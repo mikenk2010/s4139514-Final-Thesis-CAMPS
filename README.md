@@ -50,5 +50,6 @@ LLM essay evaluators trained on predominantly Western text penalise valid non-We
 - Commit after every editing session (this repo syncs to Overleaf); **never** commit essay texts or API keys — corpus data lives only in `../Code/data/` (gitignored there)
 - AI assistance logged for the course integrity disclosure
 
-## Related folders (not in this repo)
-`../CAMPS-Project/` — plan, meeting minutes, literature notes, admin · `../Code/` — experiment pipeline and data
+## Related repositories and folders
+- **Experiment code:** https://github.com/mikenk2010/vs4139514-Final-Thesis-CAMPS-Code — the CAMPS pipeline (sampling, 4-provider runner, metrics, table generation). Local working copy: `../Code/`. Corpus data stays local-only (gitignored) per the ICNALE licence.
+- `../CAMPS-Project/` — working plan, meeting minutes, literature notes, admin (OneDrive-mirrored, not on GitHub)
