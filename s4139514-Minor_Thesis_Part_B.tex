@@ -1,0 +1,42 @@
+% -*-latex-*-
+\documentclass[12pt,twoside]{mitthesis}
+\usepackage{lgrind}
+\usepackage{cmap}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit}
+\newtheorem{definition}{Definition}[chapter]
+% Override MIT's hardcoded institution name (defined inside mitthesis.cls)
+\def\MIT{RMIT UNIVERSITY}
+\def\Mit{RMIT University}
+\providecommand{\doi}[1]{doi:~\texttt{\detokenize{#1}}}
+\pagestyle{plain}
+\def\files{all}
+\def\all{all}
+\ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi
+\begin{document}
+\include{01-thesis-cover}
+\pagestyle{plain}
+\include{05-thesis-contents}
+%% ------------------------------------------------------------
+%% RMIT required structure (COSC2993):
+%%   1. Introduction
+%%   2. Literature Review
+%%   3. Methods
+%%   4. Results and Discussion
+%%   5. Conclusion
+%% ------------------------------------------------------------
+\include{06-chapter1-introduction}   % Introduction
+\include{07-chapter2-literature-review}   % Literature Review
+\include{08-chapter3-methodology}   % Methods
+\include{09-chapter4-results-discussion}   % Results and Discussion
+\include{10-chapter5-conclusion}   % Conclusion
+\appendix
+\include{11-appendixA-cri-prompts}
+\include{12-appendixB-reproducibility}
+\include{13-thesis-bibliography}
+\end{document}

@@ -1,0 +1,252 @@
+\chapter{Literature Review}
+\label{chap:literature}
+% Target ~12 pages. Status: §2.1, §2.2 (partial), §2.3 (partial), §2.6
+% drafted from verified sources; §2.4, §2.5 pending Week 4 batch.
+
+The literature relevant to this thesis was searched between July and
+September 2026 using Google Scholar, arXiv, the ACL Anthology, and the
+Springer and IEEE digital libraries, with combinations of the terms
+``automated essay scoring'', ``multi-agent'', ``LLM-as-a-judge'',
+``cultural bias'', ``debiasing'', ``fairness'', ``non-native writers'',
+and ``contrastive rhetoric'', supplemented by backward and forward
+citation chasing from key papers. Every reference cited in this thesis
+was verified against its primary source. The review is organised
+thematically: multi-agent and panel-based scoring
+(Section~\ref{sec:lit-multiagent}), inference-time debiasing
+(Section~\ref{sec:lit-debias}), cultural bias in LLMs
+(Section~\ref{sec:lit-culture}), fairness in AES for non-native writers
+(Section~\ref{sec:lit-aes-fairness}), and the contrastive-rhetoric
+foundations (Section~\ref{sec:lit-rhetoric}), before
+Section~\ref{sec:lit-gap} locates the gap this thesis addresses.
+
+\section{Multi-Agent and Panel-Based Approaches to Scoring}
+\label{sec:lit-multiagent}
+
+Two research communities have converged on the same architectural
+intuition, that several evaluators are better than one, for
+different reasons.
+
+In automated essay scoring, multi-agent designs pursue \emph{accuracy}.
+CAFES \citep{su2025cafes} orchestrates three specialised agents (an
+initial scorer, a feedback-pool manager, and a reflective scorer that
+revises scores against aggregated evidence) and reports an average
+relative improvement of 21\% in Quadratic Weighted Kappa (QWK) over
+direct prompting across multimodal essay benchmarks. Roundtable Essay
+Scoring \citep[RES;][]{jang2025roundtable} constructs evaluator agents
+with distinct trait-based rubrics and consolidates their judgments
+through a simulated roundtable discussion, reporting up to 34.86\%
+average QWK improvement over vanilla prompting on the ASAP dataset in a
+zero-shot setting.
+Related designs extend the pattern to analytic trait scoring via
+multi-agent debate with retrieval augmentation
+\citep{keramati2026madrag} and to structured component recognition
+before scoring \citep{wang2025autoscore}. What unites this family is
+the axis along which the agents differ: \emph{function} (scorer,
+critic, reviser) or \emph{trait} (content, organisation, language use).
+None varies the cultural interpretation of the rubric itself, and none
+of these studies evaluates fairness across writer cohorts: the
+improvements are reported on aggregate agreement with human raters,
+leaving open the possibility that a more accurate panel is uniformly
+accurate for some writers and uniformly harsh for others.
+
+In the LLM-evaluation community, panel designs pursue \emph{bias
+reduction}. \citet{verga2024replacing} replaced a single large judge
+model with a Panel of LLM evaluators (PoLL) drawn from three different
+model families, and found that the panel not only correlated better
+with human judgment across six datasets but reduced intra-model
+self-preference bias, at roughly a seventh of the cost. This is, to
+date, the clearest empirical demonstration that judge \emph{diversity}
+counteracts judge \emph{bias}. The diversity axis, however, is model
+provider, chosen to decorrelate model-specific quirks rather than to
+represent any substantive difference in evaluative standards. The
+present thesis can be read as a targeted transplant: it takes the
+panel-of-judges mechanism whose bias-reducing effect
+\citet{verga2024replacing} established, and re-axes the diversity from
+provider to \emph{cultural rubric interpretation}, where the bias to be
+countered is cultural rather than idiosyncratic.
+
+\section{Inference-Time Debiasing}
+\label{sec:lit-debias}
+
+A second literature attacks bias at inference time, without retraining.
+BiasFilter \citep{cheng2025biasfilter} periodically evaluates candidate
+continuations during generation against a fairness reward model and
+discards low-reward segments, enforcing fairness on \emph{generated
+text} for both open-source and API-based models. The framework
+demonstrates that meaningful debiasing is achievable purely at
+inference time, a design constraint this thesis shares, but its
+unit of intervention is the output token stream, which has no analogue
+when the model's output is a single scalar score.
+
+Closest to the present work is Multi-Agent Cultural Debate (MACD)
+\citep{tan2026macd}, which assigns LLM agents explicit cultural
+personas and orchestrates deliberation under a ``seeking common ground
+while reserving differences'' strategy. On a bilingual benchmark, MACD
+raised the rate of unbiased responses substantially over single-model
+baselines, and the authors' central finding, that agent frameworks
+with \emph{functional} roles lack the explicit cultural representation
+needed for cross-cultural fairness, independently corroborates the
+design principle behind CAMPS. The two frameworks nonetheless answer
+different questions: MACD debiases \emph{what a model says} in
+open-ended generation, where the deliverable is a text that
+synthesises perspectives; CAMPS debiases \emph{how a model judges},
+where the deliverable is a score whose fairness can be measured against
+human ground truth cohort by cohort, and where disagreement between
+cultural agents is exploited as a detection signal rather than
+dissolved through debate.
+
+A caution for all multi-agent designs comes from the MALIBU benchmark
+\citep{mirza2025malibu}, which shows that LLM-based multi-agent systems
+can implicitly \emph{reinforce} social biases, and that
+persona-conditioned judging can over-correct. For this thesis, MALIBU
+motivates two design decisions: consensus weights are calibrated
+empirically rather than assumed benign (Hypothesis H4 measures the
+over-correction frontier directly), and panel behaviour is validated
+against multi-rater human ground truth rather than taken on faith.
+%% TODO (Week 3): add FairSteer and Self-Debias after verifying author
+%% lists; position as white-box alternatives infeasible for API-only
+%% deployment.
+
+\section{Cultural Bias in Large Language Models}
+\label{sec:lit-culture}
+
+That LLMs carry a Western-centric evaluative disposition is no longer
+seriously contested. \citet{tao2024cultural} compared five OpenAI model
+generations against nationally representative values-survey data for
+107 countries and found that model responses consistently resemble
+those of English-speaking and Protestant-European populations: the
+WEIRD alignment that this thesis takes as the distal cause of
+evaluative epistemic filtering.
+
+The proximal framework for this thesis comes from the supervisor's
+research programme. \citet{dorleon2026uncovering} formally defined
+bias categories for generative outputs (stereotyping, omission,
+ethnocentrism, simplification) and proposed multi-perspective
+generation with bias detection, proving that under ideal conditions the
+method eliminates stereotypical content and perspective omission. The
+companion study \citep{shujaa2026llms} evaluated seven state-of-the-art
+LLMs on prompts embedding culturally sensitive assumptions about
+Vietnam, Myanmar, and Nepal, documenting pervasive stereotyping,
+linguistic ethnocentrism, and epistemic bias, with substantial
+variation across models. It is this cross-model variation that
+motivates testing H1 on at least four model families. The same group's work on
+framing-bias detection \citep{shujaa2025framing} reflects the
+detection-oriented strand of this programme that the Bias Divergence
+Score continues: bias treated not only as something to remove but as
+something to \emph{measure and flag}.
+%% TODO (Week 4): add SEA-HELM (Findings of ACL 2025) and the
+%% cultural-alignment reliability critique (arXiv:2503.08688) with a
+%% paragraph on evaluation-stability implications for CRI design.
+
+\section{Fairness in AES for Non-Native Writers}
+\label{sec:lit-aes-fairness}
+
+Concerns about equitable automated scoring of non-native writing
+predate the LLM era. \citet{vajjala2018automated} showed on the
+TOEFL11 and FCE corpora that the linguistic features most predictive of
+essay quality differ across L1 populations, evidence that a single
+scoring model implicitly encodes population-specific assumptions about
+what good writing looks like. What has changed with LLM-based scoring
+is the depth at which such assumptions operate: where feature-based
+systems encoded them in engineered predictors that could be inspected,
+LLM evaluators encode them in an opaque prior over rhetorical form
+\citep[cf.][]{gallegos2024bias}.
+
+The LLM-era evidence is accumulating quickly.
+\citet{pack2024llm} evaluated four prominent LLMs (PaLM~2, Claude~2,
+GPT-3.5, GPT-4) as scorers of English-learner placement essays,
+finding usable reliability for the strongest model but meaningful
+variation across models and administrations. Evaluative behaviour is
+therefore model-specific, which motivates testing H1
+across at least four model families rather than generalising from one.
+Most directly relevant, \citet{gayed2026firstlanguage} fine-tuned an
+open-weight model (Gemma-3-27B) for essay scoring and evaluated it on
+the full TOEFL11 corpus of 12{,}100 essays across eleven L1
+backgrounds, explicitly analysing scoring effects by first language.
+The study documents L1-linked scoring variation on exactly the corpus
+family and task that concern this thesis. Like the broader AES
+fairness literature it extends, however, it stops at \emph{measurement}: no
+mitigation framework is proposed, and the native/non-native design
+this thesis requires is out of scope because TOEFL11 contains no
+native-English cohort. Related recent work has begun to probe
+mechanism as well as outcome, showing that LLM scorers can infer
+writer demographics from essay text and that scoring error increases
+when a non-native writer is identified as such
+(see \texttt{doi:10.1007/978-3-031-98417-4\_6}).
+%% TODO: convert the demographic-inference chapter to a full \citep
+%% once the author list is verified against the Springer page.
+
+Taken together, this literature establishes the disparity, its
+model-dependence, and hints at its mechanism, while leaving the
+mitigation side of the problem essentially untouched. That asymmetry
+between diagnosis and treatment is the practical motivation for the
+framework developed in Chapter~3.
+
+\section{Contrastive Rhetoric and Cultural Writing Traditions}
+\label{sec:lit-rhetoric}
+
+The claim that rhetorical organisation is culturally learned, and
+that an evaluator calibrated to one tradition will therefore
+systematically misread another, has a research lineage of its own.
+\citet{kaplan1966cultural} first argued that paragraph organisation
+reflects culturally specific ``thought patterns'', contrasting the
+linear development expected in English academic prose with the
+patterns he observed in other traditions. The framework was refined
+substantially in later work: \citet{hinds1987reader} distinguished
+\emph{writer-responsible} languages, in which the burden of clarity
+falls on the writer through explicit signposting, from
+\emph{reader-responsible} languages, in which coherence is expected to
+be inferred by the reader. Under this typology, the ``missing
+thesis statement'' an LLM penalises may simply be reader-responsible
+coherence operating as designed. \citet{connor2011intercultural}
+consolidated this field as intercultural rhetoric, correcting early
+essentialist readings: rhetorical traditions are conventions
+distributed across writing communities, not fixed properties of
+individuals. This thesis adopts that distinction explicitly, treating
+L1 cohorts as proxies for rhetorical tradition rather than for
+identity.
+
+For Southeast Asian learner writing specifically, the empirical base
+is anchored by the ICNALE project \citep{ishikawa2023icnale}, whose
+topic-controlled design allows rhetorical variation to be observed
+under matched task conditions across ten Asian countries and a
+native-English reference cohort. This literature performs two duties in
+the present thesis. It supplies the content of the cultural rubric
+interpretations in Chapter~3, where each CRI prompt is grounded in
+documented rhetorical conventions rather than improvised cultural
+personas, and it supplies the defence against the objection that
+culturally-calibrated agents merely role-play stereotypes: the
+calibrations are drawn from a half-century of contrastive-rhetoric
+scholarship, and their behaviour is tested empirically in Chapter~4.
+
+\section{The Research Gap}
+\label{sec:lit-gap}
+
+Three literatures converge on the problem this thesis addresses, and
+each stops short of it in a characteristic way. The multi-agent scoring
+literature (Section~\ref{sec:lit-multiagent}) established that panels
+of evaluators outperform single judges (CAFES and RES on accuracy,
+PoLL on bias) but defines panel diversity by function, trait, or
+model provider, never by cultural interpretation of the rubric, and
+does not measure fairness across writer cohorts. The inference-time
+debiasing literature (Section~\ref{sec:lit-debias}) established that
+bias can be mitigated without retraining, and MACD specifically
+established that \emph{explicit cultural representation} in agent
+frameworks matters; but its object is generated text, not evaluative
+judgment, and it dissolves inter-agent disagreement rather than
+exploiting it. The cultural-bias literature
+(Section~\ref{sec:lit-culture}) established the WEIRD disposition of
+current models and, in \citet{dorleon2026uncovering}, provided a formal
+multi-perspective mitigation framework with provable guarantees, for
+generation only. Meanwhile, the AES fairness literature
+(Section~\ref{sec:lit-aes-fairness}) continues to document L1-linked
+scoring disparities without offering a validated mitigation framework.
+
+The intersection itself remains empty: culturally-diverse rubric
+interpretation, applied to evaluative scoring, with inter-agent
+divergence used as a calibrated trigger for human review and validated
+against multi-rater human ground truth. To the best of the searches
+described above, no published work occupies it.
+That intersection is precisely where CAMPS operates, and the recency of
+the nearest neighbours on either side suggests the space will not
+remain unoccupied for long.
