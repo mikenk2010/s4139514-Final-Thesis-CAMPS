@@ -39,13 +39,49 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 \section{Threats to Validity}
-% Construct: L1/nationality as cultural proxy (essentialism risk);
-% prompted agents vs genuine cultural calibration (cf. randomness
-% critique of cultural-alignment evals). Internal: prompt sensitivity,
-% determinism (t=0). External: two ICNALE topics; transfer check on
-% second corpus. Statistical: GRA n=140 power limits; CIs everywhere.
-%% TODO: Week 8.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\label{sec:threats}
+
+\textbf{Construct validity.} The central construct risk is the use of
+first-language and country cohorts as proxies for rhetorical
+tradition. Rhetorical conventions are distributed across writing
+communities, not fixed properties of individuals
+\citep{connor2011intercultural}, so cohort-level results must not be
+read as claims about any individual writer; this thesis draws
+cohort-level conclusions only. A second construct risk concerns the
+agents themselves: a prompted ``cultural lens'' may perform a
+stereotype of a tradition rather than a calibration to it, and
+cultural-alignment evaluations of LLMs can be unstable across
+elicitation choices. Three design features address this: each CRI
+prompt is grounded in named contrastive-rhetoric sources rather than
+improvised (Section~\ref{sec:scaling-panel}); agent behaviour is
+checked against the corpus cohort corresponding to each lens; and all
+runs are deterministic, removing sampling variation from the
+elicitation.
+
+\textbf{Internal validity.} Scores may be sensitive to prompt wording
+and output format. All prompts are fixed before the experiments,
+reproduced verbatim in Appendix~\ref{chap:appendix-prompts}, and
+identical across cohorts, so wording effects cannot differentially
+affect one cohort. Caching and fixed model versions eliminate drift
+within an experiment; model version identifiers are recorded in
+Appendix~\ref{chap:appendix-repro}.
+
+\textbf{External validity.} ICNALE's topic control is a strength for
+causal comparison and a limit on generality: two essay prompts in the
+main cohorts, and a single prompt in the GRA validation set. Findings
+therefore generalise to short argumentative learner essays of this
+kind; extension to other genres, lengths, and scoring rubrics is
+future work. The model set spans two closed and two open-weight
+systems, but all are contemporary instruction-tuned LLMs; conclusions
+are bounded to this model class.
+
+\textbf{Statistical validity.} The GRA validation set is $n = 140$,
+which limits the precision of E3's sensitivity and false-positive
+estimates; all E3 statistics are reported with their $n$ and
+confidence intervals, and the calibration/evaluation split is fixed by
+seed before analysis. Across all experiments, confidence intervals are
+the primary inferential device and no post-hoc significance testing is
+performed (Section~\ref{sec:metrics}).
 
 \section{Discussion}
 % Interpret against H1-H4; scalability paradox; zero-sum boundary;

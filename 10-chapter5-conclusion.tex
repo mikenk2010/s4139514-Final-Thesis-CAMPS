@@ -8,18 +8,59 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 \section{Contributions}
-% Conceptual, architectural, empirical, methodological, practical.
-%% TODO: Week 9.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\label{sec:conclusion-contributions}
+
+This thesis makes five contributions. Conceptually, it formalises
+\emph{evaluative epistemic filtering} as a distinct bias mechanism in
+LLM-driven scoring (Definition~\ref{def:eef}), grounded in epistemic
+injustice and contrastive rhetoric. Architecturally, it specifies
+CAMPS, a five-lens culturally-calibrated scoring panel with a
+meta-adjudicator and a divergence-based human-review trigger,
+extending multi-perspective bias mitigation from generation
+\citep{dorleon2026uncovering} to evaluation. Empirically, it
+evaluates the framework on topic-controlled ICNALE cohorts across four
+model families, re-establishing the pilot's evidence at scale on a
+corpus purpose-built for the comparison. Methodologically, it
+introduces the Bias Divergence Score with ROC calibration against
+multi-rater human ground truth, benchmarked against the disagreement
+of eighty human raters. Practically, it characterises the
+fairness--accuracy frontier explicitly, giving deploying institutions
+an honest account of what fairness costs under current models.
+%% TODO (Week 9): sharpen each claim against the actual results.
 
 \section{Limitations}
-% Corpus scope; L1 as cultural proxy (essentialism risk); inference-time
-% ceiling; model coverage; cost of human review.
-%% TODO: Week 9.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\label{sec:limitations}
+
+Beyond the validity threats analysed in Section~\ref{sec:threats},
+four limitations bound this work. First, corpus scope: the evidence
+rests on short, topic-controlled argumentative essays by university
+students; high-stakes examination writing differs in genre, length,
+and stakes. Second, the cultural lenses cover five perspectives and
+leave others (notably Middle Eastern, South Asian, and African
+traditions) to future work, constrained by the absence of validating
+cohorts in public corpora. Third, CAMPS is an inference-time
+mitigation: it treats the symptom at the point of judgment and cannot
+correct the training-distribution causes of the filter; a panel of
+biased judges is fairer than one, not unbiased. Fourth, the framework
+multiplies inference cost by the panel size and routes contested
+essays to humans, so its operational cost scales with exactly the
+essays that most need care; whether that cost is acceptable is an
+institutional decision this thesis can inform but not make.
 
 \section{Future Work}
-% Additional cultural lenses; classroom deployment study (requires new
-% ethics assessment); formal guarantees for evaluative consensus.
-%% TODO: Week 9.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\label{sec:future-work}
+
+Three directions follow directly. First, extending the panel to
+further rhetorical traditions as validating corpora become available,
+including a Middle Eastern lens for which the contrastive-rhetoric
+literature is rich but public rated corpora are lacking. Second, a
+theoretical treatment of evaluative consensus: the formal guarantees
+established for multi-perspective generation
+\citep{dorleon2026uncovering} suggest an analogous proposition for
+scoring, stating conditions under which panel consensus provably
+narrows cohort gaps; developing that result would give the
+architecture a foundation independent of any particular model
+generation. Third, deployment study: a classroom pilot measuring how
+BDS-triggered human review affects teacher workload and student
+outcomes, which would require a new ethics assessment with human
+participants and sits deliberately outside this project's scope.
