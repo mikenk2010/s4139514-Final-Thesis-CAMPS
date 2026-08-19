@@ -592,17 +592,27 @@ with course policy.
 \section{Metrics and Statistical Protocol}
 \label{sec:metrics}
 
-\textbf{Primary metric.} Agreement between automated and ground-truth
-scores is measured by Quadratic Weighted Kappa,
+\textbf{Primary metric.} The primary fairness quantity is the
+\emph{cohort score gap}: the difference in mean panel score between
+the native and Southeast Asian cohorts,
+\begin{equation}
+\Delta = \overline{S^{*}}_{\mathrm{native}}
+        - \overline{S^{*}}_{\mathrm{SEA}},
+\end{equation}
+computed on proficiency-matched cohorts so that, absent bias, the
+expected gap is near zero. This operationalisation follows the pilot
+and is forced by a property of the reference data: the native cohort
+writes as an unbanded reference group (ICNALE assigns CEFR bands to
+learners only), so band-agreement statistics are undefined for it.
+Agreement with graded ground truth is reported secondarily where such
+truth exists: Quadratic Weighted Kappa,
 \begin{equation}
 \kappa_w = 1 - \frac{\sum_{i,j} w_{ij} O_{ij}}
                      {\sum_{i,j} w_{ij} E_{ij}},
 \qquad w_{ij} = \frac{(i-j)^2}{(R-1)^2},
 \end{equation}
-where $O$ and $E$ are the observed and expected score matrices and $R$
-the number of scale points; $\kappa_w$ is computed separately per
-cohort, and the \emph{gap} $\Delta\kappa_w = \kappa_w^{\mathrm{native}}
-- \kappa_w^{\mathrm{SEA}}$ is the fairness quantity of interest.
+against proficiency bands for the learner cohorts, and against the
+multi-rater human consensus for the GRA validation set (E3).
 
 \textbf{Uncertainty.} Every reported statistic carries its $n$, and
 every proportion or $\kappa_w$ is reported with a 95\% percentile
