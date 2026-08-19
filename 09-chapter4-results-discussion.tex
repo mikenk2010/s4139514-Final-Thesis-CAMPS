@@ -70,11 +70,53 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 \input{tables/table_e3_bds}
 
 \section{Uncertainty and Error Analysis}
-% Bootstrap distributions; qualitative analysis of mis-scored essays;
-% cases where CAMPS fails; comparison of pilot artifacts (e.g., small-n
-% ceiling effects) with at-scale estimates.
-%% TODO: Week 8.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\label{sec:results-uncertainty}
+%% NOTE: E1-based; extend with E2/E3 error analysis when those complete.
+
+\textbf{How the panel narrows the gap.} The gap reductions in
+Section~\ref{sec:results-e1} conceal a severity shift that deserves
+honest statement: the panel lowers mean scores for \emph{both}
+cohorts on the frontier models, and lowers native-cohort scores more.
+On GPT-4o, mean SEA scores fell by 0.33 bands under the panel and
+native scores by 0.56 ($n = 100$ each); on Claude Sonnet, by 0.71 and
+0.98 respectively. The gap therefore narrows substantially through
+native-score deflation rather than SEA-score elevation. Whether this
+constitutes fairness or levelling down is taken up in
+Section~\ref{sec:results-discussion}; the empirical point is that the
+panel makes the frontier models harsher and more even-handed at once,
+while leaving the low-gap model (Qwen3, $-0.04$ and $-0.00$)
+essentially unchanged.
+
+\textbf{Where the bias concentrates.} Disaggregating the baseline gap
+by proficiency band shows the filter operating most strongly on
+mid-proficiency writing. For B1\_2 essays ($n = 74$), the baseline
+gap against the native cohort was 0.95 bands on GPT-4o and 1.50 on
+Claude Sonnet; for B2+ essays ($n = 26$), it fell to 0.37 and 0.27.
+High-proficiency Southeast Asian writers largely escape the penalty,
+plausibly because their essays more closely realise the Anglo-American
+form the baseline evaluator expects; the filter's cost falls on
+writers whose English is sound but whose rhetoric is most distinctly
+local.
+
+\textbf{Panel divergence.} With $k = 3$ agents scoring integer bands,
+BDS takes few distinct values and its distribution is coarse; this
+discreteness is a design limit of the small panel, and one motivation
+for the five-agent panel of E2. Mean BDS was of similar magnitude in
+both cohorts (for example 0.39 SEA vs.\ 0.51 native on GPT-4o), so
+panel disagreement alone does not yet separate the cohorts at
+$k = 3$; the calibrated evaluation of divergence as a detection
+signal, against human ground truth, is E3's task.
+
+\textbf{A concrete case.} The highest-divergence Southeast Asian
+essay under GPT-4o (a Philippine B1\_2 essay, $\mathrm{BDS} = 0.94$)
+illustrates the theorised mechanism directly. The Western-calibrated
+agent scored it 5.0, noting the absence of upfront thesis structure;
+the SEA-calibrated agent scored the same essay 7.0, describing ``a
+coherent and cohesive structure, with the thesis emerging through
+contextual development''; the neutral agent agreed at 7.0. The
+disagreement is not noise: it is two documented rubric interpretations
+reaching different verdicts on the same rhetorical choice, which is
+precisely the signal BDS is designed to expose.
 
 \section{Threats to Validity}
 \label{sec:threats}
