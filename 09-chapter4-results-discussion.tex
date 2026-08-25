@@ -165,8 +165,54 @@ performed (Section~\ref{sec:metrics}).
 
 \section{Discussion}
 \label{sec:results-discussion}
-% Interpret against H1-H4; scalability paradox; zero-sum boundary;
-% relation to Dorleon & Shujaa's formal framework; practical
-% implications for institutions; honest treatment of Part A limitations.
-%% TODO: Week 9.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+%% DRAFT from E1; integrate E2 (k=5, adjudicator, weight frontier) and
+%% E3 (BDS validation) findings when those experiments complete.
+
+In plain terms, Experiment E1 found that current language models score
+Southeast Asian students' essays lower than native speakers' essays of
+matched proficiency, on every model tested; that the size of this
+penalty differs five-fold across models; and that a small panel of
+culturally-calibrated evaluators removes about a quarter of the
+penalty on the models where it is largest.
+
+Three aspects of these results bear on the working theory. First, the
+universality of the gap across four model families, including an
+open-weight model, is what Definition~\ref{def:eef} predicts if the
+filter derives from training distributions shared across the industry
+rather than from any vendor's alignment choices. Second, the
+cross-model ordering, largest in the US frontier models and smallest
+in the Chinese-trained model, is consistent with the distributional
+account, though it must be held loosely given confounds of scale and
+scoring style. Third, the mitigation profile, effective where bias is
+large and inert where it is small, is the signature of a decorrelation
+mechanism rather than a blanket adjustment, supporting the design
+argument of Section~\ref{sec:camps-framework}.
+
+A natural objection deserves direct treatment: are current frontier
+models not simply too capable for cultural bias to matter? The E1
+results answer empirically. The most capable models in the set showed
+the \emph{largest} gaps, not the smallest, because capability and
+evaluative neutrality are different properties: a model can apply a
+culturally partial standard with great fluency, and the fluency of its
+justifications makes the partiality harder, not easier, to see.
+Moreover, the five-fold variation in gap size across vendors means the
+choice of scoring model is itself a fairness decision, one that
+institutions currently make without evidence. Even under a future
+model with no measurable gap, the contribution of this thesis would
+stand as the audit instrument by which such a claim is verified:
+matched-cohort measurement, divergence-based detection, and a
+human-disagreement benchmark, re-runnable on any model at negligible
+cost.
+
+The severity shift documented in
+Section~\ref{sec:results-uncertainty} raises a question the fairness
+literature knows as levelling down: the panel achieves part of its
+equalisation by scoring native essays lower, not only by treating
+Southeast Asian essays more generously. If the baseline native scores
+were inflated by the same familiarity that penalised Southeast Asian
+essays, this is a correction; if not, it is a cost. Distinguishing the
+two requires graded human ground truth, which the GRA validation set
+provides for E3.
+%% TODO: resolve the levelling-down question with E3's human-consensus
+%% comparison; tie back to H3/H4 and the zero-sum framing; integrate
+%% the honest treatment of the Part A evidence base.
