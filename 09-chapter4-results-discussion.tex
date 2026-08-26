@@ -44,6 +44,19 @@ are excluded pending completion of the run.
 %% TODO: update the Gemini sentence and Table 4.1 once its panel
 %% condition completes (quota cooldown).
 
+Figure~\ref{fig:e1-gaps} visualises the primary result: the gap on
+every model under both conditions, with its confidence intervals.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fig-e1-gaps}
+\caption[E1 cohort score gaps by model and condition]{Native$-$SEA
+score gap by model and condition, with 95\% bootstrap confidence
+intervals ($n$=100 per cohort). Every baseline gap excludes zero; the
+panel reduces the gap on the two models where it is largest.}
+\label{fig:e1-gaps}
+\end{figure}
+
 The pattern in these results anticipates the fuller treatment in
 Sections~\ref{sec:results-e2} and~\ref{sec:results-discussion}:
 mitigation strength appears to track the size of the bias being
@@ -92,11 +105,22 @@ by proficiency band shows the filter operating most strongly on
 mid-proficiency writing. For B1\_2 essays ($n = 74$), the baseline
 gap against the native cohort was 0.95 bands on GPT-4o and 1.50 on
 Claude Sonnet; for B2+ essays ($n = 26$), it fell to 0.37 and 0.27.
+Figure~\ref{fig:e1-band} visualises this concentration.
 High-proficiency Southeast Asian writers largely escape the penalty,
 plausibly because their essays more closely realise the Anglo-American
 form the baseline evaluator expects; the filter's cost falls on
 writers whose English is sound but whose rhetoric is most distinctly
 local.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/fig-e1-gap-by-band}
+\caption[Baseline gap by SEA proficiency band]{Baseline cohort gap
+disaggregated by the Southeast Asian writers' proficiency band: the
+penalty concentrates on mid-proficiency (B1 upper) writing across all
+models.}
+\label{fig:e1-band}
+\end{figure}
 
 \textbf{Panel divergence.} With $k = 3$ agents scoring integer bands,
 BDS takes few distinct values and its distribution is coarse; this
