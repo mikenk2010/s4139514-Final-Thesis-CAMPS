@@ -103,9 +103,18 @@ motivates two design decisions: consensus weights are calibrated
 empirically rather than assumed benign (Hypothesis H4 measures the
 over-correction frontier directly), and panel behaviour is validated
 against multi-rater human ground truth rather than taken on faith.
-%% TODO (Week 3): add FairSteer and Self-Debias after verifying author
-%% lists; position as white-box alternatives infeasible for API-only
-%% deployment.
+A separate line of work mitigates bias inside the model rather than
+around it. Self-debiasing exploits a model's own ability to recognise
+undesirable properties of its output, suppressing them at decoding
+time \citep{schick2021self}, and FairSteer intervenes on hidden-layer
+activations with dynamically applied steering vectors at inference
+time \citep{li2025fairsteer}. Both are effective in their settings,
+but both are white-box methods: they require access to output
+distributions or internal activations that commercial scoring
+deployments accessed through an API do not expose. CAMPS was
+deliberately designed to operate at the level of prompts and outputs
+alone, trading the precision of internal intervention for
+applicability to any evaluator, including closed models.
 
 \section{Cultural Bias in Large Language Models}
 \label{sec:lit-culture}
@@ -134,9 +143,22 @@ framing-bias detection \citep{shujaa2025framing} reflects the
 detection-oriented strand of this programme that the Bias Divergence
 Score continues: bias treated not only as something to remove but as
 something to \emph{measure and flag}.
-%% TODO (Week 4): add SEA-HELM (Findings of ACL 2025) and the
-%% cultural-alignment reliability critique (arXiv:2503.08688) with a
-%% paragraph on evaluation-stability implications for CRI design.
+Two further studies shaped how cultural calibration is implemented in
+this thesis. SEA-HELM, a community-built evaluation suite for
+Southeast Asian languages, argues that benchmarks produced by machine
+translation or synthetic generation without community input lose
+cultural authenticity \citep{susanto2025seahelm}; the same reasoning
+led this thesis to ground its cultural lenses in the contrastive
+rhetoric literature and in a corpus built in the region, rather than
+in ad hoc persona descriptions. More cautionary still,
+\citet{khan2025randomness} showed that survey-based measures of LLM
+cultural alignment are unstable across presentation formats and that
+prompting a model to represent a specific culture is not reliably
+steerable. For CAMPS this is a design constraint, not a refutation:
+lens prompts are fixed verbatim (Appendix~A), decoding is
+deterministic, and the panel's behaviour is validated empirically
+against human raters (E3) rather than assumed correct because the
+prompt requested it.
 
 \section{Fairness in AES for Non-Native Writers}
 \label{sec:lit-aes-fairness}
@@ -169,12 +191,10 @@ fairness literature it extends, however, it stops at \emph{measurement}: no
 mitigation framework is proposed, and the native/non-native design
 this thesis requires is out of scope because TOEFL11 contains no
 native-English cohort. Related recent work has begun to probe
-mechanism as well as outcome, showing that LLM scorers can infer
-writer demographics from essay text and that scoring error increases
-when a non-native writer is identified as such
-(see \texttt{doi:10.1007/978-3-031-98417-4\_6}).
-%% TODO: convert the demographic-inference chapter to a full \citep
-%% once the author list is verified against the Springer page.
+mechanism as well as outcome: \citet{yang2025demographics} showed that
+prompt-based LLM scorers can infer writer demographics, including
+English-learner status, from essay text alone, and that scoring
+behaviour shifts once such a status is recognised.
 
 Taken together, this literature establishes the disparity, its
 model-dependence, and hints at its mechanism, while leaving the

@@ -30,7 +30,18 @@ calibration are implemented in \texttt{src/metrics.py} with unit
 tests.
 
 \section*{Model versions}
-%% TODO: record the exact pinned model identifiers here after the E1
-%% launch (from configs/experiment.yaml at run time).
-The exact model identifiers used in each experiment are pinned in the
-configuration file at run time and recorded here in the final version.
+The exact model identifiers requested through each provider's API, as
+pinned in \texttt{configs/experiment.yaml} and recorded in every log
+entry, were: \texttt{gpt-4o} (OpenAI); \texttt{claude-sonnet-4-6}
+(Anthropic); \texttt{qwen3:14b} (Alibaba, open weights, executed
+locally via Ollama); and \texttt{gemini-3.1-pro-preview} (Google). One
+model change occurred mid-study: the study began with
+\texttt{gemini-2.5-pro}, which the provider withdrew from new API
+access partway through data collection. The 249 calls completed
+against it were archived and excluded from all analyses (mixing scores
+from two model versions within one experimental cell would confound
+the comparison), and the full Gemini condition was rerun from scratch
+on \texttt{gemini-3.1-pro-preview}. The archived log is retained in
+the repository for audit. All scoring calls used temperature~0.0; the
+sampling manifest was frozen with seed 4139514 before any scoring
+began.

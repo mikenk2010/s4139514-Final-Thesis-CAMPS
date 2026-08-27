@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: s4139514-Minor_Thesis_Part_B.aux
+A level-1 auxiliary file: 01-thesis-cover.aux
+A level-1 auxiliary file: 05-thesis-contents.aux
+A level-1 auxiliary file: 06-chapter1-introduction.aux
+A level-1 auxiliary file: 07-chapter2-literature-review.aux
+A level-1 auxiliary file: 08-chapter3-methodology.aux
+A level-1 auxiliary file: 09-chapter4-results-discussion.aux
+A level-1 auxiliary file: 10-chapter5-conclusion.aux
+A level-1 auxiliary file: 11-appendixA-cri-prompts.aux
+A level-1 auxiliary file: 12-appendixB-reproducibility.aux
+A level-1 auxiliary file: 13-thesis-bibliography.aux
+The style file: plainnat.bst
+Database file #1: main.bib
+You've used 30 entries,
+            2773 wiz_defined-function locations,
+            779 strings with 11974 characters,
+and the built_in function-call counts, 16698 in all, are:
+= -- 1465
+> -- 1181
+< -- 22
++ -- 398
+- -- 368
+* -- 1381
+:= -- 2561
+add.period$ -- 118
+call.type$ -- 30
+change.case$ -- 208
+chr.to.int$ -- 30
+cite$ -- 60
+duplicate$ -- 690
+empty$ -- 1219
+format.name$ -- 402
+if$ -- 3530
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 23
+newline$ -- 177
+num.names$ -- 122
+pop$ -- 462
+preamble$ -- 1
+purify$ -- 181
+quote$ -- 0
+skip$ -- 575
+stack$ -- 0
+substring$ -- 479
+swap$ -- 122
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 315
+warning$ -- 0
+while$ -- 125
+width$ -- 0
+write$ -- 438

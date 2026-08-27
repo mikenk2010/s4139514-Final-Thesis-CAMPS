@@ -1,0 +1,237 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Blanchard et~al.(2013)Blanchard, Tetreault, Higgins, Cahill, and
+  Chodorow]{blanchard2013toefl11}
+Daniel Blanchard, Joel Tetreault, Derrick Higgins, Aoife Cahill, and Martin
+  Chodorow.
+\newblock {TOEFL11}: A corpus of non-native {E}nglish.
+\newblock Technical Report RR-13-24, Educational Testing Service, 2013.
+\newblock Corpus distributed as LDC2014T06, Linguistic Data Consortium.
+
+\bibitem[Cheng et~al.(2025)Cheng, Chen, Zan, Jia, and
+  Peng]{cheng2025biasfilter}
+Xiaoqing Cheng, Ruizhe Chen, Hongying Zan, Yuxiang Jia, and Min Peng.
+\newblock {BiasFilter}: An inference-time debiasing framework for large
+  language models.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  EMNLP 2025}, 2025.
+
+\bibitem[Connor(2011)]{connor2011intercultural}
+Ulla Connor.
+\newblock \emph{Intercultural Rhetoric in the Writing Classroom}.
+\newblock University of Michigan Press, Ann Arbor, MI, 2011.
+
+\bibitem[Dorleon and Shujaa(2026)]{dorleon2026uncovering}
+Ginel Dorleon and Shirin Shujaa.
+\newblock Uncovering cultural biases and stereotypes in large language models.
+\newblock In \emph{Proceedings of the 27th International Conference on
+  Asia-Pacific Digital Libraries (ICADL)}, volume 16242 of \emph{Lecture Notes
+  in Computer Science}, pages 64--77. Springer, 2026.
+\newblock \doi{10.1007/978-981-95-4861-3_5}.
+
+\bibitem[Dorleon et~al.(2022)Dorleon, Megdiche, Bricon-Souf, and
+  Teste]{dorleon2022feature}
+Ginel Dorleon, Imen Megdiche, Nathalie Bricon-Souf, and Olivier Teste.
+\newblock Feature selection under fairness constraints.
+\newblock In \emph{Proceedings of the 37th ACM/SIGAPP Symposium on Applied
+  Computing (SAC '22)}, pages 1125--1127. ACM, 2022.
+\newblock \doi{10.1145/3477314.3507168}.
+
+\bibitem[Dorleon et~al.(2023)Dorleon, Megdiche, Bricon-Souf,
+  et~al.]{dorleon2023fapfid}
+Ginel Dorleon, Imen Megdiche, Nathalie Bricon-Souf, et~al.
+\newblock {FAPFID}: A fairness-aware approach for protected features and
+  imbalanced data.
+\newblock In \emph{Transactions on Large-Scale Data- and Knowledge-Centered
+  Systems}, volume 13840 of \emph{Lecture Notes in Computer Science}, pages
+  107--125. Springer, 2023.
+\newblock \doi{10.1007/978-3-662-66863-4_5}.
+
+\bibitem[Fricker(2007)]{fricker2007epistemic}
+Miranda Fricker.
+\newblock \emph{Epistemic Injustice: Power and the Ethics of Knowing}.
+\newblock Oxford University Press, Oxford, 2007.
+
+\bibitem[Gallegos et~al.(2024)Gallegos, Rossi, Barrow, Tanjim, Kim,
+  Dernoncourt, Yu, Zhang, and Ahmed]{gallegos2024bias}
+Isabel~O. Gallegos, Ryan~A. Rossi, Joe Barrow, Md~Mehrab Tanjim, Sungchul Kim,
+  Franck Dernoncourt, Tong Yu, Ruiyi Zhang, and Nesreen~K. Ahmed.
+\newblock Bias and fairness in large language models: A survey.
+\newblock \emph{Computational Linguistics}, 50\penalty0 (3):\penalty0
+  1097--1179, 2024.
+
+\bibitem[Gayed(2026)]{gayed2026firstlanguage}
+John~Maurice Gayed.
+\newblock Investigating first-language bias in {LLM}-based automated essay
+  scoring: A cross-prompt evaluation of an open-weight {AI} model on {TOEFL}
+  essays.
+\newblock arXiv preprint, 2026.
+\newblock arXiv:2607.14605.
+
+\bibitem[Hinds(1987)]{hinds1987reader}
+John Hinds.
+\newblock Reader versus writer responsibility: A new typology.
+\newblock In Ulla Connor and Robert~B. Kaplan, editors, \emph{Writing Across
+  Languages: Analysis of {L2} Text}, pages 141--152. Addison-Wesley, Reading,
+  MA, 1987.
+
+\bibitem[Ishikawa(2023)]{ishikawa2023icnale}
+Shin'ichiro Ishikawa.
+\newblock \emph{The {ICNALE} Guide: An Introduction to a Learner Corpus Study
+  on {A}sian Learners' {L2} {E}nglish}.
+\newblock Routledge, 2023.
+\newblock ISBN 9781032180250.
+
+\bibitem[Jang et~al.(2025)Jang, Moon, Jung, Kim, and Lee]{jang2025roundtable}
+Jinhee Jang, Ayoung Moon, Minkyoung Jung, YoungBin Kim, and Seung~Jin Lee.
+\newblock {LLM} agents at the roundtable: A multi-perspective and dialectical
+  reasoning framework for essay scoring.
+\newblock arXiv preprint, 2025.
+\newblock arXiv:2509.14834.
+
+\bibitem[Kaplan(1966)]{kaplan1966cultural}
+Robert~B. Kaplan.
+\newblock Cultural thought patterns in inter-cultural education.
+\newblock \emph{Language Learning}, 16\penalty0 (1--2):\penalty0 1--20, 1966.
+
+\bibitem[Keramati et~al.(2026)Keramati, Zhou, Mehrotra, and
+  Warschauer]{keramati2026madrag}
+Ali Keramati, Shiyuan Zhou, Sharad Mehrotra, and Mark Warschauer.
+\newblock {MADRAG}: Multi-agent debate with retrieval-augmented generation for
+  training-free analytic essay scoring.
+\newblock arXiv preprint, 2026.
+\newblock arXiv:2606.06754.
+
+\bibitem[Khan et~al.(2025)Khan, Casper, and
+  Hadfield-Menell]{khan2025randomness}
+Ariba Khan, Stephen Casper, and Dylan Hadfield-Menell.
+\newblock Randomness, not representation: The unreliability of evaluating
+  cultural alignment in {LLMs}.
+\newblock arXiv preprint, 2025.
+
+\bibitem[Li et~al.(2024)Li, Chen, Wang, Sitaram, and Xie]{li2024culturellm}
+Cheng Li, Mengzhuo Chen, Jindong Wang, Sunayana Sitaram, and Xing Xie.
+\newblock {CultureLLM}: Incorporating cultural differences into large language
+  models.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2024.
+
+\bibitem[Li et~al.(2025)Li, Fan, Chen, Gai, Gong, Zhang, and
+  Liu]{li2025fairsteer}
+Yichen Li, Zhiting Fan, Ruizhe Chen, Xiaotang Gai, Luqi Gong, Yan Zhang, and
+  Zuozhu Liu.
+\newblock {FairSteer}: Inference time debiasing for {LLMs} with dynamic
+  activation steering.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2025}, pages 11293--11312, Vienna, Austria, 2025. Association for
+  Computational Linguistics.
+\newblock \doi{10.18653/v1/2025.findings-acl.589}.
+
+\bibitem[Mirza et~al.(2025)Mirza, Huang, Vasista, Akalin, O'Brien, Patil, and
+  Zhu]{mirza2025malibu}
+Imran Mirza, Cole Huang, Ishwara Vasista, Asli Akalin, Sean O'Brien, Rohan
+  Patil, and Kevin Zhu.
+\newblock {MALIBU} benchmark: Multi-agent {LLM} implicit bias uncovered, 2025.
+\newblock arXiv:2507.01019.
+
+\bibitem[Pack et~al.(2024)Pack, Barrett, and Escalante]{pack2024llm}
+Austin Pack, Alex Barrett, and Juan Escalante.
+\newblock Large language models and automated essay scoring of {E}nglish
+  language learner writing: Insights into validity and reliability.
+\newblock \emph{Computers and Education: Artificial Intelligence}, 6:\penalty0
+  100234, 2024.
+
+\bibitem[Schick et~al.(2021)Schick, Udupa, and Sch{\"u}tze]{schick2021self}
+Timo Schick, Sahana Udupa, and Hinrich Sch{\"u}tze.
+\newblock Self-diagnosis and self-debiasing: A proposal for reducing
+  corpus-based bias in {NLP}.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  9:\penalty0 1408--1424, 2021.
+\newblock \doi{10.1162/tacl_a_00434}.
+
+\bibitem[Shujaa and Dorleon(2025)]{shujaa2025framing}
+Shirin Shujaa and Ginel Dorleon.
+\newblock Detecting framing bias in news via probabilistic graphical modeling.
+\newblock In \emph{Proceedings of the ACM/IEEE Joint Conference on Digital
+  Libraries (JCDL)}, pages 245--248. IEEE, 2025.
+\newblock \doi{10.1109/JCDL67857.2025.00037}.
+
+\bibitem[Shujaa et~al.(2026)Shujaa, Dorleon, and Tang]{shujaa2026llms}
+Shirin Shujaa, Ginel Dorleon, and A.~Tang.
+\newblock How {LLMs} handle cultural bias: Reactions to {A}sian minority
+  historical narratives.
+\newblock In \emph{Proceedings of the 27th International Conference on
+  Asia-Pacific Digital Libraries (ICADL)}, volume 16242 of \emph{Lecture Notes
+  in Computer Science}, pages 39--52. Springer, 2026.
+\newblock \doi{10.1007/978-981-95-4861-3_3}.
+
+\bibitem[Su et~al.(2025)Su, Yan, Gao, Zhang, Liu, and Hu]{su2025cafes}
+Jiamin Su, Yibo Yan, Zhuoran Gao, Han Zhang, Xiang Liu, and Xuming Hu.
+\newblock {CAFES}: A collaborative multi-agent framework for multi-granular
+  multimodal essay scoring.
+\newblock arXiv preprint, 2025.
+\newblock arXiv:2505.13965.
+
+\bibitem[Susanto et~al.(2025)Susanto, Hulagadri, Montalan, Ngui, Yong, Leong,
+  Rengarajan, Limkonchotiwat, Mai, and Tjhi]{susanto2025seahelm}
+Yosephine Susanto, Adithya~Venkatadri Hulagadri, Jann~Railey Montalan,
+  Jian~Gang Ngui, Xianbin Yong, Wei~Qi Leong, Hamsawardhini Rengarajan, Peerat
+  Limkonchotiwat, Yifan Mai, and William~Chandra Tjhi.
+\newblock {SEA-HELM}: {Southeast} {Asian} holistic evaluation of language
+  models.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2025}, pages 12308--12336, Vienna, Austria, 2025. Association for
+  Computational Linguistics.
+\newblock \doi{10.18653/v1/2025.findings-acl.636}.
+
+\bibitem[Tan et~al.(2026)Tan, Jiang, Zeng, Ding, and Xu]{tan2026macd}
+Qian Tan, Lei Jiang, Yuting Zeng, Shuoyang Ding, and Xiaohua Xu.
+\newblock Mitigating cultural bias in {LLMs} via multi-agent cultural debate.
+\newblock arXiv preprint, 2026.
+\newblock arXiv:2601.12091.
+
+\bibitem[Tao et~al.(2024)Tao, Viberg, Baker, and Kizilcec]{tao2024cultural}
+Yan Tao, Olga Viberg, Ryan~S. Baker, and Ren{\'e}~F. Kizilcec.
+\newblock Cultural bias and cultural alignment of large language models.
+\newblock \emph{PNAS Nexus}, 3\penalty0 (9):\penalty0 pgae346, 2024.
+\newblock \doi{10.1093/pnasnexus/pgae346}.
+
+\bibitem[Vajjala(2018)]{vajjala2018automated}
+Sowmya Vajjala.
+\newblock Automated assessment of non-native learner essays: Investigating the
+  role of linguistic features.
+\newblock \emph{International Journal of Artificial Intelligence in Education},
+  28:\penalty0 79--105, 2018.
+
+\bibitem[Verga et~al.(2024)Verga, Hofst{\"a}tter, Althammer, Su, Piktus,
+  Arkhangorodsky, Xu, White, and Lewis]{verga2024replacing}
+Pat Verga, Sebastian Hofst{\"a}tter, Sophia Althammer, Yixuan Su, Aleksandra
+  Piktus, Arkady Arkhangorodsky, Minjie Xu, Naomi White, and Patrick Lewis.
+\newblock Replacing judges with juries: Evaluating {LLM} generations with a
+  panel of diverse models.
+\newblock arXiv preprint, 2024.
+\newblock arXiv:2404.18796.
+
+\bibitem[Wang et~al.(2025)Wang, Ding, Wu, Sun, Liu, and
+  Zhai]{wang2025autoscore}
+Yun Wang, Zhaojun Ding, Xuansheng Wu, Siyue Sun, Ninghao Liu, and Xiaoming
+  Zhai.
+\newblock {AutoSCORE}: Enhancing automated scoring with multi-agent large
+  language models via structured component recognition.
+\newblock arXiv preprint, 2025.
+\newblock arXiv:2509.21910.
+
+\bibitem[Yang et~al.(2025)Yang, Rakovi{\'c}, Ga{\v s}evi{\'c}, and
+  Chen]{yang2025demographics}
+Kaixun Yang, Mladen Rakovi{\'c}, Dragan Ga{\v s}evi{\'c}, and Guanliang Chen.
+\newblock Does the prompt-based large language model recognize students'
+  demographics and introduce bias in essay scoring?
+\newblock In \emph{Artificial Intelligence in Education (AIED 2025)}, volume
+  15878 of \emph{Lecture Notes in Computer Science}. Springer, 2025.
+\newblock \doi{10.1007/978-3-031-98417-4_6}.
+
+\end{thebibliography}
