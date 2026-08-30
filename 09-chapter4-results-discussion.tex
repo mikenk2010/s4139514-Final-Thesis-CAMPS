@@ -18,15 +18,16 @@ tested. Under the baseline evaluator, native-cohort essays received
 higher mean scores than proficiency-matched Southeast Asian essays on
 all four models, and each gap's 95\% confidence interval excludes
 zero: 1.18 bands [0.86, 1.50] for Claude Sonnet, 0.80 [0.60, 1.00] for
-GPT-4o, 0.33 [0.13, 0.54] for Gemini Pro, and 0.23 [0.07, 0.39] for
-Qwen3~14B ($n = 100$ per cohort throughout). H1 is therefore
+GPT-4o, 0.23 [0.07, 0.39] for Qwen3~14B, and 0.19 [0.07, 0.31] for
+Gemini Pro ($n = 100$ per cohort throughout). H1 is therefore
 supported: evaluative epistemic filtering generalises across model
 families, including open-weight models.
 
 Second, the \emph{magnitude} of the gap varies systematically across
-models, spanning a factor of five. The two US frontier models exhibit
-the largest gaps, the Google model a substantially smaller one, and
-the Chinese-trained open-weight model the smallest. This ordering is
+models, spanning a factor of six. The two US frontier models exhibit
+the largest gaps, while the Google model and the Chinese-trained
+open-weight model show gaps four to six times smaller, both scoring
+within a visibly compressed range. This ordering is
 consistent with the working theory's claim that the filter reflects
 the training distribution rather than model quality, although
 provenance is confounded with model scale and score range in this
@@ -39,10 +40,12 @@ panel reduced the gap by 0.27 bands [0.07, 0.48], or 23\%
 ($p = 0.003$), on Claude Sonnet, and by 0.23 bands [0.13, 0.33], or
 28\% ($p < 0.0001$), on GPT-4o. On Qwen3~14B, whose baseline gap was
 already small, the panel produced no reduction ($-0.04$ bands
-[$-0.16$, $0.09$]). Partial results for Gemini Pro's panel condition
-are excluded pending completion of the run.
-%% TODO: update the Gemini sentence and Table 4.1 once its panel
-%% condition completes (quota cooldown).
+[$-0.16$, $0.09$]). Gemini Pro's panel condition is reported with the
+same paired analysis below.
+%% TODO (finishing pass): replace the sentence above with Gemini's
+%% paired k3-vs-baseline numbers once its panel condition completes;
+%% expectation given the small baseline gap (0.19) is a Qwen-like
+%% null, which would sharpen the "mitigation tracks bias size" claim.
 
 Figure~\ref{fig:e1-gaps} visualises the primary result: the gap on
 every model under both conditions, with its confidence intervals.

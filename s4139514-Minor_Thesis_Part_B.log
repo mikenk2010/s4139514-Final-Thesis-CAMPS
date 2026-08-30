@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  28 AUG 2026 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  30 AUG 2026 22:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -912,21 +912,28 @@ Chapter 4.
 <figures/fig-e1-gaps.pdf, id=246, 520.34402pt x 303.534pt>
 File: figures/fig-e1-gaps.pdf Graphic file (type pdf)
 <use figures/fig-e1-gaps.pdf>
-Package pdftex.def Info: figures/fig-e1-gaps.pdf  used on input line 52.
+Package pdftex.def Info: figures/fig-e1-gaps.pdf  used on input line 55.
 (pdftex.def)             Requested size: 390.25534pt x 227.6592pt.
- (./tables/table_e1_qwk.tex) (./tables/table_e2_ablation.tex)
-(./tables/table_e3_bds.tex [48 <./figures/fig-e1-gaps.pdf>]) [49]
+ (./tables/table_e1_qwk.tex) (./tables/table_e2_ablation.tex [48 <./figures/fig
+-e1-gaps.pdf>]) (./tables/table_e3_bds.tex)
+Underfull \vbox (badness 2012) has occurred while \output is active []
+
+ [49]
 <figures/fig-e1-gap-by-band.pdf, id=316, 520.34402pt x 289.08pt>
 File: figures/fig-e1-gap-by-band.pdf Graphic file (type pdf)
 <use figures/fig-e1-gap-by-band.pdf>
-Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 117
+Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 120
 .
 (pdftex.def)             Requested size: 390.25534pt x 216.81828pt.
- [50 <./figures/fig-e1-gap-by-band.pdf>] [51] [52]) [53]
+
+Underfull \vbox (badness 3746) has occurred while \output is active []
+
+ [50]
+[51 <./figures/fig-e1-gap-by-band.pdf>] [52]) [53]
 \openout2 = `10-chapter5-conclusion.aux'.
 
- (./10-chapter5-conclusion.tex
-[54
+
+(./10-chapter5-conclusion.tex [54
 
 
 
@@ -1056,7 +1063,7 @@ Underfull \hbox (badness 1102) in paragraph at lines 198--202
 Here is how much of TeX's memory you used:
  16041 strings out of 480247
  327794 string characters out of 5896151
- 584037 words of memory out of 5000000
+ 584038 words of memory out of 5000000
  33525 multiletter control sequences out of 15000+600000
  520360 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1083,7 +1090,7 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts
 /type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/q
 tmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (65 pages, 460552 bytes).
+Output written on s4139514-Minor_Thesis_Part_B.pdf (65 pages, 460754 bytes).
 PDF statistics:
  535 PDF objects out of 1000 (max. 8388607)
  270 compressed objects within 3 object streams
