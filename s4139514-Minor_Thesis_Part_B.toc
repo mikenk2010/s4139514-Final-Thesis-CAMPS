@@ -24,14 +24,14 @@
 \contentsline {chapter}{\numberline {4}Results and Discussion}{47}{}%
 \contentsline {section}{\numberline {4.1}Experiment 1: Evaluative Bias at Scale (H1)}{47}{}%
 \contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{48}{}%
-\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{50}{}%
-\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{50}{}%
-\contentsline {section}{\numberline {4.5}Threats to Validity}{52}{}%
-\contentsline {section}{\numberline {4.6}Discussion}{53}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{55}{}%
-\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{55}{}%
-\contentsline {section}{\numberline {5.2}Contributions}{55}{}%
-\contentsline {section}{\numberline {5.3}Limitations}{56}{}%
-\contentsline {section}{\numberline {5.4}Future Work}{56}{}%
-\contentsline {chapter}{\numberline {A}CRI System Prompts}{57}{}%
-\contentsline {chapter}{\numberline {B}Reproducibility}{61}{}%
+\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{51}{}%
+\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{53}{}%
+\contentsline {section}{\numberline {4.5}Threats to Validity}{55}{}%
+\contentsline {section}{\numberline {4.6}Discussion}{56}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{59}{}%
+\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{59}{}%
+\contentsline {section}{\numberline {5.2}Contributions}{60}{}%
+\contentsline {section}{\numberline {5.3}Limitations}{61}{}%
+\contentsline {section}{\numberline {5.4}Future Work}{61}{}%
+\contentsline {chapter}{\numberline {A}CRI System Prompts}{63}{}%
+\contentsline {chapter}{\numberline {B}Reproducibility}{67}{}%

@@ -3,22 +3,24 @@
 % Narrative adapted from the Part A final presentation.
 
 A Vietnamese student opens her essay with her grandfather's proverb,
-``water wears down stone'', and builds her argument the way many Asian
-writing traditions teach: context first, conclusion arrived at rather
-than announced. A human examiner recognises the skill. An AI grader,
+``water wears down stone'', and argues the way many Asian writing
+traditions teach: context first, conclusion arrived at rather than
+announced. A human examiner recognises the skill. An AI grader,
 trained overwhelmingly on Western text, may see only a missing thesis
-statement and mark her down. The penalty is not for weak English but
-for the shape of her reasoning.
+statement and mark her down, penalising the shape of her reasoning,
+not her English.
 
-As artificial intelligence increasingly grades essays that decide
-scholarships, visas, and university places, this hidden cultural
-penalty could affect students worldwide. This thesis measures the penalty
-and proposes a practical fix called CAMPS: instead of one AI judge, a
-panel of AI judges, each reading the essay through a different cultural
-lens, whose scores are combined. When the judges strongly disagree, the
-essay is flagged for a human teacher; the disagreement itself becomes
-a bias detector.
+As AI increasingly grades high-stakes essays, this thesis measures
+that hidden penalty and proposes a fix, CAMPS: a panel of AI judges,
+each reading the essay through a different cultural lens, with strong
+disagreement flagging the essay for a human teacher.
 
-%% TODO (Week 9): plain-language findings.
-[A plain-language statement of the findings will be inserted here once
-the experiments are complete.]
+The experiments confirmed the penalty. Every AI model tested scored
+native-English essays above equally proficient Southeast Asian
+essays, the most biased by over a full grade band, hitting
+intermediate-level writers hardest. The panel removed about a quarter
+of the penalty on the most biased models, though adding more judges
+did not help, and the disagreement signal proved too coarse, so far,
+to decide alone which essays need a human. No student should be
+graded by a single cultural lens, and the bias of any AI grader can
+now be measured before it is trusted.

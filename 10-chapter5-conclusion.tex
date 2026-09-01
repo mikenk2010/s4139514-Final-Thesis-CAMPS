@@ -4,8 +4,55 @@
 \section{Conclusions Against the Hypotheses}
 % Answer each of H1-H4 explicitly (rubric: conclusions relate to the
 % original research questions/hypotheses).
-%% TODO: Week 9.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+This thesis asked whether LLM essay evaluators penalise valid
+non-Western rhetoric, and whether a culturally plural panel can
+mitigate and detect that penalty. Each hypothesis receives an
+explicit answer.
+
+\textbf{H1 (existence and generality): supported.} On
+proficiency-matched ICNALE cohorts ($n = 100$ per cohort), every
+model tested scored the native-English cohort above the Southeast
+Asian cohort under a single neutral evaluator, with 95\% confidence
+intervals excluding zero on all four: 1.18 bands for Claude Sonnet,
+0.80 for GPT-4o, 0.23 for Qwen3~14B, and 0.19 for Gemini Pro.
+Evaluative epistemic filtering is real, general across model
+families, and six-fold heterogeneous in magnitude, concentrating on
+mid-proficiency writers.
+
+\textbf{H2 (mitigation, $k = 5$ over $k = 3$): rejected as stated,
+partially supported in substance.} The culturally plural panel
+reduced the gap against the baseline where bias was large, by 23\%
+(Claude Sonnet) and 28--31\% (GPT-4o), but the five-lens extension
+added nothing on GPT-4o (0.02 bands [$-0.02$, $0.07$]), regressed
+significantly on Claude Sonnet ($-0.10$ [$-0.15$, $-0.06$]), and
+the three-lens panel over-corrected on the least biased model
+(Gemini Pro, gap 0.19 to 0.45). Mitigation is driven by lens
+composition, not lens count, and is dose-dependent on the bias being
+treated.
+
+\textbf{H3 (detection at $\ge 90\%$ sensitivity, $\le 5\%$ false
+positives): not supported.} Against the disagreement of 80 human
+raters on 140 GRA essays, BDS achieved held-out sensitivity of 0.875
+only at a false-positive rate of 0.712 (AUC 0.603, $n = 68$). The
+score's integer-resolution coarseness and the mismatch between
+cultural contestation and general human disagreement are identified
+as the causes; the review-trigger use of BDS remains a hypothesis
+for future work, not a validated capability.
+
+\textbf{H4 (a measurable fairness--accuracy boundary): supported,
+with a shallow frontier.} Sweeping 10{,}626 consensus weightings
+showed that the gap-minimising configuration cut GPT-4o's gap from
+0.55 to 0.32 bands at a QWK cost of 0.007, and on Claude Sonnet
+reduced the gap while \emph{increasing} QWK. Within the measured
+operating range, fairness and validity were not in material tension.
+
+Answering the research questions: RQ1 is answered affirmatively, with
+the qualification that the filter's strength is a property of the
+individual model family; RQ2 is answered conditionally: inference-time
+cultural plurality mitigates the penalty where it is material, at
+negligible measured cost to validity, but its self-diagnostic signal
+is not yet reliable enough to route essays autonomously.
 
 \section{Contributions}
 \label{sec:conclusion-contributions}
@@ -18,15 +65,18 @@ CAMPS, a five-lens culturally-calibrated scoring panel with a
 meta-adjudicator and a divergence-based human-review trigger,
 extending multi-perspective bias mitigation from generation
 \citep{dorleon2026uncovering} to evaluation. Empirically, it
-evaluates the framework on topic-controlled ICNALE cohorts across four
-model families, re-establishing the pilot's evidence at scale on a
-corpus purpose-built for the comparison. Methodologically, it
-introduces the Bias Divergence Score with ROC calibration against
-multi-rater human ground truth, benchmarked against the disagreement
-of eighty human raters. Practically, it characterises the
-fairness--accuracy frontier explicitly, giving deploying institutions
-an honest account of what fairness costs under current models.
-%% TODO (Week 9): sharpen each claim against the actual results.
+evaluates the framework on topic-controlled ICNALE cohorts across
+four model families, confirming the existence claim at scale while
+overturning two working assumptions: that panel benefit grows with
+panel size, and that inter-judge divergence transfers directly into a
+detection signal. Methodologically, it introduces the Bias
+Divergence Score with ROC calibration against the disagreement of
+eighty human raters, an evaluation design that exposed the construct
+gap between cultural contestation and general rater disagreement.
+Practically, it characterises the fairness--accuracy frontier
+explicitly and finds it shallow, giving deploying institutions an
+evidence-based answer, near zero at the measured operating points, to
+the question of what fairness costs under current models.
 
 \section{Limitations}
 \label{sec:limitations}

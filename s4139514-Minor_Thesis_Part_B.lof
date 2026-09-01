@@ -5,7 +5,10 @@
 \contentsline {figure}{\numberline {3-2}{\ignorespaces Cohort construction and sampling flow}}{40}{}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4-1}{\ignorespaces E1 cohort score gaps by model and condition}}{49}{}%
-\contentsline {figure}{\numberline {4-2}{\ignorespaces Baseline gap by SEA proficiency band}}{51}{}%
+\contentsline {figure}{\numberline {4-2}{\ignorespaces E2 ablation: gap by panel configuration}}{51}{}%
+\contentsline {figure}{\numberline {4-3}{\ignorespaces E2 fairness--accuracy frontier (GPT-4o)}}{52}{}%
+\contentsline {figure}{\numberline {4-4}{\ignorespaces E3: BDS against human-rater disagreement}}{53}{}%
+\contentsline {figure}{\numberline {4-5}{\ignorespaces Baseline gap by SEA proficiency band}}{54}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
