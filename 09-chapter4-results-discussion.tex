@@ -34,18 +34,26 @@ provenance is confounded with model scale and score range in this
 sample, so the ordering is reported as an observation rather than a
 causal claim.
 
-Third, the panel reduces the gap where the gap is large. Using a
-paired bootstrap over essays (10{,}000 resamples), the three-agent
-panel reduced the gap by 0.27 bands [0.07, 0.48], or 23\%
-($p = 0.003$), on Claude Sonnet, and by 0.23 bands [0.13, 0.33], or
-28\% ($p < 0.0001$), on GPT-4o. On Qwen3~14B, whose baseline gap was
-already small, the panel produced no reduction ($-0.04$ bands
-[$-0.16$, $0.09$]). Gemini Pro's panel condition is reported with the
-same paired analysis below.
-%% TODO (finishing pass): replace the sentence above with Gemini's
-%% paired k3-vs-baseline numbers once its panel condition completes;
-%% expectation given the small baseline gap (0.19) is a Qwen-like
-%% null, which would sharpen the "mitigation tracks bias size" claim.
+Third, the panel's effect depended on the size of the bias it was
+asked to mitigate. Using a paired bootstrap over essays (10{,}000
+resamples), the three-agent panel reduced the gap by 0.27 bands
+[0.07, 0.48], or 23\% ($p = 0.003$), on Claude Sonnet, and by 0.23
+bands [0.13, 0.33], or 28\% ($p < 0.0001$), on GPT-4o. On Qwen3~14B,
+whose baseline gap was already small, the panel produced no change
+($-0.04$ bands [$-0.16$, $0.09$]). On Gemini Pro, whose baseline gap
+was the smallest of the four, the panel \emph{widened} the gap, from
+0.19 to 0.45 bands (change $-0.26$ [$-0.39$, $-0.13$]). The
+lens-level scores locate the mechanism: within Gemini's panel the
+neutral lens scored far higher than the baseline evaluator and with a
+much larger cohort gap (7.18 native vs.\ 6.33 SEA, a 0.85-band gap on
+its own; $n = 100$ per cohort), while the Western and Southeast Asian
+lenses remained compressed. On this model the lens prompts shifted
+how much of the score range was used, not merely which rhetorical
+features were rewarded, and the panel mean inherited the expanded
+lens's gap. This over-correction on a low-bias model is exactly the
+failure mode the MALIBU benchmark warns of for persona-conditioned
+judging, and it is treated as a boundary condition for H2 in
+Section~\ref{sec:results-discussion}.
 
 Figure~\ref{fig:e1-gaps} visualises the primary result: the gap on
 every model under both conditions, with its confidence intervals.
@@ -56,14 +64,20 @@ every model under both conditions, with its confidence intervals.
 \caption[E1 cohort score gaps by model and condition]{Native$-$SEA
 score gap by model and condition, with 95\% bootstrap confidence
 intervals ($n$=100 per cohort). Every baseline gap excludes zero; the
-panel reduces the gap on the two models where it is largest.}
+panel narrows the gap on the two models where it is largest, leaves
+it unchanged on Qwen3, and widens it on Gemini Pro.}
 \label{fig:e1-gaps}
 \end{figure}
 
 The pattern in these results anticipates the fuller treatment in
-Sections~\ref{sec:results-e2} and~\ref{sec:results-discussion}:
-mitigation strength appears to track the size of the bias being
-mitigated, which is what a decorrelation mechanism would predict.
+Sections~\ref{sec:results-e2} and~\ref{sec:results-discussion}: the
+panel's effect tracks the size of the bias being mitigated, from
+substantial reduction (large-gap models) through no effect (Qwen3) to
+over-correction (Gemini Pro). Cultural plurality in the evaluator is
+therefore not a free intervention to be applied indiscriminately; it
+is a treatment whose dose–response behaviour must be measured per
+model, which is precisely what the BDS flag and the calibration in
+Experiment~3 are designed to support.
 
 \input{tables/table_e1_qwk}
 
@@ -198,9 +212,11 @@ performed (Section~\ref{sec:metrics}).
 In plain terms, Experiment E1 found that current language models score
 Southeast Asian students' essays lower than native speakers' essays of
 matched proficiency, on every model tested; that the size of this
-penalty differs five-fold across models; and that a small panel of
+penalty differs six-fold across models; that a small panel of
 culturally-calibrated evaluators removes about a quarter of the
-penalty on the models where it is largest.
+penalty on the models where it is largest; and that on the model
+where the penalty was smallest, the same panel over-corrected and
+widened it.
 
 Three aspects of these results bear on the working theory. First, the
 universality of the gap across four model families, including an
@@ -210,10 +226,21 @@ rather than from any vendor's alignment choices. Second, the
 cross-model ordering, largest in the US frontier models and smallest
 in the Chinese-trained model, is consistent with the distributional
 account, though it must be held loosely given confounds of scale and
-scoring style. Third, the mitigation profile, effective where bias is
-large and inert where it is small, is the signature of a decorrelation
-mechanism rather than a blanket adjustment, supporting the design
-argument of Section~\ref{sec:camps-framework}.
+scoring style. Third, the mitigation profile is dose-dependent:
+effective where bias is large, inert where it is small, and
+over-correcting where it is smallest. The first two arms are the
+signature of a decorrelation mechanism rather than a blanket
+adjustment, supporting the design argument of
+Section~\ref{sec:camps-framework}; the third arm, Gemini Pro's
+widened gap, shows that the same lens prompts that decorrelate a
+strongly filtered evaluator can perturb the scoring behaviour of a
+weakly filtered one, in its case by expanding the neutral lens's use
+of the score range. The practical reading is that CAMPS should be
+deployed \emph{after} a baseline audit of the kind E1 provides, and
+only on evaluators whose measured bias clears the panel's own
+perturbation floor; a framework that ships with its own audit
+instrument makes this an operational check rather than a research
+exercise.
 
 A natural objection deserves direct treatment: are current frontier
 models not simply too capable for cultural bias to matter? The E1
