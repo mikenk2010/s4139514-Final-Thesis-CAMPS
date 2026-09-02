@@ -87,7 +87,7 @@ components are specified below.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{figures/fig-camps-architecture}
+\includegraphics[width=0.72\textwidth]{figures/fig-camps-architecture}
 \caption[The CAMPS pipeline]{The CAMPS pipeline. Each essay is scored
 in parallel by $k$ \emph{culturally-calibrated} agents: LLM evaluators
 whose system prompts embed a documented cultural interpretation of the
@@ -168,48 +168,12 @@ loop closes the system without touching model weights; everything
 learned lives in $w$ and $\tau$.
 
 \medskip
-Table~\ref{tab:component-roles} summarises how the five components
-divide the framework's labour: the first two create and apply the
-plurality of perspectives, the third converts plurality into a single
-defensible score, and the last two turn residual disagreement into
-detection and adaptation. No component alone mitigates the filter;
-the fairness properties of CAMPS are a property of the assembly.
-
-\begin{table}[htbp]
-\centering
-\caption[How each component contributes to CAMPS]{How each component
-contributes to CAMPS, and where that contribution is tested.}
-\label{tab:component-roles}
-\small
-\begin{tabular}{p{2.6cm} p{3.4cm} p{5.2cm} c}
-\hline
-Component & Input $\rightarrow$ Output & Contribution & Tested by \\
-\hline
-1. Cultural Rubric Interpreter &
-$R \rightarrow \{r_1,\dots,r_k\}$ &
-Makes cultural perspectives explicit and scholarly-grounded; replaces
-pretended neutrality with declared plurality & H2 \\[4pt]
-2. Evaluator agent pool &
-$(E, r_i) \rightarrow s_i$ &
-Independent, deterministic judgments; decorrelates the individual
-cultural filters and prevents interaction-driven bias amplification &
-H1, H2 \\[4pt]
-3. Consensus aggregation &
-$\{s_i\}, w \rightarrow S^{*}$ &
-Partially cancels individual filters through weighted averaging;
-weight vector governs the fairness--accuracy trade-off & H2, H4 \\[4pt]
-4. Bias Divergence Score &
-$\{s_i\} \rightarrow \mathrm{BDS}(E)$ &
-Converts residual inter-agent disagreement into a calibrated
-detection signal for culturally contested essays & H3 \\[4pt]
-5. Calibration loop &
-review outcomes $\rightarrow (w, \tau)$ &
-Adapts weights and threshold from human feedback without touching
-model weights; keeps the system correctable after deployment & H3, H4 \\
-\hline
-\end{tabular}
-\end{table}
-
+The five components divide the framework's labour: the first two
+create and apply the plurality of perspectives, the third converts
+plurality into a single defensible score, and the last two turn
+residual disagreement into detection and adaptation. No component
+alone mitigates the filter; the fairness properties of CAMPS are a
+property of the assembly.
 Table~\ref{tab:framework-comparison} positions CAMPS against the
 frameworks reviewed in Chapter~2 along the five capabilities the
 design combines.
@@ -413,7 +377,7 @@ which BDS values can be compared, essay by essay.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/fig-sampling-flow}
+\includegraphics[width=0.8\textwidth]{figures/fig-sampling-flow}
 \caption[Cohort construction and sampling flow]{Cohort construction
 and sampling. Essay texts remain within licensed storage; the
 reproducibility manifest records essay identifiers only.}
@@ -424,33 +388,21 @@ reproducibility manifest records essay identifiers only.}
 Agents score each essay on the rubric's band scale; agreement with
 ground truth is computed against the corpus's proficiency bands for
 the main cohorts and against the GRA's multi-rater consensus for the
-validation set. Inspection of the downloaded archive (v2.1) confirms
-its structure: each of the 140 essays carries ratings from 80 raters
-(11{,}200 essay-rating records), where each rater scores ten analytic
-dimensions on a 0--10 scale, grouped as Language (intelligibility,
-complexity, accuracy, fluency), Content (comprehensibility,
-logicality, sophistication, purposefulness), and Attitude
-(willingness, involvement), together with a holistic score out of 100
-and free-text strengths and weaknesses. The archive also provides
-per-essay means over the 80 raters for every dimension. For E3, the
-per-essay mean of the Content dimensions serves as the primary human
-consensus reference for coherence-oriented scoring, with the holistic
-mean as a secondary check, and per-essay rating dispersion across the
-80 raters provides the human-disagreement benchmark against which BDS
-is compared. The GRA essay set also includes Thai, Indonesian,
-Philippine, East Asian, and native-English samples, enabling
-lens-level validation on rated data. Two further properties of the
-archive, established by inspection of the downloaded data, shape the
-E3 design. First, all 140 rated essays address the part-time-job
-prompt, so the validation set is single-topic; the E3 findings are
-accordingly validated within one prompt, with cross-topic behaviour
-assessed on the main cohorts. Second, the 80 raters disagree
-substantially among themselves: the mean within-essay standard
-deviation of the Content-dimension ratings is approximately 1.8 points
-on the 0--10 scale. This human baseline matters for interpreting BDS:
+validation set. Inspection of the downloaded GRA archive (v2.1)
+confirms its structure: each of the 140 essays carries ratings from
+80 raters of varied L1 backgrounds, each scoring ten analytic
+dimensions (0--10) grouped as Language, Content, and Attitude, plus a
+holistic score out of 100. Per-essay rating dispersion across the 80
+raters provides the human-disagreement benchmark against which BDS is
+compared. Two properties of the archive shape the E3 design. First,
+all 140 rated essays address the part-time-job prompt, so the
+validation set is single-topic. Second, the raters disagree
+substantially among themselves (mean within-essay standard deviation
+of the Content ratings $\approx 1.8$ on the 0--10 scale):
 disagreement among evaluators, human or artificial, is the normal
-condition of essay assessment, and the question E3 asks is whether the
-panel's divergence tracks the essays on which \emph{humans} diverge.
+condition of essay assessment, and the question E3 asks is whether
+the panel's divergence tracks the essays on which \emph{humans}
+diverge.
 
 \subsection*{Licence and handling}
 ICNALE is distributed free for research; its terms of use prohibit
@@ -497,31 +449,25 @@ on a hold-out split & H3 \\
 \end{tabular}
 \end{table}
 
-\textbf{Experiment E1 (scaled replication)} scores every essay in both
-cohorts under the single-agent baseline and the pilot's three-agent
-panel, on all four models. E1 establishes whether the cohort scoring
-gap exists at scale and across model families (H1), and provides the
-$k{=}3$ reference against which the extended panel is compared.
+\textbf{Experiment E1 (scaled replication)} scores both cohorts under
+the single-agent baseline and the pilot's three-agent panel on all
+four models, establishing whether the gap exists at scale (H1) and
+providing the $k{=}3$ reference for E2.
 
 \textbf{Experiment E2 (extended architecture)} scores the same essays
-under the five-agent panel, with and without the meta-adjudicator, and
-sweeps the consensus weights in steps of $0.05$ under the constraint
-$\sum_i w_i = 1$. The sweep traces the fairness--accuracy frontier
-directly: for each weight vector, per-cohort agreement with ground
-truth is recorded, and H4's boundary is located empirically as the
-point where further gains for the disadvantaged cohort begin to cost
-native-cohort accuracy. The ablation over $k$ separates the
-contribution of panel size from that of the adjudicator.
+under the five-agent panel, with and without the meta-adjudicator,
+and sweeps the consensus weights in steps of $0.05$ under
+$\sum_i w_i = 1$, tracing the fairness--accuracy frontier from which
+H4's boundary is read off empirically. The ablation over $k$
+separates the contribution of panel size from that of the
+adjudicator.
 
-\textbf{Experiment E3 (detection validation)} computes BDS for the 140
-GRA essays, which carry eighty independent human ratings each. Human
-rating dispersion provides the reference notion of a genuinely
-contested essay; the BDS threshold $\tau$ is calibrated on a random
-half of the GRA set by receiver operating characteristic analysis
-(Youden's $J$) and evaluated on the held-out half, reporting
-sensitivity, false-positive rate, and area under the curve. A
-supplementary check compares BDS rankings with the research team's
-independent re-scoring, conducted blind to flag status.
+\textbf{Experiment E3 (detection validation)} computes BDS for the
+140 GRA essays. Human rating dispersion provides the reference notion
+of a genuinely contested essay; the threshold $\tau$ is calibrated on
+a random half of the GRA set (Youden's $J$) and evaluated on the
+held-out half, reporting sensitivity, false-positive rate, and area
+under the ROC curve.
 
 \section{Alternatives Considered}
 \label{sec:alternatives}
@@ -535,9 +481,9 @@ data. It is rejected on deployment grounds: it requires weight access
 or fine-tuning budgets unavailable to most educational institutions,
 must be repeated for every model generation, and cannot be audited by
 the deploying institution. \emph{Activation steering}, as in FairSteer
-\citep[cf.][]{cheng2025biasfilter}, intervenes on internal
-representations and is infeasible for API-only access by construction.
-%% NOTE: cite FairSteer directly once its bib entry is verified.
+\citep{li2025fairsteer}, intervenes on internal representations and is
+infeasible for API-only access by construction
+(Section~\ref{sec:lit-debias}).
 
 \emph{Single-prompt debiasing}, instructing one evaluator to ``score
 fairly across cultures'', was considered and rejected for two reasons:
@@ -629,11 +575,11 @@ held-out split, with the calibrated threshold $\tau$ stated
 explicitly.
 
 \textbf{Weight calibration.} The E2 weight sweep reports the full
-frontier rather than a single optimum: per-cohort $\kappa_w$ at each
-weight vector, from which the H4 boundary is read off. Where a single
-operating point is needed for comparison, weights are chosen to
-maximise mean $\kappa_w$ subject to $\Delta\kappa_w$ not exceeding the
-equal-weight value.
+frontier rather than a single optimum: at each weight vector, the
+cohort score gap (fairness) and $\kappa_w$ against CEFR bands on the
+banded learner cohort (accuracy; the native reference is unbanded)
+are recorded, and the H4 boundary is read off the resulting Pareto
+frontier.
 
 \textbf{Reproducibility.} All tables and figures in Chapter~4 are
 generated by the analysis scripts in the project repository from the

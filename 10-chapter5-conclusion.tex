@@ -7,46 +7,51 @@
 
 This thesis asked whether LLM essay evaluators penalise valid
 non-Western rhetoric, and whether a culturally plural panel can
-mitigate and detect that penalty. Each hypothesis receives an
-explicit answer.
+mitigate and detect that penalty. Table~\ref{tab:verdicts} answers
+each hypothesis explicitly against the evidence of Chapter~4.
 
-\textbf{H1 (existence and generality): supported.} On
-proficiency-matched ICNALE cohorts ($n = 100$ per cohort), every
-model tested scored the native-English cohort above the Southeast
-Asian cohort under a single neutral evaluator, with 95\% confidence
-intervals excluding zero on all four: 1.18 bands for Claude Sonnet,
-0.80 for GPT-4o, 0.23 for Qwen3~14B, and 0.19 for Gemini Pro.
-Evaluative epistemic filtering is real, general across model
-families, and six-fold heterogeneous in magnitude, concentrating on
-mid-proficiency writers.
+\begin{table}[htbp]
+\centering
+\caption[Verdicts on hypotheses H1--H4]{Verdicts on the four
+hypotheses. All statistics from Chapter~4; $n$=100 per cohort
+(E1/E2), $n$=68 held-out (E3); 95\% bootstrap CIs.}
+\label{tab:verdicts}
+\small
+\begin{tabular}{p{2.2cm} p{2.2cm} p{7.6cm}}
+\hline
+Hypothesis & Verdict & Decisive evidence \\
+\hline
+H1 existence \& generality & Supported &
+Baseline gap positive on all four families, every CI excluding
+zero: 1.18 (Claude), 0.80 (GPT-4o), 0.23 (Qwen3), 0.19 (Gemini)
+bands; concentrated at B1\textsubscript{2} \\[3pt]
+H2 mitigation, $k{=}5 > k{=}3$ & Rejected as stated &
+$k$=3 panel cut the gap 23--28\% where bias was large; $k$=5 added
+0.02 [$-0.02$, 0.07] on GPT-4o, regressed $-0.10$ [$-0.15$, $-0.06$]
+on Claude; over-corrected on Gemini (0.19 $\to$ 0.45); adjudicator
+null on both \\[3pt]
+H3 detection $\ge$90\%/$\le$5\% & Not supported &
+Held-out AUC 0.603 (GPT-4o; sens.\ 0.875 at FPR 0.712) and 0.370
+(Claude); $r$(BDS, human dispersion) $=$ 0.16 and $-0.18$ \\[3pt]
+H4 trade-off boundary & Supported (shallow) &
+10{,}626-vector sweep: gap 0.55 $\to$ 0.32 at 0.007 QWK cost
+(GPT-4o); gap 1.01 $\to$ 0.79 with QWK \emph{gain} 0.169 $\to$ 0.190
+(Claude) \\
+\hline
+\end{tabular}
+\end{table}
 
-\textbf{H2 (mitigation, $k = 5$ over $k = 3$): rejected as stated,
-partially supported in substance.} The culturally plural panel
-reduced the gap against the baseline where bias was large, by 23\%
-(Claude Sonnet) and 28--31\% (GPT-4o), but the five-lens extension
-added nothing on GPT-4o (0.02 bands [$-0.02$, $0.07$]), regressed
-significantly on Claude Sonnet ($-0.10$ [$-0.15$, $-0.06$]), and
-the three-lens panel over-corrected on the least biased model
-(Gemini Pro, gap 0.19 to 0.45). Mitigation is driven by lens
-composition, not lens count, and is dose-dependent on the bias being
-treated.
-
-\textbf{H3 (detection at $\ge 90\%$ sensitivity, $\le 5\%$ false
-positives): not supported.} Against the disagreement of 80 human
-raters on 140 GRA essays, BDS achieved held-out sensitivity of 0.875
-only at a false-positive rate of 0.712 on GPT-4o (AUC 0.603,
-$n = 68$), and no association at all on Claude Sonnet (AUC 0.370). The
-score's integer-resolution coarseness and the mismatch between
-cultural contestation and general human disagreement are identified
-as the causes; the review-trigger use of BDS remains a hypothesis
-for future work, not a validated capability.
-
-\textbf{H4 (a measurable fairness--accuracy boundary): supported,
-with a shallow frontier.} Sweeping 10{,}626 consensus weightings
-showed that the gap-minimising configuration cut GPT-4o's gap from
-0.55 to 0.32 bands at a QWK cost of 0.007, and on Claude Sonnet
-reduced the gap while \emph{increasing} QWK. Within the measured
-operating range, fairness and validity were not in material tension.
+Three sentences interpret the table. Evaluative epistemic filtering
+is real, general across model families, six-fold heterogeneous in
+magnitude, and concentrated on mid-proficiency writers (H1).
+Mitigation works where bias is large but is driven by lens
+composition rather than lens count, and can over-correct where bias
+is minimal, so cultural plurality is a treatment whose dose must be
+measured per model, not a universally safe default (H2, H4). The
+panel's divergence signal, at integer resolution, does not track
+general human disagreement, so the review-trigger use of BDS remains
+a hypothesis for future work rather than a validated capability
+(H3).
 
 Answering the research questions: RQ1 is answered affirmatively, with
 the qualification that the filter's strength is a property of the

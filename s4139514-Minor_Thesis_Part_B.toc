@@ -15,23 +15,23 @@
 \contentsline {chapter}{\numberline {3}Methodology}{31}{}%
 \contentsline {section}{\numberline {3.1}Working Theory: Evaluative Epistemic Filtering}{31}{}%
 \contentsline {section}{\numberline {3.2}The CAMPS Framework}{32}{}%
-\contentsline {section}{\numberline {3.3}Scaling the Panel: from Three to Five Agents}{37}{}%
+\contentsline {section}{\numberline {3.3}Scaling the Panel: from Three to Five Agents}{36}{}%
 \contentsline {section}{\numberline {3.4}Data}{38}{}%
-\contentsline {section}{\numberline {3.5}Experimental Design}{42}{}%
-\contentsline {section}{\numberline {3.6}Alternatives Considered}{43}{}%
-\contentsline {section}{\numberline {3.7}Ethical Considerations}{44}{}%
-\contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{45}{}%
-\contentsline {chapter}{\numberline {4}Results and Discussion}{47}{}%
-\contentsline {section}{\numberline {4.1}Experiment 1: Evaluative Bias at Scale (H1)}{47}{}%
-\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{48}{}%
-\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{53}{}%
-\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{54}{}%
-\contentsline {section}{\numberline {4.5}Threats to Validity}{56}{}%
-\contentsline {section}{\numberline {4.6}Discussion}{57}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{61}{}%
-\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{61}{}%
-\contentsline {section}{\numberline {5.2}Contributions}{62}{}%
-\contentsline {section}{\numberline {5.3}Limitations}{63}{}%
-\contentsline {section}{\numberline {5.4}Future Work}{63}{}%
-\contentsline {chapter}{\numberline {A}CRI System Prompts}{65}{}%
-\contentsline {chapter}{\numberline {B}Reproducibility}{69}{}%
+\contentsline {section}{\numberline {3.5}Experimental Design}{41}{}%
+\contentsline {section}{\numberline {3.6}Alternatives Considered}{42}{}%
+\contentsline {section}{\numberline {3.7}Ethical Considerations}{43}{}%
+\contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{43}{}%
+\contentsline {chapter}{\numberline {4}Results and Discussion}{45}{}%
+\contentsline {section}{\numberline {4.1}Experiment 1: Evaluative Bias at Scale (H1)}{45}{}%
+\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{47}{}%
+\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{50}{}%
+\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{52}{}%
+\contentsline {section}{\numberline {4.5}Threats to Validity}{54}{}%
+\contentsline {section}{\numberline {4.6}Discussion}{55}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{57}{}%
+\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{57}{}%
+\contentsline {section}{\numberline {5.2}Contributions}{58}{}%
+\contentsline {section}{\numberline {5.3}Limitations}{59}{}%
+\contentsline {section}{\numberline {5.4}Future Work}{59}{}%
+\contentsline {chapter}{\numberline {A}CRI System Prompts}{61}{}%
+\contentsline {chapter}{\numberline {B}Reproducibility}{65}{}%
