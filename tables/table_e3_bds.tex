@@ -2,18 +2,19 @@
 \begin{table}[htbp]
 \centering
 \caption[E3: BDS detection performance]{Experiment E3: BDS detection
-performance on the held-out GRA split (model: gpt-4o).}
+performance against top-quartile human-rater dispersion on the
+held-out GRA split, per model.}
 \label{tab:e3-bds}
 \small
-\begin{tabular}{lc}
+\begin{tabular}{lcc}
 \hline
-Quantity & Value \\
+Quantity & GPT-4o & Claude Sonnet \\
 \hline
-Calibrated threshold $\tau$ & 0.400 \\
-Sensitivity (held-out, $n$=68) & 0.875 \\
-False-positive rate (held-out) & 0.712 \\
-Area under ROC curve (held-out) & 0.603 \\
-Correlation of BDS with human dispersion & 0.158 \\
+Calibrated threshold $\tau$ & 0.40 & 0.49 \\
+Sensitivity (held-out, $n$=68) & 0.875 & 0.312 \\
+False-positive rate (held-out) & 0.712 & 0.462 \\
+Area under ROC curve (held-out) & 0.603 & 0.370 \\
+Correlation of BDS with human dispersion & 0.158 & -0.177 \\
 \hline
 \end{tabular}
 \end{table}

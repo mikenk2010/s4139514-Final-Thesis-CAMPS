@@ -85,13 +85,10 @@ Experiment~3 are designed to support.
 \label{sec:results-e2}
 Experiment E2 extended the panel from three lenses to five, adding
 the East Asian and Mekong Cultural Reference Instructions, and added
-the meta-adjudicator, scoring the same 200 cohort essays.
-Table~\ref{tab:e2-ablation} reports the ablation for GPT-4o, on which
-all four configurations completed (2{,}200 calls);
-Figure~\ref{fig:e2-ablation} adds Claude Sonnet, whose five-lens
-condition completed.
-%% TODO: add Claude's adjudicated row/sentence when its k5_adj cells
-%% complete (excluded by the completeness rule at time of analysis).
+the meta-adjudicator, scoring the same 200 cohort essays on GPT-4o
+and Claude Sonnet (2{,}200 calls per model, all conditions complete).
+Table~\ref{tab:e2-ablation} and Figure~\ref{fig:e2-ablation} report
+the ablation.
 
 The extension did not improve mitigation. On GPT-4o, the five-lens
 gap was 0.55 bands [0.36, 0.74] against 0.57 [0.37, 0.78] for three
@@ -107,19 +104,39 @@ premise that its power grows with its size. On Claude Sonnet the
 five-lens panel was significantly \emph{worse} than three lenses: the
 gap rose from 0.91 [0.61, 1.21] to 1.01 [0.71, 1.31], a paired
 change of $-0.10$ bands [$-0.15$, $-0.06$], and its advantage over
-baseline weakened to 0.17 [$-0.02$, 0.36]. Hypothesis H2, which
-predicted stronger mitigation at $k = 5$ than $k = 3$, is therefore
-rejected on both models tested.
+baseline weakened to 0.17 [$-0.02$, 0.36]; the adjudicator changed
+nothing on this model (gap 1.01 [0.69, 1.34], paired change 0.001
+[$-0.08$, $0.08$]). Hypothesis H2, which predicted stronger
+mitigation at $k = 5$ than $k = 3$, is therefore rejected on both
+models tested.
 
-The lens-level scores suggest why. The two added lenses scored the
-cohorts nearly in parallel, so their inclusion diluted, rather than
+The lens-level scores suggest why, and
+Figure~\ref{fig:e2-lens-radar} makes the pattern visible at a glance:
+each axis is one cultural lens, and the native cohort's profile
+(outer polygon) encloses the Southeast Asian cohort's on every lens
+of both models, the graphical signature of a penalty that no single
+lens escapes. The shape of the two profiles, however, is nearly
+parallel on the two added lenses: East Asian and Mekong scored the
+cohorts almost in lock-step, so their inclusion diluted, rather than
 reinforced, the corrective contrast that the Southeast Asian lens
-contributes; on Claude the five-lens panel also deepened the severity
-shift (cohort means fell to 3.81 SEA and 4.82 native, from 4.44 and
-5.62 at baseline; $n = 100$ each). Mitigation, on this evidence, is
-driven by lens \emph{composition} rather than lens \emph{count}: a
-panel is a set of measurement instruments, and adding instruments
-that do not discriminate the construct adds noise.
+contributes. On Claude the five-lens panel also deepened the severity
+shift, visible as the radically smaller polygons (cohort means fell
+to 3.81 SEA and 4.82 native, from 4.44 and 5.62 at baseline;
+$n = 100$ each). Mitigation, on this evidence, is driven by lens
+\emph{composition} rather than lens \emph{count}: a panel is a set of
+measurement instruments, and adding instruments that do not
+discriminate the construct adds noise.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig-e2-lens-radar}
+\caption[Lens-level cohort profiles (radar)]{Mean lens-level score by
+cohort on the five-lens panel. The native profile (red) encloses the
+Southeast Asian profile (blue) on every lens of both models; the
+added East Asian and Mekong lenses track the cohorts in parallel,
+explaining why enlarging the panel did not enlarge the correction.}
+\label{fig:e2-lens-radar}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -168,23 +185,25 @@ agreement with the corpus's proficiency bands.}
 
 Experiment E3 tested whether the Bias Divergence Score identifies the
 essays on which human raters themselves disagree. The five-lens panel
-scored all 140 GRA essays on GPT-4o (700 calls); each essay carries
-holistic ratings from 80 human raters, whose standard deviation
-defines the human-disagreement ground truth, with ``contested''
-operationalised as the top dispersion quartile. Half the essays,
-selected by the pre-registered seed, calibrated the threshold $\tau$
-(Youden's index); the other half was held out for evaluation.
-%% TODO: add Claude's E3 row/sentence when its GRA run completes.
+scored all 140 GRA essays on GPT-4o and Claude Sonnet (700 calls per
+model); each essay carries holistic ratings from 80 human raters,
+whose standard deviation defines the human-disagreement ground truth,
+with ``contested'' operationalised as the top dispersion quartile.
+Half the essays, selected by the pre-registered seed, calibrated the
+threshold $\tau$ (Youden's index); the other half was held out for
+evaluation.
 
-H3 is not supported. At the calibrated $\tau = 0.40$, held-out
-sensitivity reached 0.875 ($n = 68$), but at a false-positive rate of
-0.712, nowhere near the pre-registered target of at least 90\%
-sensitivity at or below 5\% false positives; the area under the ROC
-curve was 0.603, and the correlation between BDS and human dispersion
-was $r = 0.16$ ($n = 136$ matched essays). Table~\ref{tab:e3-bds}
-and Figure~\ref{fig:e3-roc} report the result: as an automatic
-review trigger at this operating point, BDS performed only modestly
-better than chance.
+H3 is not supported, on either model. On GPT-4o, at the calibrated
+$\tau = 0.40$, held-out sensitivity reached 0.875 ($n = 68$), but at
+a false-positive rate of 0.712, nowhere near the pre-registered
+target of at least 90\% sensitivity at or below 5\% false positives;
+the area under the ROC curve was 0.603 and the correlation between
+BDS and human dispersion was $r = 0.16$ ($n = 136$ matched essays).
+On Claude Sonnet the association was absent entirely: held-out AUC
+0.370, below chance, with $r = -0.18$. Table~\ref{tab:e3-bds} and
+Figure~\ref{fig:e3-roc} report both models: as an automatic review
+trigger at this operating point, BDS performed at best modestly
+better than chance, and at worst no better than a coin flip.
 
 \input{tables/table_e3_bds}
 
@@ -193,7 +212,7 @@ better than chance.
 \includegraphics[width=0.95\textwidth]{figures/fig-e3-roc}
 \caption[E3: BDS against human-rater disagreement]{Left: ROC of BDS
 against top-quartile human dispersion on the held-out GRA split
-(GPT-4o panel). Right: BDS against the dispersion of 80 human
+(both models). Right: BDS against the dispersion of 80 human
 raters; the discreteness of BDS under integer lens scores is visible
 as horizontal bands.}
 \label{fig:e3-roc}
