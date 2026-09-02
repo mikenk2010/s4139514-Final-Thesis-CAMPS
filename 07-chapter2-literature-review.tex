@@ -24,28 +24,21 @@ Two research communities have converged on the same architectural
 intuition, that several evaluators are better than one, for
 different reasons.
 
-In automated essay scoring, multi-agent designs pursue \emph{accuracy}.
-CAFES \citep{su2025cafes} orchestrates three specialised agents (an
-initial scorer, a feedback-pool manager, and a reflective scorer that
-revises scores against aggregated evidence) and reports an average
-relative improvement of 21\% in Quadratic Weighted Kappa (QWK) over
-direct prompting across multimodal essay benchmarks. Roundtable Essay
-Scoring \citep[RES;][]{jang2025roundtable} constructs evaluator agents
-with distinct trait-based rubrics and consolidates their judgments
-through a simulated roundtable discussion, reporting up to 34.86\%
-average QWK improvement over vanilla prompting on the ASAP dataset in a
-zero-shot setting.
-Related designs extend the pattern to analytic trait scoring via
-multi-agent debate with retrieval augmentation
-\citep{keramati2026madrag} and to structured component recognition
-before scoring \citep{wang2025autoscore}. What unites this family is
-the axis along which the agents differ: \emph{function} (scorer,
-critic, reviser) or \emph{trait} (content, organisation, language use).
-None varies the cultural interpretation of the rubric itself, and none
-of these studies evaluates fairness across writer cohorts: the
-improvements are reported on aggregate agreement with human raters,
-leaving open the possibility that a more accurate panel is uniformly
-accurate for some writers and uniformly harsh for others.
+In automated essay scoring, multi-agent designs pursue
+\emph{accuracy}. CAFES \citep{su2025cafes} orchestrates scorer,
+feedback-manager, and reflective-reviser agents (average 21\% QWK
+improvement over direct prompting); Roundtable Essay Scoring
+\citep[RES;][]{jang2025roundtable} consolidates trait-based evaluator
+agents through simulated discussion (up to 34.86\% on ASAP,
+zero-shot); related designs add debate with retrieval
+\citep{keramati2026madrag} and component recognition
+\citep{wang2025autoscore}. What unites this family is the axis along
+which agents differ: \emph{function} or \emph{trait}. None varies the
+cultural interpretation of the rubric itself, and none evaluates
+fairness across writer cohorts: improvements are reported on
+aggregate agreement, leaving open the possibility that a more
+accurate panel is uniformly accurate for some writers and uniformly
+harsh for others.
 
 In the LLM-evaluation community, panel designs pursue \emph{bias
 reduction}. \citet{verga2024replacing} replaced a single large judge
@@ -78,19 +71,16 @@ when the model's output is a single scalar score.
 
 Closest to the present work is Multi-Agent Cultural Debate (MACD)
 \citep{tan2026macd}, which assigns LLM agents explicit cultural
-personas and orchestrates deliberation under a ``seeking common ground
-while reserving differences'' strategy. On a bilingual benchmark, MACD
-raised the rate of unbiased responses substantially over single-model
-baselines, and the authors' central finding, that agent frameworks
-with \emph{functional} roles lack the explicit cultural representation
-needed for cross-cultural fairness, independently corroborates the
-design principle behind CAMPS. The two frameworks nonetheless answer
-different questions: MACD debiases \emph{what a model says} in
-open-ended generation, where the deliverable is a text that
-synthesises perspectives; CAMPS debiases \emph{how a model judges},
-where the deliverable is a score whose fairness can be measured against
-human ground truth cohort by cohort, and where disagreement between
-cultural agents is exploited as a detection signal rather than
+personas and orchestrates deliberation. MACD substantially raised the
+rate of unbiased responses over single-model baselines, and its
+central finding, that functionally-roled agent frameworks lack the
+explicit cultural representation cross-cultural fairness needs,
+independently corroborates the design principle behind CAMPS. The two
+frameworks nonetheless answer different questions: MACD debiases
+\emph{what a model says} in open-ended generation; CAMPS debiases
+\emph{how a model judges}, where the deliverable is a score whose
+fairness can be measured cohort by cohort, and where disagreement
+between cultural agents is exploited as a detection signal rather than
 dissolved through debate.
 
 A caution for all multi-agent designs comes from the MALIBU benchmark

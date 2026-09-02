@@ -39,50 +39,41 @@ distinguishes evaluative epistemic filtering from the legitimate
 scoring of weaker English, and what the matched-cohort experimental
 design in Section~\ref{sec:experimental-design} is built to isolate.
 
-Four conditions jointly sustain the filter in current systems. First,
-training corpora over-represent WEIRD cultural contexts, and models
-demonstrably absorb the corresponding value orientation
-\citep{tao2024cultural}. Second, the standards LLM evaluators apply
-are opaque: unlike feature-based AES, where population-specific
-predictors could be inspected directly \citep{vajjala2018automated},
-an LLM's evaluative prior is distributed across its parameters
-\citep{gallegos2024bias}. Third, diagnostic effort has concentrated on
-generative outputs; the bias categories formalised by
-\citet{dorleon2026uncovering} have no evaluative counterpart in the
-literature. Fourth, the observable symptom (L1-linked scoring
-disparities) is now documented \citep{gayed2026firstlanguage} but has
-not been connected to a mitigation mechanism.
+Four conditions jointly sustain the filter: training corpora
+over-represent WEIRD cultural contexts, whose value orientation
+models demonstrably absorb \citep{tao2024cultural}; the standards LLM
+evaluators apply are opaque, distributed across parameters rather
+than inspectable as engineered features \citep{vajjala2018automated,
+gallegos2024bias}; diagnostic effort has concentrated on generative
+outputs, leaving the bias categories of \citet{dorleon2026uncovering}
+without an evaluative counterpart; and the observable symptom,
+L1-linked scoring disparity, is documented
+\citep{gayed2026firstlanguage} but unconnected to any mitigation
+mechanism.
 
-The theory yields three testable signatures, which map directly onto
-the hypotheses of Chapter~1. First, a systematic scoring gap should
-appear between rhetorical-tradition cohorts matched on human-rated
-quality (H1). Second, the gap should shrink when the single evaluator
-is replaced by a panel whose members embody different rubric
+The theory yields three testable signatures, mapping onto the
+hypotheses of Chapter~1: a systematic scoring gap between
+rhetorical-tradition cohorts matched on proficiency (H1); shrinkage
+of that gap under a panel whose members embody different rubric
 interpretations, because their individual filters are partially
-decorrelated (H2). Third, panel members should disagree measurably on
-precisely the essays where filtering operates, which makes divergence
-itself a detection signal (H3).
-The fairness--accuracy boundary (H4) follows from the consensus
-mechanism and is derived in Section~\ref{sec:camps-framework}.
+decorrelated (H2); and measurable panel disagreement on precisely the
+essays where filtering operates, making divergence itself a detection
+signal (H3). The fairness--accuracy boundary (H4) follows from the
+consensus mechanism below.
 
 \section{The CAMPS Framework}
 \label{sec:camps-framework}
 
 CAMPS (Culturally-Aware Multi-Perspective Scoring) operationalises a
 single design principle: if no evaluator judges from nowhere
-(Section~\ref{sec:theory}), then fairness is pursued through a
-\emph{plurality} of explicitly declared perspectives rather than
-through a pretended neutrality. Concretely, the plurality is the panel
-of five cultural rubric interpretations specified in
-Section~\ref{sec:scaling-panel} (Western, Southeast Asian, East
-Asian, Mekong/Vietnamese, and a neutral regulatory ideal; see
-Table~\ref{tab:lens-panel}), each declared in an inspectable system
-prompt rather than hidden in model weights, continuing the
-multi-perspective principle introduced in
-Section~\ref{sec:theory}. The framework operates entirely at
-inference time, requires no model retraining or weight access, and
-treats every underlying LLM as a black box reachable through an API.
-Figure~\ref{fig:camps-architecture} shows the pipeline; the five
+(Section~\ref{sec:theory}), fairness is pursued through a
+\emph{plurality} of explicitly declared perspectives rather than a
+pretended neutrality -- five cultural rubric interpretations
+(Table~\ref{tab:lens-panel}), each declared in an inspectable system
+prompt rather than hidden in model weights. The framework operates
+entirely at inference time, requires no retraining or weight access,
+and treats every underlying LLM as a black box reachable through an
+API. Figure~\ref{fig:camps-architecture} shows the pipeline; the five
 components are specified below.
 
 \begin{figure}[htbp]
@@ -147,17 +138,14 @@ The framework's detection signal is the dispersion of the panel:
 \mathrm{BDS}(E) = \sqrt{\frac{1}{k} \sum_{i=1}^{k}
   \bigl(s_i(E) - S^{*}(E)\bigr)^{2}}.
 \end{equation}
-A low BDS means the cultural interpretations converge: the essay is
-scored the same way regardless of the lens, and the automated score can
-be trusted. A high BDS means the lenses disagree, which under the
-working theory is exactly the signature of an essay whose score depends
-on culturally contingent expectations; such essays are flagged for
-human review. The pilot fixed the threshold at $\tau = 0.75$ on the
-operational argument that 0.75 standard deviations corresponds to a
-two-band disagreement under IELTS-style scoring. Part~B replaces this
-hand-set value with a threshold calibrated by receiver operating
-characteristic analysis against multi-rater human ground truth (H3),
-as specified in Section~\ref{sec:experimental-design}.
+A low BDS means the cultural interpretations converge and the
+automated score can be trusted; a high BDS means the lenses disagree,
+which under the working theory is the signature of an essay whose
+score depends on culturally contingent expectations, and the essay is
+flagged for human review. Part~B replaces the pilot's hand-set
+threshold ($\tau = 0.75$) with one calibrated by ROC analysis against
+multi-rater human ground truth (H3;
+Section~\ref{sec:experimental-design}).
 
 \subsection*{Component 5: Calibration loop}
 Outcomes of human review feed back into the framework in two ways: the
@@ -215,30 +203,20 @@ threshold are calibrated empirically rather than hand-set
 \label{sec:scaling-panel}
 
 The pilot panel comprised three rubric interpretations: Western,
-Southeast Asian, and a neutral interpretation retained as a regulatory
-ideal (Section~\ref{sec:camps-framework}). Scaling to five requires a
-principled answer to the question \emph{which} cultural lenses to add.
-Three selection criteria are applied. A candidate lens must be
-(i)~\emph{documented}: its rhetorical conventions must be described in
-the contrastive-rhetoric literature, so that the CRI prompt encodes
-scholarship rather than stereotype; (ii)~\emph{validatable}: the
-corpus must contain a writer cohort from the corresponding tradition,
-so that the lens's behaviour can be checked against real essays; and
-(iii)~\emph{distinct}: the lens must be expected to diverge from the
-existing panel on identifiable essay features, otherwise it adds cost
-without information.
-
-Applying these criteria to the available data
-(Section~\ref{sec:data}) selects an \emph{East Asian} lens, grounded
-in the reader-responsible coherence tradition documented for Japanese
-and related academic writing cultures \citep{hinds1987reader} and
-validatable against ICNALE's China, Japan, Korea, and Taiwan cohorts,
-and a \emph{Mekong/Vietnamese} lens, motivated by the region this
-research serves and validatable against the ICNALE~WEP cohorts from
-Vietnam, Cambodia, Laos, and Myanmar. A Middle Eastern lens, although
-well documented in the contrastive-rhetoric literature, fails the
-validatable criterion for the primary corpus and is deferred to future
-work. Table~\ref{tab:lens-panel} summarises the resulting panel.
+Southeast Asian, and a neutral regulatory ideal. Scaling to five
+requires a principled answer to \emph{which} lenses to add. A
+candidate lens must be (i)~\emph{documented} in the
+contrastive-rhetoric literature, so the CRI prompt encodes
+scholarship rather than stereotype; (ii)~\emph{validatable} against a
+corpus cohort from the corresponding tradition; and
+(iii)~\emph{distinct}, expected to diverge from the existing panel on
+identifiable features. These criteria select an \emph{East Asian}
+lens, grounded in reader-responsible coherence
+\citep{hinds1987reader} and validatable against ICNALE's East Asian
+cohorts, and a \emph{Mekong/Vietnamese} lens, motivated by the region
+this research serves and validatable against the WEP cohorts. A
+Middle Eastern lens fails the validatable criterion for this corpus
+and is deferred. Table~\ref{tab:lens-panel} summarises the panel.
 
 \begin{table}[htbp]
 \centering
@@ -277,61 +255,44 @@ short written rationales, and produces a reasoned consensus score,
 \begin{equation}
 S^{\mathrm{adj}}(E) = M\bigl(s_1, \rho_1, \dots, s_k, \rho_k\bigr),
 \end{equation}
-where $\rho_i$ is agent $i$'s rationale. The adjudicator is blind to the writer's identity and cohort
-metadata, and runs at $t = 0.0$ like the agents. It constitutes an
-alternative aggregation path to the weighted mean of
-Equation~\ref{eq:consensus}. Where the weighted mean treats every
-agent's judgment as exchangeable evidence, the adjudicator can weigh
-\emph{arguments}, for example discounting an agent whose rationale
-misidentifies the essay's structure. Experiment
-E2 compares the two paths directly, and the BDS of
-Equation~\ref{eq:bds} is computed from the raw agent scores in both
-conditions, so the detection signal is unaffected by the choice of
-aggregator. This design responds to the caution from multi-agent bias
-research \citep{mirza2025malibu}: the adjudicator adds deliberation
-\emph{after} independent judgment, rather than allowing agents to
-influence one another during scoring.
+where $\rho_i$ is agent $i$'s rationale. The adjudicator is blind to
+writer identity and cohort metadata and runs at $t = 0.0$. Where the
+weighted mean treats every judgment as exchangeable evidence, the
+adjudicator can weigh \emph{arguments}, discounting an agent whose
+rationale misreads the essay; E2 compares the two aggregation paths
+directly, with BDS computed from raw agent scores in both conditions.
+Responding to the caution of \citet{mirza2025malibu}, deliberation is
+added \emph{after} independent judgment, never during scoring.
 
 \section{Data}
 \label{sec:data}
 
 \subsection*{Corpus selection}
-The experimental design requires a corpus with four properties: essays
-by Southeast Asian learners identified by first language or country;
-a native-English reference cohort writing under identical task
-conditions; a human-assigned quality or proficiency measure; and terms
-of use permitting research at this scale. A systematic search of the
-major public learner corpora found exactly one corpus satisfying all
-four. TOEFL11 \citep{blanchard2013toefl11}, used in the pilot phase,
-contains 12{,}100 essays across eleven first languages but includes
-no Southeast Asian L1 and, by construction, no native-English cohort,
-and its proficiency labels are coarse (low, medium, high). ICLE~v3
-covers twenty-five L1 backgrounds without Thai or another Southeast
-Asian L1; ELLIPSE offers approximately 9{,}000 human-scored learner
-essays without L1 labels; EFCAMDAT records nationality and CEFR level
-but has no native reference cohort.\footnote{Corpus contents verified
-against their official distribution pages in July 2026: TOEFL11 via
-the Linguistic Data Consortium (LDC2014T06), ICLE via UCLouvain,
-ELLIPSE via its public repository, EFCAMDAT via the EF--Cambridge
-Open Language Database.} The ICNALE corpus family
-\citep{ishikawa2023icnale} satisfies all four properties and is
-therefore adopted.
+The design requires a corpus with four properties: Southeast Asian
+learner essays identified by L1 or country; a native-English
+reference cohort writing under identical task conditions; a
+human-assigned proficiency measure; and licence terms permitting
+research at this scale. A systematic search of the major public
+learner corpora found exactly one satisfying all four: TOEFL11
+\citep{blanchard2013toefl11} has no Southeast Asian L1 and no native
+cohort, ICLE~v3 lacks Southeast Asian L1s, ELLIPSE lacks L1 labels,
+and EFCAMDAT lacks a native reference.\footnote{Corpus contents
+verified against their official distribution pages in July 2026:
+TOEFL11 via the Linguistic Data Consortium (LDC2014T06), ICLE via
+UCLouvain, ELLIPSE via its public repository, EFCAMDAT via the
+EF--Cambridge Open Language Database.} The ICNALE corpus family
+\citep{ishikawa2023icnale} satisfies all four and is adopted.
 
 \subsection*{The ICNALE corpus family}
-ICNALE (the International Corpus Network of Asian Learners of
-English) collects topic-controlled English essays and speeches from
-college students across ten Asian countries and regions together with
-a native-English-speaker reference cohort writing under identical
-conditions. Three modules are used in this thesis
-(Table~\ref{tab:icnale-modules}). Critically for the present design,
-every written essay addresses the same two prompts (whether college
-students should hold a part-time job, and whether smoking should be
-banned in restaurants), under controlled length and time conditions;
-this removes the prompt-variation confound present in TOEFL11's
-eight-topic design. All learner participants are placed into
-CEFR-linked proficiency bands (A2, B1\_1, B1\_2, B2+) on the basis of
-standardised test scores or a vocabulary-size test, which enables
-proficiency-matched cohort construction.
+ICNALE collects topic-controlled English essays from college students
+across ten Asian countries and regions, together with a
+native-English reference cohort writing under identical conditions;
+the three modules used are summarised in
+Table~\ref{tab:icnale-modules}. Critically, every written essay
+addresses the same two prompts under controlled length and time
+conditions, removing the prompt-variation confound of TOEFL11's
+eight-topic design, and all learners carry CEFR-linked proficiency
+bands (A2--B2+), enabling proficiency-matched cohort construction.
 
 \begin{table}[htbp]
 \centering
@@ -358,22 +319,16 @@ raters of varied L1 and occupational backgrounds (22{,}400 ratings)
 \end{table}
 
 \subsection*{Cohort construction and sampling}
-Figure~\ref{fig:sampling-flow} summarises the construction of the
-experimental sample. The Southeast Asian cohort draws essays from the
-Thailand, Indonesia, and Philippines components of the WE module,
-optionally extended with the Vietnam component of WEP; the native
-cohort draws from the ENS component. Both cohorts are restricted to
-the two upper proficiency bands (B1\_2 and B2+) and stratified by
-topic and band, with $n \approx 100$ essays per cohort drawn under a
-fixed random seed. Restricting to the upper bands serves the same
-purpose as the pilot's matched-score design: it narrows the range of
-underlying proficiency so that systematic scoring differences between
-cohorts cannot be attributed to proficiency alone, with residual
-band-composition differences controlled in analysis. The GRA's 140
-essays are retained in full as the validation set for Experiment E3,
-since each carries eighty independent human ratings; inter-rater
-dispersion in the GRA additionally provides a human benchmark against
-which BDS values can be compared, essay by essay.
+Figure~\ref{fig:sampling-flow} summarises the sample. The Southeast
+Asian cohort draws from the Thailand, Indonesia, and Philippines
+components of WE; the native cohort from ENS. Both cohorts are
+restricted to the two upper proficiency bands (B1\_2, B2+) and
+stratified by topic and band, $n \approx 100$ per cohort under a
+fixed seed. Restricting to the upper bands narrows the range of
+underlying proficiency so that systematic cohort differences cannot
+be attributed to proficiency alone, with residual band composition
+controlled in analysis. The GRA's 140 essays are retained in full as
+E3's validation set.
 
 \begin{figure}[htbp]
 \centering
@@ -405,16 +360,13 @@ the panel's divergence tracks the essays on which \emph{humans}
 diverge.
 
 \subsection*{Licence and handling}
-ICNALE is distributed free for research; its terms of use prohibit
-redistribution of any part of the data, and the project's required
-citation is the ICNALE Guide \citep{ishikawa2023icnale}. In this
-project, essay texts are stored only in access-controlled university
-storage, never committed to version control, and no essay text is
-reproduced in this thesis beyond short quotation where the licence
-permits; the reproducibility package releases code, prompts,
-configurations, and essay-ID manifests only. The data are
-de-identified by the distributor, and their use falls under the
-ethics exemption described in Section~\ref{sec:ethics}.
+ICNALE is distributed free for research with redistribution
+prohibited \citep{ishikawa2023icnale}. Essay texts are stored only in
+access-controlled storage and never committed to version control; the
+reproducibility package releases code, prompts, configurations, and
+essay-ID manifests only. The data are de-identified by the
+distributor and fall under the ethics exemption of
+Section~\ref{sec:ethics}.
 
 \section{Experimental Design}
 \label{sec:experimental-design}
@@ -486,54 +438,38 @@ infeasible for API-only access by construction
 (Section~\ref{sec:lit-debias}).
 
 \emph{Single-prompt debiasing}, instructing one evaluator to ``score
-fairly across cultures'', was considered and rejected for two reasons:
-it collapses the plurality of standards back into a single opaque
-judgment, so cultural bias cannot be measured, only asserted away; and
-it provides no divergence signal, so there is nothing to calibrate a
-human-review trigger against. The single-agent baseline in E1
-approximates this design and provides its empirical comparison.
-
-\emph{Inter-agent debate}, as in MACD \citep{tan2026macd}, lets agents
-deliberate before judgment. For evaluative scoring this is rejected on
-two grounds: the MALIBU results \citep{mirza2025malibu} show that
-agent interaction can amplify bias, and deliberation before scoring
-destroys the independence that makes the Bias Divergence Score
-meaningful. CAMPS instead confines deliberation to the optional
-meta-adjudicator, which operates after independent scores are
-recorded.
-
-\emph{Recruiting external human raters} for validation was rejected on
-ethics-scope and timeline grounds (Section~\ref{sec:ethics}); the GRA
-archive supplies eighty raters per essay without new data collection.
-Alternative corpora were considered and eliminated on design grounds
-in Section~\ref{sec:data}.
+fairly across cultures'', collapses the plurality of standards back
+into a single opaque judgment, so bias can only be asserted away, not
+measured, and it yields no divergence signal to calibrate a review
+trigger against; the single-agent baseline in E1 provides its
+empirical comparison. \emph{Inter-agent debate}, as in MACD
+\citep{tan2026macd}, is rejected because interaction can amplify bias
+\citep{mirza2025malibu} and deliberation before scoring destroys the
+independence that makes BDS meaningful; CAMPS confines deliberation
+to the optional post-hoc adjudicator. \emph{Recruiting external human
+raters} was rejected on ethics-scope and timeline grounds
+(Section~\ref{sec:ethics}); the GRA archive supplies eighty raters
+per essay without new data collection. Alternative corpora were
+eliminated on design grounds in Section~\ref{sec:data}.
 
 \section{Ethical Considerations}
 \label{sec:ethics}
 
-This research analyses de-identified secondary data only and is
-covered by an RMIT human research ethics exemption (Project ID 31036).
-The ICNALE corpus is distributed for research with all personal
-identifiers removed by the distributor; no attempt is made to
-re-identify any writer, no essay text is redistributed or committed to
-version control, and storage follows the project's research data
-management plan (university-managed storage, access restricted to the
-research team). Validation re-scoring is performed by the research
-team only; no external participants are recruited, and any future
-extension involving human participants would require a new ethics
-assessment before commencing.
-
-Two further considerations shape the design rather than merely
-constrain it. First, cultural essentialism: scoring agents are
-calibrated to \emph{documented rhetorical traditions}, not to
-nationalities, and L1 cohorts are treated throughout as proxies for
-rhetorical tradition rather than identity
-(Section~\ref{sec:lit-rhetoric}). Second, downstream welfare: CAMPS is
-designed as a human-in-the-loop system precisely because the cost of a
-misclassified essay falls on a student; the BDS mechanism exists to
-route uncertain judgments to a human rather than automate them. The
-use of generative AI tools in this project is disclosed in accordance
-with course policy.
+This research analyses de-identified secondary data only, under an
+RMIT human research ethics exemption (Project ID 31036): no attempt
+is made to re-identify any writer, no essay text is redistributed,
+storage follows the project's data management plan, no external
+participants are recruited, and any future extension involving human
+participants would require a new ethics assessment. Two
+considerations shape the design rather than merely constrain it.
+First, cultural essentialism: agents are calibrated to
+\emph{documented rhetorical traditions}, not nationalities, and L1
+cohorts are treated throughout as proxies for rhetorical tradition
+rather than identity. Second, downstream welfare: CAMPS is
+human-in-the-loop precisely because the cost of a misclassified essay
+falls on a student; BDS exists to route uncertain judgments to a
+human rather than automate them. Generative AI use in this project is
+disclosed in accordance with course policy.
 
 \section{Metrics and Statistical Protocol}
 \label{sec:metrics}

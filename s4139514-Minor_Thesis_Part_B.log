@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  2 SEP 2026 12:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  2 SEP 2026 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,10 +580,8 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo/rmit.png (PNG copy)
 >] [2
 
-] [3] [4
-
 ]
-(./02-thesis-summary.tex) [5] [6
+(./02-thesis-summary.tex) [3
 
 ] (./03-thesis-abstract.tex)
 Overfull \hbox (3.17522pt too wide) in paragraph at lines 6--42
@@ -591,21 +589,17 @@ Overfull \hbox (3.17522pt too wide) in paragraph at lines 6--42
  with a Bias Di-ver-gence Score (BDS)
  []
 
-[7
+[4
 
-] [8
 
-] (./04-thesis-acknowledgments.tex)) [9]
+] (./04-thesis-acknowledgments.tex)) [5
+
+]
 \openout2 = `05-thesis-contents.aux'.
 
  (./05-thesis-contents.tex
-[10
-
-
-
-
-] (./s4139514-Minor_Thesis_Part_B.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.
-cmap>>
+(./s4139514-Minor_Thesis_Part_B.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cm
+ap>>
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -614,294 +608,253 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [11])
+) [6
+
+
+
+
+])
 \tf@toc=\write4
 \openout4 = `s4139514-Minor_Thesis_Part_B.toc'.
 
- [12]
+ [7]
 (./s4139514-Minor_Thesis_Part_B.lof)
 \tf@lof=\write5
 \openout5 = `s4139514-Minor_Thesis_Part_B.lof'.
 
- [13
+ [8
 
-] [14
-
-]
-(./s4139514-Minor_Thesis_Part_B.lot)
+] (./s4139514-Minor_Thesis_Part_B.lot)
 \tf@lot=\write6
 \openout6 = `s4139514-Minor_Thesis_Part_B.lot'.
 
- [15]) [16]
+
+[9
+
+]) [10]
 \openout2 = `06-chapter1-introduction.aux'.
 
  (./06-chapter1-introduction.tex
 Chapter 1.
+[11
+
+
+
+
+] [12]
+Overfull \hbox (9.59065pt too wide) in paragraph at lines 90--93
+[]\T1/qtm/b/n/12 H4 (Trade-off bound-ary). \T1/qtm/m/n/12 Consensus-weight al-l
+o-ca-tion ex-hibits an iden-ti-fi-able bound-
+ []
+
+[13]
+Overfull \hbox (0.65204pt too wide) in paragraph at lines 167--175
+[]\T1/qtm/m/n/12 Finally, the fairness--accuracy trade-off at the cen-tre of H4
+ has a di-rect lin-eage in fairness-
+ []
+
+[14]
+Overfull \hbox (7.2419pt too wide) in paragraph at lines 217--220
+\T1/qtm/m/n/12 validated trig-ger for tar-geted hu-man re-view, eval-u-ated aga
+inst multi-rater hu-man ground
+ []
+
+[15]) [16]
+\openout2 = `07-chapter2-literature-review.aux'.
+
+ (./07-chapter2-literature-review.tex
+Chapter 2.
 [17
 
 
 
 
 ] [18]
-Overfull \hbox (9.59065pt too wide) in paragraph at lines 90--93
-[]\T1/qtm/b/n/12 H4 (Trade-off bound-ary). \T1/qtm/m/n/12 Consensus-weight al-l
-o-ca-tion ex-hibits an iden-ti-fi-able bound-
- []
-
-[19]
-Overfull \hbox (0.65204pt too wide) in paragraph at lines 167--175
-[]\T1/qtm/m/n/12 Finally, the fairness--accuracy trade-off at the cen-tre of H4
- has a di-rect lin-eage in fairness-
- []
-
-
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
- [20]
-Overfull \hbox (7.2419pt too wide) in paragraph at lines 217--220
-\T1/qtm/m/n/12 validated trig-ger for tar-geted hu-man re-view, eval-u-ated aga
-inst multi-rater hu-man ground
- []
-
-[21]) [22]
-\openout2 = `07-chapter2-literature-review.aux'.
-
- (./07-chapter2-literature-review.tex
-Chapter 2.
-[23
-
-
-
-
-] [24]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-Overfull \hbox (2.67279pt too wide) in paragraph at lines 128--160
+Overfull \hbox (2.67279pt too wide) in paragraph at lines 118--150
 []\T1/qtm/m/n/12 The prox-i-mal frame-work for this the-sis comes from the su-p
 er-vi-sor's re-search pro-gramme.
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27]
-[28]) [29]
+[19] [20] [21] [22]) [23]
 \openout2 = `08-chapter3-methodology.aux'.
 
- (./08-chapter3-methodology.tex [30
+ (./08-chapter3-methodology.tex
+Chapter 3.
+[24
 
 
 
 
 ]
-Chapter 3.
-[31] [32]
-<figures/fig-camps-architecture.pdf, id=123, 279.22215pt x 278.93811pt>
+<figures/fig-camps-architecture.pdf, id=97, 279.22215pt x 278.93811pt>
 File: figures/fig-camps-architecture.pdf Graphic file (type pdf)
 <use figures/fig-camps-architecture.pdf>
 Package pdftex.def Info: figures/fig-camps-architecture.pdf  used on input line
- 90.
+ 81.
 (pdftex.def)             Requested size: 312.20692pt x 311.88928pt.
 
-Overfull \hbox (8.57664pt too wide) in paragraph at lines 102--114
+Overfull \hbox (8.57664pt too wide) in paragraph at lines 93--105
 \T1/qtm/m/n/12 Given the scor-ing rubric $\OML/cmm/m/it/12 R$\T1/qtm/m/n/12 , t
 he CRI pro-duces $\OML/cmm/m/it/12 k$ \T1/qtm/m/n/12 culturally-adapted in-ter-
 pre-ta-tions $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 r[]; [] ; r[]\OMS/cmsy/m/n/12 
 g$
  []
 
-[33 <./figures/fig-camps-architecture.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-[35]
-Underfull \hbox (badness 3792) in paragraph at lines 254--256
+[25] [26 <./figures/fig-camps-architecture.pdf>] [27] [28]
+Underfull \hbox (badness 3792) in paragraph at lines 232--234
 []\T1/qtm/m/n/10.95 Writer-responsible co-her-ence; ex-
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 259--259
+Underfull \hbox (badness 4686) in paragraph at lines 237--237
 []\T1/qtm/m/n/10.95 ICNALE THA, IDN,
  []
 
 
-Underfull \hbox (badness 1629) in paragraph at lines 260--262
+Underfull \hbox (badness 1629) in paragraph at lines 238--240
 []\T1/qtm/m/n/10.95 Reader-responsible co-her-ence; de-
  []
 
 
-Underfull \hbox (badness 2057) in paragraph at lines 260--262
+Underfull \hbox (badness 2057) in paragraph at lines 238--240
 \T1/qtm/m/n/10.95 layed the-sis; \T1/qtm/m/it/10.95 ki-sho-ten-ketsu\T1/qtm/m/n
 /10.95 -style
  []
 
 
-Underfull \hbox (badness 5847) in paragraph at lines 262--262
+Underfull \hbox (badness 5847) in paragraph at lines 240--240
 []\T1/qtm/m/n/10.95 ICNALE CHN, JPN,
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 263--265
+Underfull \hbox (badness 5231) in paragraph at lines 241--243
 \T1/qtm/m/n/10.95 region learner writ-ing [Ishikawa,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 []\T1/qtm/m/n/10.95 Regulatory ideal: ar-gu-men-ta-tive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 \T1/qtm/m/n/10.95 merit ir-re-spec-tive of struc-tural
  []
 
-[36]
-Underfull \vbox (badness 5345) has occurred while \output is active []
-
- [37]
-Underfull \hbox (badness 6876) in paragraph at lines 347--349
+[29] [30]
+Underfull \hbox (badness 6876) in paragraph at lines 308--310
 \T1/qtm/m/n/10.95 two con-trolled top-ics; ten
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 347--349
+Underfull \hbox (badness 1033) in paragraph at lines 308--310
 \T1/qtm/m/n/10.95 Asian coun-tries/regions plus
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 314--314
 []\T1/qtm/m/n/10.95 Global Rat-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 314--314
 \T1/qtm/m/n/10.95 Archives (GRA)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 []\T1/qtm/m/n/10.95 Multi-rater hu-man ground
  []
 
-[38]
-<figures/fig-sampling-flow.pdf, id=202, 386.60435pt x 188.76823pt>
+[31]
+<figures/fig-sampling-flow.pdf, id=179, 386.60435pt x 188.76823pt>
 File: figures/fig-sampling-flow.pdf Graphic file (type pdf)
 <use figures/fig-sampling-flow.pdf>
-Package pdftex.def Info: figures/fig-sampling-flow.pdf  used on input line 380.
+Package pdftex.def Info: figures/fig-sampling-flow.pdf  used on input line 335.
 
 (pdftex.def)             Requested size: 346.89731pt x 169.38287pt.
- [39]
-Underfull \vbox (badness 2012) has occurred while \output is active []
-
- [40 <./figures/fig-sampling-flow.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
+ [32 <./figures/fig-sampling-flow.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 []\T1/qtm/m/n/10.95 Single-agent base-line vs.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 []\T1/qtm/m/n/10.95 CAMPS $\OML/cmm/m/it/10.95 k[]\OT1/cmr/m/n/10.95 5$ \T1/qtm
 /m/n/10.95 with and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 \T1/qtm/m/n/10.95 with-out meta-adjudicator;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 \T1/qtm/m/n/10.95 consensus-weight sweep
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
 []\T1/qtm/m/n/10.95 GRA val-i-da-tion set
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
 \T1/qtm/m/n/10.95 (140 es-says $\OMS/cmsy/m/n/10.95 ^^B$ \T1/qtm/m/n/10.95 80
  []
 
-
-Underfull \vbox (badness 1565) has occurred while \output is active []
-
- [41]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42]
-Underfull \vbox (badness 6792) has occurred while \output is active []
-
- [43])
-[44]
+[33] [34] [35]) [36]
 \openout2 = `09-chapter4-results-discussion.aux'.
 
  (./09-chapter4-results-discussion.tex
 Chapter 4.
-[45
+[37
 
 
 
 
 ]
-<figures/fig-e1-gaps.pdf, id=240, 520.34402pt x 303.534pt>
+<figures/fig-e1-gaps.pdf, id=215, 520.34402pt x 303.534pt>
 File: figures/fig-e1-gaps.pdf Graphic file (type pdf)
 <use figures/fig-e1-gaps.pdf>
 Package pdftex.def Info: figures/fig-e1-gaps.pdf  used on input line 63.
 (pdftex.def)             Requested size: 325.215pt x 189.71753pt.
-
-Underfull \vbox (badness 5231) has occurred while \output is active []
-
- [46 <./figures/fig-e1-gaps.pdf>] (./tables/table_e1_qwk.tex) [47]
-<figures/fig-e2-lens-radar.pdf, id=309, 693.792pt x 317.98799pt>
+ [38 <./figures/fig-e1-gaps.pdf>] (./tables/table_e1_qwk.tex) [39]
+<figures/fig-e2-lens-radar.pdf, id=284, 693.792pt x 317.98799pt>
 File: figures/fig-e2-lens-radar.pdf Graphic file (type pdf)
 <use figures/fig-e2-lens-radar.pdf>
 Package pdftex.def Info: figures/fig-e2-lens-radar.pdf  used on input line 132.
 
 (pdftex.def)             Requested size: 368.57964pt x 168.9307pt.
-<figures/fig-e2-ablation.pdf, id=310, 520.34402pt x 303.534pt>
+<figures/fig-e2-ablation.pdf, id=285, 520.34402pt x 303.534pt>
 File: figures/fig-e2-ablation.pdf Graphic file (type pdf)
 <use figures/fig-e2-ablation.pdf>
 Package pdftex.def Info: figures/fig-e2-ablation.pdf  used on input line 143.
 (pdftex.def)             Requested size: 325.215pt x 189.71753pt.
 
-(./tables/table_e2_ablation.tex) [48 <./figures/fig-e2-lens-radar.pdf>]
-[49 <./figures/fig-e2-ablation.pdf>]
-<figures/fig-e2-frontier-gpt-4o.pdf, id=414, 462.52798pt x 303.534pt>
+(./tables/table_e2_ablation.tex) [40 <./figures/fig-e2-lens-radar.pdf>]
+[41 <./figures/fig-e2-ablation.pdf>]
+<figures/fig-e2-frontier-gpt-4o.pdf, id=388, 462.52798pt x 303.534pt>
 File: figures/fig-e2-frontier-gpt-4o.pdf Graphic file (type pdf)
 <use figures/fig-e2-frontier-gpt-4o.pdf>
 Package pdftex.def Info: figures/fig-e2-frontier-gpt-4o.pdf  used on input line
  174.
 (pdftex.def)             Requested size: 281.85034pt x 184.97482pt.
- [50 <./figures/fig-e2-frontier-gpt-4o.pdf>] (./tables/table_e3_bds.tex)
-<figures/fig-e3-roc.pdf, id=475, 693.792pt x 289.08pt>
+ [42 <./figures/fig-e2-frontier-gpt-4o.pdf>] (./tables/table_e3_bds.tex)
+<figures/fig-e3-roc.pdf, id=449, 693.792pt x 289.08pt>
 File: figures/fig-e3-roc.pdf Graphic file (type pdf)
 <use figures/fig-e3-roc.pdf>
 Package pdftex.def Info: figures/fig-e3-roc.pdf  used on input line 212.
 (pdftex.def)             Requested size: 381.5877pt x 158.99448pt.
- [51 <./figures/fig-e3-roc.pdf>] [52]
-<figures/fig-e1-gap-by-band.pdf, id=544, 520.34402pt x 289.08pt>
+ [43 <./figures/fig-e3-roc.pdf>] [44]
+<figures/fig-e1-gap-by-band.pdf, id=519, 520.34402pt x 289.08pt>
 File: figures/fig-e1-gap-by-band.pdf Graphic file (type pdf)
 <use figures/fig-e1-gap-by-band.pdf>
 Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 274
 .
 (pdftex.def)             Requested size: 325.215pt x 180.68336pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [53 <./figures/fig-e1-gap-by-band.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54]
-Underfull \vbox (badness 7238) has occurred while \output is active []
-
- [55])
-[56]
+ [45 <./figures/fig-e1-gap-by-band.pdf>] [46] [47]) [48]
 \openout2 = `10-chapter5-conclusion.aux'.
 
  (./10-chapter5-conclusion.tex
@@ -941,43 +894,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []\T1/qtm/m/n/10.95 Supported
  []
 
-[57
+[49
 
 
 
 
-]
-Underfull \vbox (badness 3281) has occurred while \output is active []
-
- [58])
-[59]
+] [50]) [51]
 \openout2 = `11-appendixA-cri-prompts.aux'.
 
- (./11-appendixA-cri-prompts.tex [60
+ (./11-appendixA-cri-prompts.tex
+Appendix A.
+[52
 
 
 
 
 ]
-Appendix A.
-
-Underfull \vbox (badness 2478) has occurred while \output is active []
-
- [61]
 Overfull \hbox (6.8949pt too wide) in paragraph at lines 28--29
 \T1/qtm/m/it/10.95 u-ate co-her-ence and co-he-sion recog-nis-ing that: (1) co-
 her-ence may be reader-responsible:
  []
 
-[62]) [63]
+[53]) [54]
 \openout2 = `12-appendixB-reproducibility.aux'.
 
- (./12-appendixB-reproducibility.tex [64
-
-
-
-
-]
+ (./12-appendixB-reproducibility.tex
 Appendix B.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
 .
@@ -997,7 +938,12 @@ Overfull \hbox (23.70648pt too wide) in paragraph at lines 24--31
 cs.py
  []
 
-[65])
+[55
+
+
+
+
+])
 Overfull \hbox (81.2823pt too wide) in paragraph at lines 33--40
 \T1/qtm/m/n/12 The ex-act model iden-ti-fiers re-quested through each provider'
 s API, as pinned in \T1/cmtt/m/n/12 configs/experiment.yaml
@@ -1016,7 +962,7 @@ Overfull \hbox (33.92464pt too wide) in paragraph at lines 33--40
 -cally via Ol-lama); and \T1/cmtt/m/n/12 gemini-3.1-pro-preview
  []
 
-[66]
+[56]
 \openout2 = `13-thesis-bibliography.aux'.
 
  (./13-thesis-bibliography.tex (./s4139514-Minor_Thesis_Part_B.bbl
@@ -1037,7 +983,7 @@ Underfull \hbox (badness 4429) in paragraph at lines 39--44
 ages 1125--1127. ACM, 2022.
  []
 
-[67
+[57
 
 
 
@@ -1048,7 +994,7 @@ Underfull \hbox (badness 1117) in paragraph at lines 125--133
 , Yan Zhang, and
  []
 
-[68]
+[58]
 Underfull \hbox (badness 1448) in paragraph at lines 198--202
 []\T1/qtm/m/n/12 Yan Tao, Olga Viberg, Ryan S. Baker, and René F. Kizil-cec.  C
 ul-tural bias and
@@ -1060,7 +1006,7 @@ Underfull \hbox (badness 1102) in paragraph at lines 198--202
 2 PNAS Nexus\T1/qtm/m/n/12 , 3(9):pgae346, 2024.
  []
 
-)) [69] (./s4139514-Minor_Thesis_Part_B.aux (./01-thesis-cover.aux)
+)) [59] (./s4139514-Minor_Thesis_Part_B.aux (./01-thesis-cover.aux)
 (./05-thesis-contents.aux) (./06-chapter1-introduction.aux)
 (./07-chapter2-literature-review.aux) (./08-chapter3-methodology.aux)
 (./09-chapter4-results-discussion.aux) (./10-chapter5-conclusion.aux)
@@ -1069,11 +1015,11 @@ Underfull \hbox (badness 1102) in paragraph at lines 198--202
 Here is how much of TeX's memory you used:
  16082 strings out of 480247
  329080 string characters out of 5896151
- 584093 words of memory out of 5000000
+ 585023 words of memory out of 5000000
  33562 multiletter control sequences out of 15000+600000
  520360 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,14n,89p,806b,314s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,14n,89p,806b,308s stack positions out of 5000i,500n,10000p,200000b,80000s
  </sessions/amazing-inspiring-lovelace/.texliv
 e2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>{/usr/share/texmf/fo
 nts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts
@@ -1096,10 +1042,10 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts
 /type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/q
 tmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (69 pages, 559784 bytes).
+Output written on s4139514-Minor_Thesis_Part_B.pdf (59 pages, 553826 bytes).
 PDF statistics:
- 768 PDF objects out of 1000 (max. 8388607)
- 307 compressed objects within 4 object streams
+ 735 PDF objects out of 1000 (max. 8388607)
+ 285 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
