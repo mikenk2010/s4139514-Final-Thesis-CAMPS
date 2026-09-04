@@ -81,15 +81,16 @@ These questions are operationalised as four testable hypotheses:
         Asian rhetorical patterns is statistically significant across at
         least four LLMs, including open-weight models.
   \item \textbf{H2 (Mitigation).} A five-agent culturally-calibrated
-        panel with a meta-adjudicator reduces the cohort QWK gap more
-        than the three-agent pilot configuration, while preserving
-        native-cohort accuracy.
-  \item \textbf{H3 (Detection).} A ROC-calibrated Bias Divergence Score
-        threshold sustains high sensitivity and a low false-positive
-        rate at $N \approx 200$.
+        panel with a meta-adjudicator reduces the cohort score gap
+        more than the three-agent pilot configuration, without
+        degrading agreement with the corpus's proficiency bands.
+  \item \textbf{H3 (Detection).} A ROC-calibrated Bias Divergence
+        Score threshold attains at least 90\% sensitivity at no more
+        than a 5\% false-positive rate against multi-rater human
+        disagreement on the 140-essay GRA validation set.
   \item \textbf{H4 (Trade-off boundary).} Consensus-weight allocation
         exhibits an identifiable boundary beyond which cohort-fairness
-        gains degrade dominant-cohort accuracy.
+        gains degrade scoring accuracy against graded ground truth.
 \end{itemize}
 
 The research questions and hypotheses relate as follows. RQ1 is a

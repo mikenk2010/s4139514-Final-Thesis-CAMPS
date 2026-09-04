@@ -12,18 +12,18 @@ filtering} and develops CAMPS (Culturally-Aware Multi-Perspective
 Scoring): an inference-time framework in which evaluator agents, each
 calibrated to a distinct cultural interpretation of the scoring
 rubric, score each essay independently before consensus aggregation,
-with a Bias Divergence Score (BDS) quantifying inter-agent
-disagreement. Across 200 topic-controlled ICNALE essays (Southeast
+with a Bias Divergence Score (BDS) quantifying disagreement.
+Across 200 topic-controlled ICNALE essays (Southeast
 Asian learners and a native-English cohort) and four model families,
 every baseline evaluator scored the native cohort above
-proficiency-matched Southeast Asian writing (gaps of 0.19--1.18
+proficiency-matched Southeast Asian writing (0.19--1.18
 bands, all 95\% confidence intervals excluding zero). A three-agent
 panel reduced the gap by 23--28\% on the two most biased models, left
 it unchanged where bias was small, and widened it on the least
 biased; a five-agent extension added no further reduction. Weight
 sweeps found substantial gap reduction available at negligible
 accuracy cost, but BDS tracked the disagreement of eighty human
-raters weakly or not at all (held-out AUC 0.60 and 0.37 by model).
-Evaluative bias is real,
-general, and partially correctable at inference time; reliable
+raters weakly or not at all (held-out AUC 0.60 and 0.37).
+Evaluative bias is general and
+partially correctable at inference time; reliable
 autonomous detection remains open.
