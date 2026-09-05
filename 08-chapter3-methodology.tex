@@ -36,8 +36,9 @@ different treatment under evaluators with different training
 distributions. Second, the deviation is conditional on rhetorical
 tradition rather than on language proficiency; this is what
 distinguishes evaluative epistemic filtering from the legitimate
-scoring of weaker English, and what the matched-cohort experimental
-design in Section~\ref{sec:experimental-design} is built to isolate.
+scoring of weaker English, and what the band-restricted cohort
+design of Section~\ref{sec:data} and the human-anchored check of
+Section~\ref{sec:results-uncertainty} are built to isolate.
 
 Four conditions jointly sustain the filter: training corpora
 over-represent WEIRD cultural contexts, whose value orientation
@@ -52,8 +53,9 @@ L1-linked scoring disparity, is documented
 mechanism.
 
 The theory yields three testable signatures, mapping onto the
-hypotheses of Chapter~1: a systematic scoring gap between
-rhetorical-tradition cohorts matched on proficiency (H1); shrinkage
+hypotheses of Chapter~1: a systematic scoring gap between an
+upper-band learner cohort and the native reference, beyond what
+residual quality difference can explain (H1); shrinkage
 of that gap under a panel whose members embody different rubric
 interpretations, because their individual filters are partially
 decorrelated (H2); and measurable panel disagreement on precisely the
@@ -154,7 +156,10 @@ consensus weights $w_i$ are re-optimised to maximise agreement with
 human scores subject to a cohort-fairness constraint, and the
 threshold $\tau$ is re-estimated as review outcomes accumulate. The
 loop closes the system without touching model weights; everything
-learned lives in $w$ and $\tau$.
+learned lives in $w$ and $\tau$. The loop is specified as part of the
+framework but not exercised in this thesis, whose experiments
+evaluate a single calibration pass (E2's weight sweep and E3's
+threshold calibration).
 
 \medskip
 The five components divide the framework's labour: the first two
@@ -228,7 +233,7 @@ can be validated.}
 \small
 \begin{tabular}{p{2.9cm} p{5.6cm} p{3.6cm}}
 \hline
-Lens & Rhetorical grounding & Validating cohort \\
+Lens & Rhetorical grounding & Validating cohort (available) \\
 \hline
 CRI\textsubscript{Western} & Writer-responsible coherence; explicit
 thesis-first linear development \citep{kaplan1966cultural,
@@ -293,7 +298,7 @@ Table~\ref{tab:icnale-modules}. Critically, every written essay
 addresses the same two prompts under controlled length and time
 conditions, removing the prompt-variation confound of TOEFL11's
 eight-topic design, and all learners carry CEFR-linked proficiency
-bands (A2--B2+), enabling proficiency-matched cohort construction.
+bands (A2--B2+), enabling band-restricted learner-cohort construction.
 
 \begin{table}[htbp]
 \centering
@@ -310,8 +315,9 @@ Written Essays (WE) v2.6 & 5{,}600 essays, 200--300 words, two
 controlled topics; ten Asian countries/regions plus native ENS cohort
 & Primary cohorts: SEA learners and native reference \\[3pt]
 Written Essays Plus (WEP) v0.7 & 2{,}340 essays from additional
-countries including Vietnam, Cambodia, Laos, Myanmar & Mekong cohort;
-validation of CRI\textsubscript{Mekong} \\[3pt]
+countries including Vietnam, Cambodia, Laos, Myanmar & Available
+validating cohort for CRI\textsubscript{Mekong}; demo samples (not
+scored in E1--E3) \\[3pt]
 Global Rating Archives (GRA) v2.1 & 140 essays, each rated by 80
 raters of varied L1 and occupational backgrounds (11{,}200 ratings)
 & Multi-rater human ground truth for BDS validation (E3) \\
@@ -322,14 +328,19 @@ raters of varied L1 and occupational backgrounds (11{,}200 ratings)
 \subsection*{Cohort construction and sampling}
 Figure~\ref{fig:sampling-flow} summarises the sample. The Southeast
 Asian cohort draws from the Thailand, Indonesia, and Philippines
-components of WE; the native cohort from ENS. Both cohorts are
-restricted to the two upper proficiency bands (B1\_2, B2+) and
-stratified by topic and band, $n \approx 100$ per cohort under a
-fixed seed. Restricting to the upper bands narrows the range of
-underlying proficiency so that systematic cohort differences cannot
-be attributed to proficiency alone, with residual band composition
-controlled in analysis. The GRA's 140 essays are retained in full as
-E3's validation set.
+components of WE, restricted to the two upper proficiency bands
+(B1\_2, B2+) and stratified by topic and band; the native cohort
+draws from ENS, which ICNALE does not band (native writers are the
+corpus's reference group); $n \approx 100$ per cohort under a fixed
+seed. Restricting the learner cohort to its upper bands narrows the
+proficiency range so that a cohort gap cannot be attributed to weak
+English, but it cannot equate the cohorts: any residual quality
+difference between upper-band learners and native writers remains
+inside the gap, which is therefore interpreted as an \emph{upper
+bound} on evaluative filtering (Section~\ref{sec:metrics}), with a
+human-anchored check on the GRA essays reported in
+Section~\ref{sec:results-uncertainty}. The GRA's 140 essays are
+retained in full as E3's validation set.
 
 \begin{figure}[htbp]
 \centering
@@ -341,10 +352,13 @@ reproducibility manifest records essay identifiers only.}
 \end{figure}
 
 \subsection*{Scoring target and ground truth}
-Agents score each essay on the rubric's band scale; agreement with
-ground truth is computed against the corpus's proficiency bands for
-the main cohorts and against the GRA's multi-rater consensus for the
-validation set. Inspection of the downloaded GRA archive (v2.1)
+Every agent, including the single-agent baseline, returns an integer
+band from 1 to 9 on the IELTS Coherence and Cohesion descriptors
+(the prompts are verbatim in Appendix~\ref{chap:appendix-prompts});
+panel consensus is the mean of these integers and so takes
+non-integer values. Agreement with ground truth is computed against
+the corpus's CEFR bands for the learner cohort and against the GRA's
+multi-rater consensus for the validation set. Inspection of the downloaded GRA archive (v2.1)
 confirms its structure: each of the 140 essays carries ratings from
 80 raters of varied L1 backgrounds, each scoring ten analytic
 dimensions (0--10) grouped as Language, Content, and Attitude, plus a
@@ -420,10 +434,11 @@ adjudicator.
 
 \textbf{Experiment E3 (detection validation)} computes BDS for the
 140 GRA essays. Human rating dispersion provides the reference notion
-of a genuinely contested essay; the threshold $\tau$ is calibrated on
-a random half of the GRA set (Youden's $J$) and evaluated on the
-held-out half, reporting sensitivity, false-positive rate, and area
-under the ROC curve.
+of a genuinely contested essay, operationalised as the top quartile
+of per-essay standard deviation across the 80 raters' Content
+ratings; the threshold $\tau$ is calibrated on a random half of the
+GRA set (Youden's $J$) and evaluated on the held-out half, reporting
+sensitivity, false-positive rate, and area under the ROC curve.
 
 \section{Alternatives Considered}
 \label{sec:alternatives}
@@ -486,8 +501,13 @@ the native and Southeast Asian cohorts,
 \Delta = \overline{S^{*}}_{\mathrm{native}}
         - \overline{S^{*}}_{\mathrm{SEA}},
 \end{equation}
-computed on proficiency-matched cohorts so that, absent bias, the
-expected gap is near zero. This operationalisation follows the pilot
+computed on an upper-band learner cohort and the unbanded native
+reference. Absent filtering the gap need not be zero, since native
+writers may differ in quality from upper-band learners even under a
+neutral judge; $\Delta$ is therefore an upper bound on filtering, and
+the treatment effects of interest are \emph{changes} in $\Delta$
+between conditions on the same essays, which the residual quality
+difference does not affect. This operationalisation follows the pilot
 and is forced by a property of the reference data: the native cohort
 writes as an unbanded reference group (ICNALE assigns CEFR bands to
 learners only), so band-agreement statistics are undefined for it.

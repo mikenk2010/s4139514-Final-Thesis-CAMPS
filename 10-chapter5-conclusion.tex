@@ -14,7 +14,7 @@ each hypothesis explicitly against the evidence of Chapter~4.
 \centering
 \caption[Verdicts on hypotheses H1--H4]{Verdicts on the four
 hypotheses. All statistics from Chapter~4; $n$=100 per cohort
-(E1/E2), $n$=68 held-out (E3); 95\% bootstrap CIs.}
+(E1/E2), $n$=70 held-out (E3); 95\% bootstrap CIs.}
 \label{tab:verdicts}
 \small
 \begin{tabular}{p{2.2cm} p{2.2cm} p{7.6cm}}
@@ -24,15 +24,16 @@ Hypothesis & Verdict & Decisive evidence \\
 H1 existence \& generality & Supported &
 Baseline gap positive on all four families, every CI excluding
 zero: 1.18 (Claude), 0.80 (GPT-4o), 0.23 (Qwen3), 0.19 (Gemini)
-bands; concentrated at B1\textsubscript{2} \\[3pt]
+bands; concentrated at B1\textsubscript{2}; gap is an upper bound
+(native reference unbanded) \\[3pt]
 H2 mitigation, $k{=}5 > k{=}3$ & Rejected as stated &
 $k$=3 panel cut the gap 23--28\% where bias was large; $k$=5 added
 0.02 [$-0.02$, 0.07] on GPT-4o, regressed $-0.10$ [$-0.15$, $-0.06$]
 on Claude; over-corrected on Gemini (0.19 $\to$ 0.45); adjudicator
 null on both \\[3pt]
 H3 detection $\ge$90\%/$\le$5\% & Not supported &
-Held-out AUC 0.603 (GPT-4o; sens.\ 0.875 at FPR 0.712) and 0.370
-(Claude); $r$(BDS, human dispersion) $=$ 0.16 and $-0.18$ \\[3pt]
+Held-out AUC 0.639 (GPT-4o; sens.\ 0.833 at FPR 0.615) and 0.481
+(Claude); $r$(BDS, human dispersion) $=$ 0.23 and $-0.13$ \\[3pt]
 H4 trade-off boundary & Supported (shallow) &
 10{,}626-vector sweep: gap 0.55 $\to$ 0.32 at 0.007 QWK cost
 (GPT-4o); gap 1.01 $\to$ 0.79 with QWK \emph{gain} 0.169 $\to$ 0.190
@@ -59,8 +60,10 @@ Answering the research questions: RQ1 is answered affirmatively, with
 the qualification that the filter's strength is a property of the
 individual model family; RQ2 is answered conditionally: inference-time
 cultural plurality mitigates the penalty where it is material, at
-negligible measured cost to validity, but its self-diagnostic signal
-is not yet reliable enough to route essays autonomously.
+negligible measured cost on the corpus's coarse band measure and
+with panel scores tracking 80-rater human consensus at $r \approx
+0.9$, but its self-diagnostic signal is not yet reliable enough to
+route essays autonomously.
 
 \section{Contributions}
 \label{sec:conclusion-contributions}
@@ -69,10 +72,12 @@ This thesis makes five contributions. Conceptually, it formalises
 \emph{evaluative epistemic filtering} as a distinct bias mechanism in
 LLM-driven scoring (Definition~\ref{def:eef}), grounded in epistemic
 injustice and contrastive rhetoric. Architecturally, it specifies
-CAMPS, a five-lens culturally-calibrated scoring panel with a
-meta-adjudicator and a divergence-based human-review trigger,
-extending multi-perspective bias mitigation from generation
-\citep{dorleon2026uncovering} to evaluation. Empirically, it
+CAMPS, a culturally-calibrated scoring panel with a divergence-based
+human-review trigger, extending multi-perspective bias mitigation
+from generation \citep{dorleon2026uncovering} to evaluation, and
+empirically bounds its design space: three well-chosen lenses
+suffice, and neither enlarging the panel nor adding an adjudicator
+yielded further gain. Empirically, it
 evaluates the framework on topic-controlled ICNALE cohorts across
 four model families, confirming the existence claim at scale while
 overturning two working assumptions: that panel benefit grows with
@@ -83,7 +88,7 @@ eighty human raters, an evaluation design that exposed the construct
 gap between cultural contestation and general rater disagreement.
 Practically, it characterises the fairness--accuracy frontier
 explicitly and finds it shallow, giving deploying institutions an
-evidence-based answer, near zero at the measured operating points, to
+evidence-based answer, near zero on the measures available here, to
 the question of what fairness costs under current models.
 
 \section{Limitations}
@@ -105,13 +110,43 @@ essays to humans, so its operational cost scales with exactly the
 essays that most need care; whether that cost is acceptable is an
 institutional decision this thesis can inform but not make.
 
+Stated plainly, the scope within which the findings hold is this.
+CAMPS worked well on frontier models with a large measured gap
+(roughly 0.8 bands or more), on short argumentative essays by
+upper-band Southeast Asian learners, and with three well-chosen
+lenses; it did nothing on a model with a small gap and over-corrected
+on the model with the smallest, so it should not be applied without
+first measuring the gap it is meant to treat. Four internal
+limitations qualify the numbers. The native reference is unbanded, so
+the cohort gap is an upper bound that includes any real quality
+difference; the human-anchored check could compare only the learner
+cohorts, since the rated archive holds four native essays. The
+mitigation was compared against a single-evaluator baseline only; a
+control panel of non-cultural prompt variants, which would separate
+cultural plurality from the effect of averaging differently worded
+prompts, was not run. BDS was evaluated at integer resolution, which
+limits what any detector built on it could achieve. And the
+accuracy axis of the frontier rests on coarse CEFR bands (QWK
+0.06--0.19), so ``negligible cost'' is a statement about that measure;
+the 80-rater correlation of about 0.9 is the stronger validity
+evidence, but it comes from a single-topic set.
+
 \section{Future Work}
 \label{sec:future-work}
 
-Three directions follow directly. First, extending the panel to
-further rhetorical traditions as validating corpora become available,
+The two null results define the nearest future work. First,
+re-validating BDS with continuous, confidence-weighted lens scores
+against annotations of specifically \emph{cultural} contestation,
+so that the detector is tested on the construct it measures, and
+running the non-cultural control panel that would isolate what
+cultural plurality adds over prompt averaging. Second, obtaining
+graded human ratings on the cohort essays themselves, so that
+Definition~\ref{def:eef} can be tested as an LLM$-$human residual
+between native and Southeast Asian writers rather than bounded by a
+raw cohort gap. Beyond these, extending the panel to further
+rhetorical traditions as validating corpora become available,
 including a Middle Eastern lens for which the contrastive-rhetoric
-literature is rich but public rated corpora are lacking. Second, a
+literature is rich but public rated corpora are lacking, and a
 theoretical treatment of evaluative consensus: the formal guarantees
 established for multi-perspective generation
 \citep{dorleon2026uncovering} suggest an analogous proposition for

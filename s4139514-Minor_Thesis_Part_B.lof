@@ -4,12 +4,12 @@
 \contentsline {figure}{\numberline {3-1}{\ignorespaces The CAMPS pipeline}}{26}{}%
 \contentsline {figure}{\numberline {3-2}{\ignorespaces Cohort construction and sampling flow}}{32}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4-1}{\ignorespaces E1 cohort score gaps by model and condition}}{39}{}%
-\contentsline {figure}{\numberline {4-2}{\ignorespaces Lens-level cohort profiles (radar)}}{41}{}%
-\contentsline {figure}{\numberline {4-3}{\ignorespaces E2 ablation: gap by panel configuration}}{41}{}%
-\contentsline {figure}{\numberline {4-4}{\ignorespaces E2 fairness--accuracy frontier (GPT-4o)}}{42}{}%
-\contentsline {figure}{\numberline {4-5}{\ignorespaces E3: BDS against human-rater disagreement}}{44}{}%
-\contentsline {figure}{\numberline {4-6}{\ignorespaces Baseline gap by SEA proficiency band}}{45}{}%
+\contentsline {figure}{\numberline {4-1}{\ignorespaces E1 cohort score gaps by model and condition}}{40}{}%
+\contentsline {figure}{\numberline {4-2}{\ignorespaces Lens-level cohort profiles (radar)}}{42}{}%
+\contentsline {figure}{\numberline {4-3}{\ignorespaces E2 ablation: gap by panel configuration}}{43}{}%
+\contentsline {figure}{\numberline {4-4}{\ignorespaces E2 fairness--accuracy frontier (GPT-4o)}}{44}{}%
+\contentsline {figure}{\numberline {4-5}{\ignorespaces E3: BDS against human-rater disagreement}}{45}{}%
+\contentsline {figure}{\numberline {4-6}{\ignorespaces Baseline gap by SEA proficiency band}}{46}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -20,18 +20,18 @@
 \contentsline {section}{\numberline {3.5}Experimental Design}{33}{}%
 \contentsline {section}{\numberline {3.6}Alternatives Considered}{34}{}%
 \contentsline {section}{\numberline {3.7}Ethical Considerations}{35}{}%
-\contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{35}{}%
-\contentsline {chapter}{\numberline {4}Results and Discussion}{37}{}%
-\contentsline {section}{\numberline {4.1}Experiment 1: Evaluative Bias at Scale (H1; H2 in part)}{37}{}%
-\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{38}{}%
+\contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{36}{}%
+\contentsline {chapter}{\numberline {4}Results and Discussion}{38}{}%
+\contentsline {section}{\numberline {4.1}Experiment 1: Evaluative Bias at Scale (H1; H2 in part)}{38}{}%
+\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{39}{}%
 \contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{43}{}%
-\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{44}{}%
-\contentsline {section}{\numberline {4.5}Threats to Validity}{46}{}%
-\contentsline {section}{\numberline {4.6}Discussion}{47}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{50}{}%
-\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{50}{}%
-\contentsline {section}{\numberline {5.2}Contributions}{51}{}%
-\contentsline {section}{\numberline {5.3}Limitations}{52}{}%
-\contentsline {section}{\numberline {5.4}Future Work}{52}{}%
-\contentsline {chapter}{\numberline {A}CRI System Prompts}{53}{}%
-\contentsline {chapter}{\numberline {B}Reproducibility}{56}{}%
+\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{45}{}%
+\contentsline {section}{\numberline {4.5}Threats to Validity}{48}{}%
+\contentsline {section}{\numberline {4.6}Discussion}{49}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{52}{}%
+\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{52}{}%
+\contentsline {section}{\numberline {5.2}Contributions}{53}{}%
+\contentsline {section}{\numberline {5.3}Limitations}{54}{}%
+\contentsline {section}{\numberline {5.4}Future Work}{55}{}%
+\contentsline {chapter}{\numberline {A}CRI System Prompts}{56}{}%
+\contentsline {chapter}{\numberline {B}Reproducibility}{59}{}%
