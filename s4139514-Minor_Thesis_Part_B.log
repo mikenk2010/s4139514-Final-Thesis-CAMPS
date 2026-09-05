@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  5 SEP 2026 13:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  5 SEP 2026 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -581,27 +581,28 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 >] [2
 
 ]
-(./02-thesis-summary.tex) [3
+(./04-thesis-acknowledgments.tex) [3
 
-] (./03-thesis-abstract.tex)
-Overfull \hbox (3.17522pt too wide) in paragraph at lines 6--42
+] (./02-thesis-summary.tex) [4
+
+]
+(./03-thesis-abstract.tex)
+Overfull \hbox (3.17522pt too wide) in paragraph at lines 6--47
 \T1/qtm/m/n/12 each es-say in-de-pen-dently be-fore con-sen-sus ag-gre-ga-tion,
  with a Bias Di-ver-gence Score (BDS)
  []
 
-[4
+[5
 
 
-] (./04-thesis-acknowledgments.tex)) [5
-
-]
+])
 \openout2 = `05-thesis-contents.aux'.
 
- (./05-thesis-contents.tex
-(./s4139514-Minor_Thesis_Part_B.toc<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cm
-ap>>
+ (./05-thesis-contents.tex (./s4139514-Minor_Thesis_Part_B.toc<<ot1.cmap>><<oml
+.cmap>><<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
@@ -1059,7 +1060,7 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts
 /type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/q
 tmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (63 pages, 562148 bytes).
+Output written on s4139514-Minor_Thesis_Part_B.pdf (63 pages, 562143 bytes).
 PDF statistics:
  747 PDF objects out of 1000 (max. 8388607)
  294 compressed objects within 3 object streams
