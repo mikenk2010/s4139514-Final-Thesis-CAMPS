@@ -122,7 +122,38 @@ RQ2 & H4 & What mitigation costs in accuracy & Experiment E2 \\
 \end{tabular}
 \end{table}
 
-Chapter~5 returns to each hypothesis explicitly.
+Chapter~5 returns to each hypothesis explicitly. Because several
+terms recur throughout, Table~\ref{tab:key-terms} defines them once
+in plain language.
+
+\begin{table}[htbp]
+\centering
+\caption[Key terms used in this thesis]{Key terms used in this
+thesis, in plain language.}
+\label{tab:key-terms}
+\small
+\begin{tabular}{p{3.3cm} p{8.9cm}}
+\hline
+Term & Meaning in this thesis \\
+\hline
+Evaluative epistemic filtering & The tendency of an AI grader to mark
+down writing whose rhetorical form is unfamiliar from its training
+data, regardless of the argument's quality. \\[2pt]
+Lens & One AI evaluator given a documented cultural interpretation of
+the same scoring rubric (Western, Southeast Asian, East Asian,
+Mekong, or Neutral). \\[2pt]
+Panel, consensus & Several lenses scoring the same essay
+independently; their weighted average is the consensus score. \\[2pt]
+Bias Divergence Score (BDS) & How much the lenses disagree on one
+essay; high values are meant to flag the essay for a human. \\[2pt]
+Cohort, cohort gap & A group of essays by writer background (Southeast
+Asian learners or native-English writers); the gap is the difference
+in mean score between the two cohorts. \\[2pt]
+Band & The 1--9 integer score an evaluator assigns; the corpus's own
+proficiency labels are CEFR bands (B1, B2). \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Theoretical Framing: Epistemic Injustice and Contrastive Rhetoric}
 \label{sec:theory}
@@ -227,13 +258,13 @@ This thesis makes five contributions:
 \section{Thesis Outline}
 \label{sec:outline}
 
-Chapter~2 reviews four bodies of literature (multi-agent and
-panel-based scoring, inference-time debiasing, cultural bias in LLMs,
-and AES fairness for non-native writers) together with the
-contrastive-rhetoric foundations, and locates the gap this thesis
-occupies. Chapter~3 develops the CAMPS framework and the experimental
-methodology, including the data, the statistical protocol, and the
-alternatives considered. Chapter~4 reports the three experiments and
-discusses the findings, including uncertainty analysis and threats to
-validity. Chapter~5 answers each hypothesis, states the contributions
-and limitations, and outlines future work.
+The thesis follows the research questions in order. Chapter~2
+reviews the literature that frames RQ1 and RQ2 and locates the gap
+this thesis occupies. Chapter~3 develops the CAMPS framework and the
+method: the data, the three experiments (E1 for H1, E2 for H2 and
+H4, E3 for H3), the statistical protocol, and the alternatives
+considered. Chapter~4 reports the experiments in that order and
+discusses what the results mean, why they arose, how they compare
+with prior work, and where they are uncertain. Chapter~5 answers each
+hypothesis, states the contributions and limitations, and outlines
+future work.
