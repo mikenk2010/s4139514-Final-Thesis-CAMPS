@@ -44,31 +44,31 @@ The definition makes two commitments. First, the filter is a property
 of the \emph{evaluator}, not of the essay: the same essay receives
 different treatment under evaluators with different training
 distributions. Second, the deviation is conditional on rhetorical
-tradition rather than on language proficiency; this is what
+tradition rather than on language proficiency. This is what
 distinguishes evaluative epistemic filtering from the legitimate
-scoring of weaker English, and what the band-restricted cohort
+scoring of weaker English. It is also what the band-restricted cohort
 design of Section~\ref{sec:data} and the human-anchored check of
 Section~\ref{sec:results-uncertainty} are built to isolate.
 
-Four conditions jointly sustain the filter: training corpora
+Four conditions jointly sustain the filter. First, training corpora
 over-represent WEIRD cultural contexts, whose value orientation
-models demonstrably absorb \citep{tao2024cultural}; the standards LLM
+models demonstrably absorb \citep{tao2024cultural}. Second, the standards LLM
 evaluators apply are opaque, distributed across parameters rather
 than inspectable as engineered features \citep{vajjala2018automated,
-gallegos2024bias}; diagnostic effort has concentrated on generative
+gallegos2024bias}. Third, diagnostic effort has concentrated on generative
 outputs, leaving the bias categories of \citet{dorleon2026uncovering}
-without an evaluative counterpart; and the observable symptom,
+without an evaluative counterpart. Fourth, the observable symptom,
 L1-linked scoring disparity, is documented
 \citep{gayed2026firstlanguage} but unconnected to any mitigation
 mechanism.
 
 The theory yields three testable signatures, mapping onto the
-hypotheses of Chapter~1: a systematic scoring gap between an
+hypotheses of Chapter~1. The first is a systematic scoring gap between an
 upper-band learner cohort and the native reference, beyond what
-residual quality difference can explain (H1); shrinkage
+residual quality difference can explain (H1). The second is shrinkage
 of that gap under a panel whose members embody different rubric
 interpretations, because their individual filters are partially
-decorrelated (H2); and measurable panel disagreement on precisely the
+decorrelated (H2). The third is measurable panel disagreement on precisely the
 essays where filtering operates, making divergence itself a detection
 signal (H3). The fairness--accuracy boundary (H4) follows from the
 consensus mechanism below.
@@ -80,7 +80,7 @@ CAMPS (Culturally-Aware Multi-Perspective Scoring) operationalises a
 single design principle: if no evaluator judges from nowhere
 (Section~\ref{sec:theory}), fairness is pursued through a
 \emph{plurality} of explicitly declared perspectives rather than a
-pretended neutrality -- five cultural rubric interpretations
+pretended neutrality. In practice this means five cultural rubric interpretations
 (Table~\ref{tab:lens-panel}), each declared in an inspectable system
 prompt rather than hidden in model weights. The framework operates
 entirely at inference time, requires no retraining or weight access,
@@ -138,9 +138,9 @@ S^{*}(E) = \frac{\sum_{i=1}^{k} w_i\, s_i(E)}{\sum_{i=1}^{k} w_i},
 \end{equation}
 with weights initialised equal. Because $S^{*}$ is linear in the
 agents' scores, the consensus cohort gap is the same weighted
-combination of the individual lenses' cohort gaps: reweighting the
+combination of the individual lenses' cohort gaps. Reweighting the
 panel therefore trades the gap against agreement with graded ground
-truth, which is the mechanism behind the fairness--accuracy boundary
+truth. This is the mechanism behind the fairness--accuracy boundary
 hypothesised in H4, and Section~\ref{sec:experimental-design}
 describes how the weight space is swept to locate it empirically.
 
@@ -152,9 +152,9 @@ The framework's detection signal is the dispersion of the panel:
   \bigl(s_i(E) - S^{*}(E)\bigr)^{2}}.
 \end{equation}
 A low BDS means the cultural interpretations converge and the
-automated score can be trusted; a high BDS means the lenses disagree,
+automated score can be trusted. A high BDS means the lenses disagree,
 which under the working theory is the signature of an essay whose
-score depends on culturally contingent expectations, and the essay is
+score depends on culturally contingent expectations. Such an essay is
 flagged for human review. Part~B replaces the pilot's hand-set
 threshold ($\tau = 0.75$) with one calibrated by ROC analysis against
 multi-rater human ground truth (H3;
@@ -207,11 +207,11 @@ Dorleon \& Shujaa \citeyearpar{dorleon2026uncovering} & \checkmark & \checkmark 
 \end{table}
 
 Relative to the Part~A pilot, the framework specified here differs in
-three respects, each developed in the following sections: the panel is
+three respects, each developed in the following sections. The panel is
 scaled from three to five cultural interpretations with a
-meta-adjudicator (Section~\ref{sec:scaling-panel}), the corpus and
+meta-adjudicator (Section~\ref{sec:scaling-panel}). The corpus and
 cohort design are rebuilt on data that supports the comparison
-(Section~\ref{sec:data}), and both the consensus weights and the BDS
+(Section~\ref{sec:data}). Both the consensus weights and the BDS
 threshold are calibrated empirically rather than hand-set
 (Section~\ref{sec:experimental-design}).
 
@@ -221,7 +221,7 @@ threshold are calibrated empirically rather than hand-set
 The pilot panel comprised three rubric interpretations: Western,
 Southeast Asian, and a neutral regulatory ideal. Scaling to five
 requires a principled answer to \emph{which} lenses to add. A
-candidate lens must be (i)~\emph{documented} in the
+candidate lens must satisfy three criteria. It must be (i)~\emph{documented} in the
 contrastive-rhetoric literature, so the CRI prompt encodes
 scholarship rather than stereotype; (ii)~\emph{validatable} against a
 corpus cohort from the corresponding tradition; and
@@ -275,7 +275,7 @@ where $\rho_i$ is agent $i$'s rationale. The adjudicator is blind to
 writer identity and cohort metadata and runs at $t = 0.0$. Where the
 weighted mean treats every judgment as exchangeable evidence, the
 adjudicator can weigh \emph{arguments}, discounting an agent whose
-rationale misreads the essay; E2 compares the two aggregation paths
+rationale misreads the essay. E2 compares the two aggregation paths
 directly, with BDS computed from raw agent scores in both conditions.
 Responding to the caution of \citet{mirza2025malibu}, deliberation is
 added \emph{after} independent judgment, never during scoring.
@@ -289,7 +289,7 @@ learner essays identified by L1 or country; a native-English
 reference cohort writing under identical task conditions; a
 human-assigned proficiency measure; and licence terms permitting
 research at this scale. A systematic search of the major public
-learner corpora found exactly one satisfying all four: TOEFL11
+learner corpora found exactly one satisfying all four. TOEFL11
 \citep{blanchard2013toefl11} has no Southeast Asian L1 and no native
 cohort, ICLE~v3 lacks Southeast Asian L1s, ELLIPSE lacks L1 labels,
 and EFCAMDAT lacks a native reference.\footnote{Corpus contents
@@ -339,14 +339,14 @@ raters of varied L1 and occupational backgrounds (11{,}200 ratings)
 Figure~\ref{fig:sampling-flow} summarises the sample. The Southeast
 Asian cohort draws from the Thailand, Indonesia, and Philippines
 components of WE, restricted to the two upper proficiency bands
-(B1\_2, B2+) and stratified by topic and band; the native cohort
+(B1\_2, B2+) and stratified by topic and band. The native cohort
 draws from ENS, which ICNALE does not band (native writers are the
-corpus's reference group); $n \approx 100$ per cohort under a fixed
+corpus's reference group). Sampling yields $n \approx 100$ per cohort under a fixed
 seed. Restricting the learner cohort to its upper bands narrows the
 proficiency range so that a cohort gap cannot be attributed to weak
-English, but it cannot equate the cohorts: any residual quality
+English, but it cannot equate the cohorts. Any residual quality
 difference between upper-band learners and native writers remains
-inside the gap, which is therefore interpreted as an \emph{upper
+inside the gap. The gap is therefore interpreted as an \emph{upper
 bound} on evaluative filtering (Section~\ref{sec:metrics}), with a
 human-anchored check on the GRA essays reported in
 Section~\ref{sec:results-uncertainty}. The GRA's 140 essays are
@@ -364,13 +364,13 @@ reproducibility manifest records essay identifiers only.}
 \subsection*{Scoring target and ground truth}
 Every agent, including the single-agent baseline, returns an integer
 band from 1 to 9 on the IELTS Coherence and Cohesion descriptors
-(the prompts are verbatim in Appendix~\ref{chap:appendix-prompts});
-panel consensus is the mean of these integers and so takes
+(the prompts are verbatim in Appendix~\ref{chap:appendix-prompts}).
+Panel consensus is the mean of these integers and so takes
 non-integer values. Agreement with ground truth is computed against
 the corpus's CEFR bands for the learner cohort and against the GRA's
 multi-rater consensus for the validation set. Inspection of the downloaded GRA archive (v2.1)
-confirms its structure: each of the 140 essays carries ratings from
-80 raters of varied L1 backgrounds, each scoring ten analytic
+confirms its structure. Each of the 140 essays carries ratings from
+80 raters of varied L1 backgrounds. Each rater scores ten analytic
 dimensions (0--10) grouped as Language, Content, and Attitude, plus a
 holistic score out of 100. Per-essay rating dispersion across the 80
 raters provides the human-disagreement benchmark against which BDS is
@@ -378,9 +378,9 @@ compared. Two properties of the archive shape the E3 design. First,
 all 140 rated essays address the part-time-job prompt, so the
 validation set is single-topic. Second, the raters disagree
 substantially among themselves (mean within-essay standard deviation
-of the Content ratings $\approx 1.8$ on the 0--10 scale):
-disagreement among evaluators, human or artificial, is the normal
-condition of essay assessment, and the question E3 asks is whether
+of the Content ratings $\approx 1.8$ on the 0--10 scale).
+Disagreement among evaluators, human or artificial, is the normal
+condition of essay assessment. The question E3 asks is whether
 the panel's divergence tracks the essays on which \emph{humans}
 diverge.
 
@@ -403,7 +403,7 @@ Sonnet), confining the costlier extended conditions to the evaluators
 where mitigation is material. All conditions share the same
 determinism guarantees: temperature fixed at $0.0$, structured JSON
 outputs, exact model versions pinned in the experiment configuration,
-and a fixed random seed for all sampling, so that every result in
+and a fixed random seed for all sampling. As a result, every result in
 Chapter~4 is reproducible from the released configuration, prompts,
 and essay-identifier manifest.
 
@@ -435,8 +435,8 @@ four models, establishing whether the gap exists at scale (H1) and
 providing the $k{=}3$ reference for E2.
 
 \textbf{Experiment E2 (extended architecture)} scores the same essays
-under the five-agent panel, with and without the meta-adjudicator,
-and sweeps the consensus weights in steps of $0.05$ under
+under the five-agent panel, with and without the meta-adjudicator.
+It also sweeps the consensus weights in steps of $0.05$ under
 $\sum_i w_i = 1$, tracing the fairness--accuracy frontier from which
 H4's boundary is read off empirically. The ablation over $k$
 separates the contribution of panel size from that of the
@@ -446,9 +446,9 @@ adjudicator.
 140 GRA essays. Human rating dispersion provides the reference notion
 of a genuinely contested essay, operationalised as the top quartile
 of per-essay standard deviation across the 80 raters' Content
-ratings; the threshold $\tau$ is calibrated on a random half of the
-GRA set (Youden's $J$) and evaluated on the held-out half, reporting
-sensitivity, false-positive rate, and area under the ROC curve.
+ratings. The threshold $\tau$ is calibrated on a random half of the
+GRA set (Youden's $J$) and evaluated on the held-out half. Sensitivity,
+false-positive rate, and area under the ROC curve are reported.
 
 \section{Alternatives Considered}
 \label{sec:alternatives}
@@ -468,9 +468,9 @@ infeasible for API-only access by construction
 
 \emph{Single-prompt debiasing}, instructing one evaluator to ``score
 fairly across cultures'', collapses the plurality of standards back
-into a single opaque judgment, so bias can only be asserted away, not
-measured, and it yields no divergence signal to calibrate a review
-trigger against; the single-agent baseline in E1 provides the
+into a single opaque judgment. Bias can then only be asserted away, not
+measured, and no divergence signal remains to calibrate a review
+trigger against. The single-agent baseline in E1 provides the
 nearest empirical comparison, though this specific instruction was
 not separately run. \emph{Inter-agent debate}, as in MACD
 \citep{tan2026macd}, is rejected because interaction can amplify bias
@@ -486,10 +486,10 @@ eliminated on design grounds in Section~\ref{sec:data}.
 \label{sec:ethics}
 
 This research analyses de-identified secondary data only, under an
-RMIT human research ethics exemption (Project ID 31036): no attempt
+RMIT human research ethics exemption (Project ID 31036). No attempt
 is made to re-identify any writer, no essay text is redistributed,
-storage follows the project's data management plan, no external
-participants are recruited, and any future extension involving human
+storage follows the project's data management plan, and no external
+participants are recruited. Any future extension involving human
 participants would require a new ethics assessment. Two
 considerations shape the design rather than merely constrain it.
 First, cultural essentialism: agents are calibrated to
@@ -514,8 +514,8 @@ the native and Southeast Asian cohorts,
 computed on an upper-band learner cohort and the unbanded native
 reference. Absent filtering the gap need not be zero, since native
 writers may differ in quality from upper-band learners even under a
-neutral judge; $\Delta$ is therefore an upper bound on filtering, and
-the treatment effects of interest are \emph{changes} in $\Delta$
+neutral judge. $\Delta$ is therefore an upper bound on filtering. The
+treatment effects of interest are \emph{changes} in $\Delta$
 between conditions on the same essays, which the residual quality
 difference does not affect. This operationalisation follows the pilot
 and is forced by a property of the reference data: the native cohort
@@ -536,9 +536,9 @@ multi-rater human consensus for the GRA validation set (E3).
 every proportion or $\kappa_w$ is reported with a 95\% percentile
 bootstrap confidence interval (10{,}000 resamples, fixed seed).
 Following the statistical-reporting guidance adopted for this thesis,
-confidence intervals are the primary inferential device;
+confidence intervals are the primary inferential device.
 $p$-values are reported only for the pre-registered paired-bootstrap
-tests of gap change (one-sided probability of no reduction), and no
+tests of gap change (one-sided probability of no reduction). No
 post-hoc significance testing is performed on exploratory findings.
 
 \textbf{Detection metrics.} BDS performance in E3 is reported as
@@ -547,10 +547,10 @@ held-out split, with the calibrated threshold $\tau$ stated
 explicitly.
 
 \textbf{Weight calibration.} The E2 weight sweep reports the full
-frontier rather than a single optimum: at each weight vector, the
+frontier rather than a single optimum. At each weight vector, the
 cohort score gap (fairness) and $\kappa_w$ against CEFR bands on the
 banded learner cohort (accuracy; the native reference is unbanded)
-are recorded, and the H4 boundary is read off the resulting Pareto
+are recorded. The H4 boundary is read off the resulting Pareto
 frontier.
 
 \textbf{Reproducibility.} All tables and figures in Chapter~4 are

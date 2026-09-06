@@ -3,10 +3,10 @@
 
 The literature relevant to this thesis was searched between July and
 September 2026 using Google Scholar, arXiv, the ACL Anthology, and the
-Springer and IEEE digital libraries, with combinations of the terms
+Springer and IEEE digital libraries. The search combined the terms
 ``automated essay scoring'', ``multi-agent'', ``LLM-as-a-judge'',
 ``cultural bias'', ``debiasing'', ``fairness'', ``non-native writers'',
-and ``contrastive rhetoric'', supplemented by backward and forward
+and ``contrastive rhetoric''. It was supplemented by backward and forward
 citation chasing from key papers. Every reference cited in this thesis
 was verified against its primary source. The review is organised
 thematically: multi-agent and panel-based scoring
@@ -27,33 +27,33 @@ different reasons.
 In automated essay scoring, multi-agent designs pursue
 \emph{accuracy}. CAFES \citep{su2025cafes} orchestrates scorer,
 feedback-manager, and reflective-reviser agents (average 21\% QWK
-improvement over direct prompting); Roundtable Essay Scoring
+improvement over direct prompting). Roundtable Essay Scoring
 \citep[RES;][]{jang2025roundtable} consolidates trait-based evaluator
 agents through simulated discussion (up to 34.86\% on ASAP,
-zero-shot); related designs add debate with retrieval
+zero-shot). Related designs add debate with retrieval
 \citep{keramati2026madrag} and component recognition
 \citep{wang2025autoscore}. What unites this family is the axis along
 which agents differ: \emph{function} or \emph{trait}. None varies the
 cultural interpretation of the rubric itself, and none evaluates
-fairness across writer cohorts: improvements are reported on
-aggregate agreement, leaving open the possibility that a more
+fairness across writer cohorts. Improvements are reported on
+aggregate agreement. This leaves open the possibility that a more
 accurate panel is uniformly accurate for some writers and uniformly
 harsh for others.
 
 In the LLM-evaluation community, panel designs pursue \emph{bias
 reduction}. \citet{verga2024replacing} replaced a single large judge
 model with a Panel of LLM evaluators (PoLL) drawn from three different
-model families, and found that the panel not only correlated better
-with human judgment across six datasets but reduced intra-model
+model families. They found that the panel not only correlated better
+with human judgment across six datasets but also reduced intra-model
 self-preference bias, at roughly a seventh of the cost. This is, to
 date, the clearest empirical demonstration that judge \emph{diversity}
 counteracts judge \emph{bias}. The diversity axis, however, is model
 provider, chosen to decorrelate model-specific quirks rather than to
 represent any substantive difference in evaluative standards. The
-present thesis can be read as a targeted transplant: it takes the
+present thesis can be read as a targeted transplant. It takes the
 panel-of-judges mechanism whose bias-reducing effect
 \citet{verga2024replacing} established, and re-axes the diversity from
-provider to \emph{cultural rubric interpretation}, where the bias to be
+provider to \emph{cultural rubric interpretation}. Here the bias to be
 countered is cultural rather than idiosyncratic.
 
 \section{Inference-Time Debiasing}
@@ -65,7 +65,7 @@ continuations during generation against a fairness reward model and
 discards low-reward segments, enforcing fairness on \emph{generated
 text} for both open-source and API-based models. The framework
 demonstrates that meaningful debiasing is achievable purely at
-inference time, a design constraint this thesis shares, but its
+inference time, a design constraint this thesis shares. But its
 unit of intervention is the output token stream, which has no analogue
 when the model's output is a single scalar score.
 
@@ -76,10 +76,10 @@ rate of unbiased responses over single-model baselines, and its
 central finding, that functionally-roled agent frameworks lack the
 explicit cultural representation cross-cultural fairness needs,
 independently corroborates the design principle behind CAMPS. The two
-frameworks nonetheless answer different questions: MACD debiases
-\emph{what a model says} in open-ended generation; CAMPS debiases
-\emph{how a model judges}, where the deliverable is a score whose
-fairness can be measured cohort by cohort, and where disagreement
+frameworks nonetheless answer different questions. MACD debiases
+\emph{what a model says} in open-ended generation. CAMPS debiases
+\emph{how a model judges}: the deliverable is a score whose
+fairness can be measured cohort by cohort, and disagreement
 between cultural agents is exploited as a detection signal rather than
 dissolved through debate.
 
@@ -110,9 +110,9 @@ applicability to any evaluator, including closed models.
 That LLMs carry a Western-centric evaluative disposition is no longer
 seriously contested. \citet{tao2024cultural} compared five OpenAI model
 generations against nationally representative values-survey data for
-107 countries and found that model responses consistently resemble
-those of English-speaking and Protestant-European populations: the
-WEIRD alignment that this thesis takes as the distal cause of
+107 countries. They found that model responses consistently resemble
+those of English-speaking and Protestant-European populations. This is
+the WEIRD alignment that this thesis takes as the distal cause of
 evaluative epistemic filtering.
 
 The proximal framework for this thesis comes from the supervisor's
@@ -135,7 +135,7 @@ Two further studies shaped how cultural calibration is implemented in
 this thesis. SEA-HELM, a community-built evaluation suite for
 Southeast Asian languages, argues that benchmarks produced by machine
 translation or synthetic generation without community input lose
-cultural authenticity \citep{susanto2025seahelm}; the same reasoning
+cultural authenticity \citep{susanto2025seahelm}. The same reasoning
 led this thesis to ground its cultural lenses in the contrastive
 rhetoric literature and in a corpus built in the region, rather than
 in ad hoc persona descriptions. More cautionary still,
@@ -179,10 +179,10 @@ fairness literature it extends, however, it stops at \emph{measurement}: no
 mitigation framework is proposed, and the native/non-native design
 this thesis requires is out of scope because TOEFL11 contains no
 native-English cohort. Related recent work has begun to probe
-mechanism as well as outcome: \citet{yang2025demographics} showed that
+mechanism as well as outcome. \citet{yang2025demographics} showed that
 prompt-based LLM scorers can infer writer demographics, including
-English-learner status, from essay text alone, and that scoring
-behaviour shifts once such a status is recognised.
+English-learner status, from essay text alone. They also showed that
+scoring behaviour shifts once such a status is recognised.
 
 Taken together, this literature establishes the disparity, its
 model-dependence, and hints at its mechanism, while leaving the
@@ -219,11 +219,11 @@ is anchored by the ICNALE project \citep{ishikawa2023icnale}, whose
 topic-controlled design allows rhetorical variation to be observed
 under matched task conditions across ten Asian countries and a
 native-English reference cohort. This literature performs two duties in
-the present thesis. It supplies the content of the cultural rubric
+the present thesis. First, it supplies the content of the cultural rubric
 interpretations in Chapter~3, where each CRI prompt is grounded in
 documented rhetorical conventions rather than improvised cultural
-personas, and it supplies the defence against the objection that
-culturally-calibrated agents merely role-play stereotypes: the
+personas. Second, it supplies the defence against the objection that
+culturally-calibrated agents merely role-play stereotypes. The
 calibrations are drawn from a half-century of contrastive-rhetoric
 scholarship, and their behaviour is tested empirically in Chapter~4.
 
@@ -234,13 +234,13 @@ Three literatures converge on the problem this thesis addresses, and
 each stops short of it in a characteristic way. The multi-agent scoring
 literature (Section~\ref{sec:lit-multiagent}) established that panels
 of evaluators outperform single judges (CAFES and RES on accuracy,
-PoLL on bias) but defines panel diversity by function, trait, or
-model provider, never by cultural interpretation of the rubric, and
+PoLL on bias). But it defines panel diversity by function, trait, or
+model provider, never by cultural interpretation of the rubric, and it
 does not measure fairness across writer cohorts. The inference-time
 debiasing literature (Section~\ref{sec:lit-debias}) established that
 bias can be mitigated without retraining, and MACD specifically
 established that \emph{explicit cultural representation} in agent
-frameworks matters; but its object is generated text, not evaluative
+frameworks matters. But its object is generated text, not evaluative
 judgment, and it dissolves inter-agent disagreement rather than
 exploiting it. The cultural-bias literature
 (Section~\ref{sec:lit-culture}) established the WEIRD disposition of

@@ -25,19 +25,19 @@ Three findings emerge. First, the evaluative gap exists on every model
 tested. Under the baseline evaluator, native-cohort essays received
 higher mean scores than upper-band Southeast Asian essays on all four
 models, and each gap's 95\% confidence interval excludes
-zero: 1.18 bands [0.86, 1.50] for Claude Sonnet, 0.80 [0.60, 1.00] for
+zero. The gaps were 1.18 bands [0.86, 1.50] for Claude Sonnet, 0.80 [0.60, 1.00] for
 GPT-4o, 0.23 [0.07, 0.39] for Qwen3~14B, and 0.19 [0.07, 0.31] for
 Gemini Pro ($n = 100$ per cohort throughout). H1 is therefore
 supported: evaluative epistemic filtering generalises across model
 families, including open-weight models.
 
 Second, the \emph{magnitude} of the gap varied systematically across
-models, spanning a factor of six: Claude Sonnet and GPT-4o exhibited
-the largest gaps, while Gemini Pro and the open-weight Qwen3 showed
+models, spanning a factor of six. Claude Sonnet and GPT-4o exhibited
+the largest gaps. Gemini Pro and the open-weight Qwen3 showed
 gaps four to six times smaller, both scoring within a visibly
 compressed range. This ordering is
 consistent with the working theory's claim that the filter reflects
-the training distribution rather than model quality, although
+the training distribution rather than model quality. But
 provenance is confounded with model scale and score range in this
 sample, so the ordering is reported as an observation rather than a
 causal claim.
@@ -51,11 +51,11 @@ whose baseline gap was already small, the panel produced no change
 ($-0.04$ bands [$-0.16$, $0.09$]). On Gemini Pro, whose baseline gap
 was the smallest of the four, the panel \emph{widened} the gap, from
 0.19 to 0.45 bands (change $-0.26$ [$-0.39$, $-0.13$]). The
-lens-level scores locate the mechanism: within Gemini's panel the
+lens-level scores locate the mechanism. Within Gemini's panel the
 neutral lens scored far higher than the baseline evaluator and with a
 much larger cohort gap (7.18 native vs.\ 6.33 SEA, a 0.85-band gap on
-its own; $n = 100$ per cohort), while the Western and Southeast Asian
-lenses remained compressed. On this model the lens prompts shifted
+its own; $n = 100$ per cohort). The Western and Southeast Asian
+lenses, by contrast, remained compressed. On this model the lens prompts shifted
 how much of the score range was used, not merely which rhetorical
 features were rewarded, and the panel mean inherited the expanded
 lens's gap. This over-correction on a low-bias model is exactly the
@@ -82,9 +82,9 @@ Sections~\ref{sec:results-e2} and~\ref{sec:results-discussion}: the
 panel's effect tracks the size of the bias being mitigated, from
 substantial reduction (large-gap models) through no effect (Qwen3) to
 over-correction (Gemini Pro). Cultural plurality in the evaluator is
-therefore not a free intervention to be applied indiscriminately; it
+therefore not a free intervention to be applied indiscriminately. It
 is a treatment whose dose--response behaviour must be measured per
-model, which is precisely what the BDS flag and the calibration in
+model. That measurement is precisely what the BDS flag and the calibration in
 Experiment~3 are designed to support.
 
 \input{tables/table_e1_qwk}
@@ -92,11 +92,11 @@ Experiment~3 are designed to support.
 \section{Experiment 2: Extended CAMPS Panel (H2, H4)}
 \label{sec:results-e2}
 Experiment E2 extended the panel from three lenses to five, adding
-the East Asian and Mekong lenses, and added the meta-adjudicator,
-scoring the same 200 cohort essays on GPT-4o and Claude Sonnet
-(2{,}200 calls per model: 1{,}000 for the five-lens condition and
+the East Asian and Mekong lenses, and added the meta-adjudicator.
+It scored the same 200 cohort essays on GPT-4o and Claude Sonnet.
+This required 2{,}200 calls per model: 1{,}000 for the five-lens condition and
 1{,}200 for the adjudicated condition, which re-runs the five lenses
-plus the adjudicator).
+plus the adjudicator.
 Table~\ref{tab:e2-ablation} and Figure~\ref{fig:e2-ablation} report
 the ablation.
 
@@ -111,27 +111,27 @@ adjudicator behaved similarly: its final scores gave a gap of 0.52
 remained robust, 0.25 bands [0.15, 0.35], a 31\% reduction
 ($p < 0.0001$), so what E2 rules out is not the panel but the
 premise that its power grows with its size. On Claude Sonnet the
-five-lens panel was significantly \emph{worse} than three lenses: the
+five-lens panel was significantly \emph{worse} than three lenses. The
 gap rose from 0.91 [0.61, 1.21] to 1.01 [0.70, 1.32], a paired
 change of $-0.10$ bands [$-0.15$, $-0.06$], and its advantage over
-baseline weakened to 0.17 [$-0.02$, 0.36]; the adjudicator changed
+baseline weakened to 0.17 [$-0.02$, 0.36]. The adjudicator changed
 nothing on this model (gap 1.01 [0.69, 1.34], paired change 0.001
 [$-0.08$, $0.08$]). H2's second clause, that the panel should not
-degrade agreement with the corpus's proficiency bands, did hold:
+degrade agreement with the corpus's proficiency bands, did hold.
 QWK against bands on the Southeast Asian cohort rose from 0.056
 (baseline) to 0.088 ($k = 3$) and 0.086 ($k = 5$) on GPT-4o, and
-from 0.135 to 0.168 and 0.169 on Claude Sonnet, so no configuration
+from 0.135 to 0.168 and 0.169 on Claude Sonnet. So no configuration
 traded fairness for band agreement, though all values are low.
 Hypothesis H2, which predicted stronger mitigation at $k = 5$ than
 $k = 3$, is therefore rejected on both models tested.
 
 The lens-level scores suggest why, and
-Figure~\ref{fig:e2-lens-radar} makes the pattern visible at a glance:
-each axis is one cultural lens, and the native cohort's profile
+Figure~\ref{fig:e2-lens-radar} makes the pattern visible at a glance.
+Each axis is one cultural lens. The native cohort's profile
 (outer polygon) encloses the Southeast Asian cohort's on every lens
 of both models, the graphical signature of a penalty that no single
 lens escapes. The shape of the two profiles, however, is nearly
-parallel on the two added lenses: East Asian and Mekong scored the
+parallel on the two added lenses. East Asian and Mekong scored the
 cohorts almost in lock-step, so their inclusion diluted, rather than
 reinforced, the corrective contrast that the Southeast Asian lens
 contributes. On Claude the five-lens panel also deepened the severity
@@ -168,13 +168,13 @@ reduction on GPT-4o and a significant regression on Claude Sonnet.}
 The weight sweep addresses H4 directly. Recomputing the five-lens
 consensus at every weight vector on a $\Delta = 0.05$ simplex grid
 (10{,}626 vectors, zero additional API calls) traces the
-fairness--accuracy frontier in Figure~\ref{fig:e2-frontier}, with
-accuracy measured as QWK against the corpus's CEFR bands on the
-banded Southeast Asian cohort and fairness as the absolute cohort
+fairness--accuracy frontier in Figure~\ref{fig:e2-frontier}.
+Accuracy is measured as QWK against the corpus's CEFR bands on the
+banded Southeast Asian cohort, and fairness as the absolute cohort
 gap. The frontier is shallow. On GPT-4o, moving from equal weights
 (gap 0.55, QWK 0.086) to the gap-minimising vector, which loads
 entirely on the Southeast Asian lens, cut the gap to 0.32 while
-QWK changed by only $-0.007$; on Claude Sonnet the gap-minimising
+QWK changed by only $-0.007$. On Claude Sonnet the gap-minimising
 vector \emph{raised} QWK, from 0.169 to 0.190, while cutting the gap
 from 1.01 to 0.79. Within the operating range measured here,
 fairness and validity were not in material tension: H4's predicted
@@ -201,9 +201,9 @@ agreement with the corpus's proficiency bands.}
 Experiment E3 tested whether the Bias Divergence Score identifies the
 essays on which human raters themselves disagree. The five-lens panel
 scored all 140 GRA essays on GPT-4o and Claude Sonnet (700 calls per
-model); each essay carries ratings from 80 human raters on the four
+model). Each essay carries ratings from 80 human raters on the four
 Content dimensions, whose per-essay standard deviation defines the
-human-disagreement ground truth, with ``contested'' operationalised
+human-disagreement ground truth. ``Contested'' is operationalised
 as the top dispersion quartile.
 Half the essays, selected by the pre-registered seed, calibrated the
 threshold $\tau$ (Youden's index); the other half was held out for
@@ -211,9 +211,9 @@ evaluation.
 
 H3 is not supported, on either model. On GPT-4o, at the calibrated
 $\tau = 0.40$, held-out sensitivity reached 0.833 ($n = 70$), but at
-a false-positive rate of 0.615, nowhere near the pre-registered
-target of at least 90\% sensitivity at or below 5\% false positives;
-the area under the ROC curve was 0.639 and the correlation between
+a false-positive rate of 0.615. This is nowhere near the pre-registered
+target of at least 90\% sensitivity at or below 5\% false positives.
+The area under the ROC curve was 0.639 and the correlation between
 BDS and human dispersion was $r = 0.23$ ($n = 140$). On Claude Sonnet
 the association was absent: at the same threshold, sensitivity 0.833
 came with a false-positive rate of 0.865, held-out AUC 0.481, and
@@ -241,16 +241,16 @@ concentrate BDS onto a handful of values, visible as horizontal bands
 in the scatter, leaving the score too coarse to rank 140 essays
 against a continuous dispersion measure. The conceptual reason is a
 construct mismatch that the case study of
-Section~\ref{sec:results-uncertainty} makes concrete: BDS measures
+Section~\ref{sec:results-uncertainty} makes concrete. BDS measures
 \emph{cultural} contestation, disagreement between calibrated lenses
-about rhetorical form, whereas the dispersion of 80 raters aggregates
+about rhetorical form. The dispersion of 80 raters, by contrast, aggregates
 every source of human disagreement, including severity, halo, and
-attention effects unrelated to culture, and the GRA essays vary over
+attention effects unrelated to culture. Moreover, the GRA essays vary over
 only a narrow dispersion range on a single topic. A detector of
 cultural contestation was evaluated against a benchmark of general
 disagreement and, unsurprisingly in hindsight, tracked it weakly.
-The honest conclusions are that the review-trigger claim of the
-working theory is unproven at this operating point, and that
+Two honest conclusions follow. First, the review-trigger claim of the
+working theory is unproven at this operating point. Second,
 validating it properly requires either continuous lens scores
 (restoring resolution to BDS) or human annotation of \emph{cultural}
 contestation specifically, which no public corpus currently
@@ -268,7 +268,7 @@ native scores by 0.56 ($n = 100$ each); on Claude Sonnet, by 0.71 and
 0.98 respectively. The gap therefore narrows substantially through
 native-score deflation rather than SEA-score elevation. Whether this
 constitutes fairness or levelling down is taken up in
-Section~\ref{sec:results-discussion}; the empirical point is that the
+Section~\ref{sec:results-discussion}. The empirical point is that the
 panel makes the frontier models harsher and more even-handed at once,
 while leaving the low-gap model (Qwen3, $-0.04$ and $-0.01$)
 essentially unchanged.
@@ -301,9 +301,9 @@ discreteness is a design limit of the small panel, and one motivation
 for the five-agent panel of E2. Mean BDS was of similar magnitude in
 both cohorts (for example 0.39 SEA vs.\ 0.51 native on GPT-4o), so
 panel disagreement alone does not yet separate the cohorts at
-$k = 3$; the calibrated evaluation of divergence as a detection
+$k = 3$. The calibrated evaluation of divergence as a detection
 signal, against human ground truth, was E3's finding
-(Section~\ref{sec:results-e3}): the coarseness anticipated here
+(Section~\ref{sec:results-e3}). The coarseness anticipated here
 proved decisive.
 
 \textbf{Human-anchored check.} The cohort score gap is measured
@@ -317,22 +317,22 @@ $r = 0.91$ (GPT-4o) and $r = 0.88$ (Claude Sonnet) across all 140
 essays, far above the band-level QWK, because the human mean is a
 fine-grained reference. Standardising both scales and taking the
 LLM$-$human residual by writer group, the panel showed no
-cohort-specific deviation between the two learner cohorts: the
+cohort-specific deviation between the two learner cohorts. The
 Southeast Asian ($n = 44$) minus East Asian ($n = 80$) residual
 difference was $+0.06$ SD [$-0.07$, $+0.19$] on GPT-4o and $-0.04$
 [$-0.21$, $+0.13$] on Claude Sonnet. The Western lens alone likewise
 showed no learner-cohort residual ($+0.05$ [$-0.13$, $+0.23$] and
-$+0.12$ [$-0.10$, $+0.35$]), while the Southeast Asian lens on GPT-4o
+$+0.12$ [$-0.10$, $+0.35$]). The Southeast Asian lens on GPT-4o, however,
 was \emph{more generous} to Southeast Asian essays than the human
-raters ($+0.24$ [$+0.07$, $+0.41$]), a lens-calibration lean that the
+raters ($+0.24$ [$+0.07$, $+0.41$]). This is a lens-calibration lean that the
 consensus averages out. The GRA set contains only four native-speaker
 essays, too few for inference; descriptively, the panel scored them
 below the human raters ($-0.22$ and $-0.38$ SD), in the direction of
-the severity shift noted above. Two cautions apply: the GRA human
+the severity shift noted above. Two cautions apply. First, the GRA human
 raters themselves ordered the groups native $>$ East Asian $>$
 Southeast Asian (Content means 6.35, 5.47, 4.87 on the 0--10 scale),
 confirming that raw cohort gaps partly reflect quality differences
-humans also perceive; and the analysis is post-hoc and single-topic.
+humans also perceive. Second, the analysis is post-hoc and single-topic.
 Its value is bounded but real: under a human anchor, the panel
 treats the two learner traditions alike, and the native$-$SEA gap of
 E1 should be read as an upper bound on filtering rather than a pure
@@ -341,10 +341,10 @@ bias estimate.
 \textbf{A concrete case.} The highest-divergence Southeast Asian
 essay under GPT-4o (a Philippine B1\_2 essay, $\mathrm{BDS} = 0.94$)
 illustrates the theorised mechanism directly. The Western-calibrated
-agent scored it 5.0, noting the absence of upfront thesis structure;
-the SEA-calibrated agent scored the same essay 7.0, describing ``a
+agent scored it 5.0, noting the absence of upfront thesis structure.
+The SEA-calibrated agent scored the same essay 7.0, describing ``a
 coherent and cohesive structure, with the thesis emerging through
-contextual development''; the neutral agent agreed at 7.0. The
+contextual development''. The neutral agent agreed at 7.0. The
 disagreement is not noise: it is two documented rubric interpretations
 reaching different verdicts on the same rhetorical choice, which is
 precisely the signal BDS is designed to expose.
@@ -362,13 +362,13 @@ cohort-level conclusions only. A second construct risk concerns the
 agents themselves: a prompted ``cultural lens'' may perform a
 stereotype of a tradition rather than a calibration to it, and
 cultural-alignment evaluations of LLMs can be unstable across
-elicitation choices. Three design features address this: each CRI
+elicitation choices. Three design features address this. First, each CRI
 prompt is grounded in named contrastive-rhetoric sources rather than
-improvised (Section~\ref{sec:scaling-panel}); the Western and
-Southeast Asian lenses are checked against their corpus cohorts,
-whereas the East Asian and Mekong lenses, though validating cohorts
-exist in the corpus, were not separately validated in E1--E3 and
-their behaviour is known only through the panel; and all runs are
+improvised (Section~\ref{sec:scaling-panel}). Second, the Western and
+Southeast Asian lenses are checked against their corpus cohorts.
+The East Asian and Mekong lenses, by contrast, were not separately
+validated in E1--E3, though validating cohorts exist in the corpus,
+and their behaviour is known only through the panel. Third, all runs are
 deterministic, removing sampling variation from the elicitation.
 
 \textbf{Internal validity.} Scores may be sensitive to prompt wording
@@ -398,16 +398,16 @@ performed (Section~\ref{sec:metrics}).
 \section{Discussion}
 \label{sec:results-discussion}
 
-In plain terms, the experiments found that current language models
+In plain terms, the experiments found the following. Current language models
 score Southeast Asian students' essays lower than native speakers'
-essays of matched proficiency, on every model tested; that the size
-of this penalty differs six-fold across models; that a small panel of
+essays of matched proficiency, on every model tested. The size
+of this penalty differs six-fold across models. A small panel of
 culturally-calibrated evaluators removes about a quarter of the
 penalty on the models where it is largest, while over-correcting on
-the model where it is smallest; that enlarging the panel from three
-lenses to five adds nothing and can subtract; that reweighting the
+the model where it is smallest. Enlarging the panel from three
+lenses to five adds nothing and can subtract. Reweighting the
 panel can buy substantial gap reduction at almost no cost in
-agreement with the corpus's proficiency labels; and that the panel's
+agreement with the corpus's proficiency labels. And the panel's
 internal disagreement, as currently measured, does not reliably
 predict which essays human raters dispute.
 
@@ -448,14 +448,15 @@ effective where bias is large, inert where it is small, and
 over-correcting where it is smallest. The first two arms are the
 signature of a decorrelation mechanism rather than a blanket
 adjustment, supporting the design argument of
-Section~\ref{sec:camps-framework}; the third arm, Gemini Pro's
+Section~\ref{sec:camps-framework}. The third arm, Gemini Pro's
 widened gap, shows that the same lens prompts that decorrelate a
 strongly filtered evaluator can perturb the scoring behaviour of a
-weakly filtered one, in its case by expanding the neutral lens's use
-of the score range. The practical reading is that CAMPS should be
+weakly filtered one. In Gemini Pro's case the perturbation took the
+form of the neutral lens expanding its use of the score range. The
+practical reading is that CAMPS should be
 deployed \emph{after} a baseline audit of the kind E1 provides, and
 only on evaluators whose measured bias clears the panel's own
-perturbation floor; a framework that ships with its own audit
+perturbation floor. A framework that ships with its own audit
 instrument makes this an operational check rather than a research
 exercise.
 
@@ -463,17 +464,17 @@ A natural objection deserves direct treatment: are current frontier
 models not simply too capable for cultural bias to matter? The E1
 results answer empirically. The most capable models in the set showed
 the \emph{largest} gaps, not the smallest, because capability and
-evaluative neutrality are different properties: a model can apply a
+evaluative neutrality are different properties. A model can apply a
 culturally partial standard with great fluency, and the fluency of its
 justifications makes the partiality harder, not easier, to see.
 Moreover, the six-fold variation in gap size across vendors means the
 choice of scoring model is itself a fairness decision, one that
 institutions currently make without evidence. Even under a future
 model with no measurable gap, the contribution of this thesis would
-stand as the audit instrument by which such a claim is verified:
-band-restricted cohort measurement, divergence-based detection, and a
-human-disagreement benchmark, re-runnable on any model at negligible
-cost.
+stand as the audit instrument by which such a claim is verified.
+That instrument comprises band-restricted cohort measurement,
+divergence-based detection, and a human-disagreement benchmark,
+re-runnable on any model at negligible cost.
 
 The severity shift documented in
 Section~\ref{sec:results-uncertainty} raises a question the fairness
@@ -485,7 +486,7 @@ essays, this is a correction; if not, it is a cost. The evidence
 gathered here bounds the question without settling it. The weight
 sweep shows that the equalisation obtainable by reweighting comes at
 negligible cost, and on Claude Sonnet a small gain, in agreement with
-the corpus's own proficiency bands, so whatever is being removed from
+the corpus's own proficiency bands. So whatever is being removed from
 native scores is not information those bands contain. But bands are
 coarse, and E3's construct mismatch means the GRA human ratings
 cannot arbitrate directly; settling correction-versus-cost requires
@@ -500,9 +501,9 @@ does not yet survive scrutiny is the panel as an autonomous
 \emph{triage} instrument: BDS at integer resolution is a coarse
 signal, honestly reported as such. A version of this thesis that
 claimed all four hypotheses were confirmed would have been less
-useful than the one the data wrote: the field's working assumption
+useful than the one the data wrote. The field's working assumption
 that more perspectives are monotonically better is contradicted on
-two models, and the popular idea of using judge disagreement as a
+two models. And the popular idea of using judge disagreement as a
 router is shown to need a construct-valid benchmark before it can be
 trusted. Both null results test prespecified hypotheses on the full
 sample and carry the same evidentiary weight as the confirmations.

@@ -42,27 +42,27 @@ H4 trade-off boundary & Supported (shallow) &
 \end{tabular}
 \end{table}
 
-Three sentences interpret the table. Evaluative epistemic filtering
+The table is read as follows. Evaluative epistemic filtering
 is real, general across model families, six-fold heterogeneous in
 magnitude, and concentrated on mid-proficiency writers (H1).
-Mitigation works where bias is large but is driven by lens
-composition rather than lens count, and can over-correct where bias
-is minimal, so cultural plurality is a treatment whose dose must be
-measured per model, not a universally safe default (H2, H4; accuracy
+Mitigation works where bias is large, but it is driven by lens
+composition rather than lens count, and it can over-correct where bias
+is minimal. Cultural plurality is therefore a treatment whose dose must be
+measured per model, not a universally safe default (H2, H4). Accuracy
 throughout is operationalised on the banded learner cohort, the
-native reference being unbanded). The
+native reference being unbanded. The
 panel's divergence signal, at integer resolution, does not track
 general human disagreement, so the review-trigger use of BDS remains
 a hypothesis for future work rather than a validated capability
 (H3).
 
-Answering the research questions: RQ1 is answered affirmatively, with
+Turning to the research questions, RQ1 is answered affirmatively, with
 the qualification that the filter's strength is a property of the
-individual model family; RQ2 is answered conditionally: inference-time
+individual model family. RQ2 is answered conditionally. Inference-time
 cultural plurality mitigates the penalty where it is material, at
 negligible measured cost on the corpus's coarse band measure and
 with panel scores tracking 80-rater human consensus at $r \approx
-0.9$, but its self-diagnostic signal is not yet reliable enough to
+0.9$. But its self-diagnostic signal is not yet reliable enough to
 route essays autonomously.
 
 \section{Contributions}
@@ -74,13 +74,13 @@ LLM-driven scoring (Definition~\ref{def:eef}), grounded in epistemic
 injustice and contrastive rhetoric. Architecturally, it specifies
 CAMPS, a culturally-calibrated scoring panel with a divergence-based
 human-review trigger, extending multi-perspective bias mitigation
-from generation \citep{dorleon2026uncovering} to evaluation, and
-empirically bounds its design space: three well-chosen lenses
+from generation \citep{dorleon2026uncovering} to evaluation. It also
+empirically bounds the design space: three well-chosen lenses
 suffice, and neither enlarging the panel nor adding an adjudicator
 yielded further gain. Empirically, it
 evaluates the framework on topic-controlled ICNALE cohorts across
-four model families, confirming the existence claim at scale while
-overturning two working assumptions: that panel benefit grows with
+four model families, confirming the existence claim at scale. It also
+overturns two working assumptions: that panel benefit grows with
 panel size, and that inter-judge divergence transfers directly into a
 detection signal. Methodologically, it introduces the Bias
 Divergence Score with ROC calibration against the disagreement of
@@ -107,15 +107,15 @@ correct the training-distribution causes of the filter; a panel of
 biased judges is fairer than one, not unbiased. Fourth, the framework
 multiplies inference cost by the panel size and routes contested
 essays to humans, so its operational cost scales with exactly the
-essays that most need care; whether that cost is acceptable is an
+essays that most need care. Whether that cost is acceptable is an
 institutional decision this thesis can inform but not make.
 
 Stated plainly, the scope within which the findings hold is this.
 CAMPS worked well on frontier models with a large measured gap
 (roughly 0.8 bands or more), on short argumentative essays by
 upper-band Southeast Asian learners, and with three well-chosen
-lenses; it did nothing on a model with a small gap and over-corrected
-on the model with the smallest, so it should not be applied without
+lenses. It did nothing on a model with a small gap and over-corrected
+on the model with the smallest. So it should not be applied without
 first measuring the gap it is meant to treat. Four internal
 limitations qualify the numbers. The native reference is unbanded, so
 the cohort gap is an upper bound that includes any real quality
@@ -127,8 +127,8 @@ cultural plurality from the effect of averaging differently worded
 prompts, was not run. BDS was evaluated at integer resolution, which
 limits what any detector built on it could achieve. And the
 accuracy axis of the frontier rests on coarse CEFR bands (QWK
-0.06--0.19), so ``negligible cost'' is a statement about that measure;
-the 80-rater correlation of about 0.9 is the stronger validity
+0.06--0.19), so ``negligible cost'' is a statement about that measure.
+The 80-rater correlation of about 0.9 is the stronger validity
 evidence, but it comes from a single-topic set.
 
 \section{Future Work}
@@ -137,21 +137,21 @@ evidence, but it comes from a single-topic set.
 The two null results define the nearest future work. First,
 re-validating BDS with continuous, confidence-weighted lens scores
 against annotations of specifically \emph{cultural} contestation,
-so that the detector is tested on the construct it measures, and
-running the non-cultural control panel that would isolate what
-cultural plurality adds over prompt averaging. Second, obtaining
+so that the detector is tested on the construct it measures.
+Alongside this, the non-cultural control panel that would isolate what
+cultural plurality adds over prompt averaging should be run. Second, obtaining
 graded human ratings on the cohort essays themselves, so that
 Definition~\ref{def:eef} can be tested as an LLM$-$human residual
 between native and Southeast Asian writers rather than bounded by a
-raw cohort gap. Beyond these, extending the panel to further
+raw cohort gap. Beyond these, the panel could be extended to further
 rhetorical traditions as validating corpora become available,
 including a Middle Eastern lens for which the contrastive-rhetoric
-literature is rich but public rated corpora are lacking, and a
-theoretical treatment of evaluative consensus: the formal guarantees
+literature is rich but public rated corpora are lacking. A
+theoretical treatment of evaluative consensus is a further direction: the formal guarantees
 established for multi-perspective generation
 \citep{dorleon2026uncovering} suggest an analogous proposition for
 scoring, stating conditions under which panel consensus provably
-narrows cohort gaps; developing that result would give the
+narrows cohort gaps. Developing that result would give the
 architecture a foundation independent of any particular model
 generation. Third, deployment study: a classroom pilot measuring how
 BDS-triggered human review affects teacher workload and student

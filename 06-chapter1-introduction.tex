@@ -21,16 +21,16 @@ English-speaking and Protestant-European countries
 
 Consider an illustration. A Vietnamese student opens an argumentative
 essay with her grandfather's proverb, \emph{nuoc chay da mon} (water
-wears down stone),
+wears down stone).
 %% NOTE: proverb romanised deliberately -- mitthesis.cls under pdflatex
 %% does not support Vietnamese diacritics without vntex/XeLaTeX.
-and develops her position the way many Asian
+She then develops her position the way many Asian
 academic writing traditions teach: context first, evidence accumulated
 gradually, the conclusion arrived at rather than announced. A trained
 human examiner can recognise the coherence of this inductive structure.
 An LLM evaluator calibrated by its training distribution to expect a
 thesis statement in the opening paragraph may instead record ``lacks a
-clear thesis'' and ``argument feels indirect'', and penalise the
+clear thesis'' and ``argument feels indirect''. It may also penalise the
 hedging forms that signal politeness in her tradition as weak
 reasoning. If so, she loses marks not because her English is poor, but
 because the shape of her reasoning is culturally unfamiliar to the
@@ -51,9 +51,9 @@ claims this thesis investigates at scale.
 The problem this thesis addresses can therefore be stated plainly.
 LLM-based essay scoring applies culturally partial standards,
 invisibly and at scale, to students whose academic futures depend on
-the result; the disparity is documented, but no validated framework
-exists to mitigate it in evaluative settings, and no calibrated
-mechanism exists to detect the essays it affects. This thesis
+the result. The disparity is documented, but no validated framework
+exists to mitigate it in evaluative settings. Nor does any calibrated
+mechanism exist to detect the essays it affects. This thesis
 quantifies the problem across models, builds and tests such a
 framework, and equips it with a detection mechanism validated against
 human ground truth.
@@ -175,8 +175,8 @@ The second grounding is contrastive rhetoric. Since
 \citet{kaplan1966cultural} first observed that rhetorical organisation
 is culturally learned, research summarised by
 \citet{connor2011intercultural} has documented systematic differences
-between writing traditions, including the distinction between
-writer-responsible and reader-responsible coherence and the validity of
+between writing traditions. These include the distinction between
+writer-responsible and reader-responsible coherence, and the validity of
 inductive, context-first argument structures common in Asian academic
 writing. This literature supplies the scholarly basis for the cultural
 rubric interpretations at the centre of the proposed framework,
