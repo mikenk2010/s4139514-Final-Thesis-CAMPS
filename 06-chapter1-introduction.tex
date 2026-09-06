@@ -42,7 +42,8 @@ derived from its training distribution, systematically discounting
 rhetorical strategies that deviate from Anglo-American conventions
 regardless of their argumentative merit. A pilot study in the preceding
 phase of this research (Part~A) reported statistically significant
-scoring disparities between Southeast Asian and native-English cohorts
+scoring disparities between Southeast Asian (SEA) and native-English
+cohorts
 of equivalent human-rated quality across two frontier models. The same
 pilot reported that a culturally-diversified scoring panel reduced the
 disparity. Those findings motivated, but do not yet establish, the
@@ -55,8 +56,8 @@ the result. The disparity is documented, but no validated framework
 exists to mitigate it in evaluative settings. Nor does any calibrated
 mechanism exist to detect the essays it affects. This thesis
 quantifies the problem across models, builds and tests such a
-framework, and equips it with a detection mechanism validated against
-human ground truth.
+framework, and tests its detection mechanism against human ground
+truth.
 
 \section{Research Questions and Hypotheses}
 \label{sec:rqs}
@@ -80,15 +81,17 @@ These questions are operationalised as four testable hypotheses:
   \item \textbf{H1 (Generalisation).} Evaluative bias against Southeast
         Asian rhetorical patterns appears as a native$-$SEA cohort
         score gap whose 95\% confidence interval excludes zero on at
-        least four LLMs, including open-weight models.
+        least four LLMs, including an open-weight model.
   \item \textbf{H2 (Mitigation).} A five-agent culturally-calibrated
         panel with a meta-adjudicator reduces the cohort score gap
         more than the three-agent pilot configuration, without
         degrading agreement with the corpus's proficiency bands.
-  \item \textbf{H3 (Detection).} A ROC-calibrated Bias Divergence
-        Score threshold attains at least 90\% sensitivity at no more
+  \item \textbf{H3 (Detection).} A Bias Divergence Score threshold
+        calibrated by receiver operating characteristic (ROC) analysis
+        attains at least 90\% sensitivity at no more
         than a 5\% false-positive rate against multi-rater human
-        disagreement on the 140-essay GRA validation set.
+        disagreement on the 140-essay Global Rating Archives (GRA)
+        validation set.
   \item \textbf{H4 (Trade-off boundary).} Consensus-weight allocation
         exhibits an identifiable boundary beyond which cohort-fairness
         gains degrade scoring accuracy against graded ground truth.
@@ -150,7 +153,7 @@ Cohort, cohort gap & A group of essays by writer background (Southeast
 Asian learners or native-English writers); the gap is the difference
 in mean score between the two cohorts. \\[2pt]
 Band & The 1--9 integer score an evaluator assigns; the corpus's own
-proficiency labels are CEFR bands (B1, B2). \\
+proficiency labels are CEFR bands (B1\_2, B2+). \\
 \hline
 \end{tabular}
 \end{table}
@@ -218,7 +221,7 @@ operators. Quantifying that penalty rigorously is a precondition for
 governing it. Second, method: existing multi-agent AES research
 improves accuracy without cultural awareness
 \citep[e.g.,][]{su2025cafes}, while existing debiasing research targets
-generative outputs rather than evaluative judgments; a validated
+generative outputs rather than evaluative judgements; a validated
 framework for \emph{evaluative} fairness would fill a documented gap at
 their intersection. Third, deployability: because the proposed
 framework operates entirely at inference time through commercial APIs,
@@ -248,8 +251,8 @@ This thesis makes five contributions:
         models, re-establishing the pilot evidence at scale on a corpus
         purpose-built for the comparison.
   \item \textbf{Methodological:} it introduces the Bias Divergence
-        Score as a calibrated, human-validated trigger for targeted
-        human review, evaluated against multi-rater human ground truth.
+        Score as a candidate trigger for targeted human review, and
+        evaluates it against multi-rater human ground truth.
   \item \textbf{Practical:} it characterises the fairness--accuracy
         trade-off frontier, giving deploying institutions an explicit
         account of what fairness currently costs.
@@ -261,8 +264,8 @@ This thesis makes five contributions:
 The thesis follows the research questions in order. Chapter~2
 reviews the literature that frames RQ1 and RQ2 and locates the gap
 this thesis occupies. Chapter~3 develops the CAMPS framework and the
-method: the data, the three experiments (E1 for H1, E2 for H2 and
-H4, E3 for H3), the statistical protocol, and the alternatives
+method: the data, the three experiments (E1 for H1 and part of H2,
+E2 for H2 and H4, E3 for H3), the statistical protocol, and the alternatives
 considered. Chapter~4 reports the experiments in that order and
 discusses what the results mean, why they arose, how they compare
 with prior work, and where they are uncertain. Chapter~5 answers each

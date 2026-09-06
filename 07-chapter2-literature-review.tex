@@ -26,11 +26,12 @@ different reasons.
 
 In automated essay scoring, multi-agent designs pursue
 \emph{accuracy}. CAFES \citep{su2025cafes} orchestrates scorer,
-feedback-manager, and reflective-reviser agents (average 21\% QWK
-improvement over direct prompting). Roundtable Essay Scoring
+feedback-manager, and reflective-reviser agents (average 21\%
+improvement in Quadratic Weighted Kappa, QWK, over direct
+prompting). Roundtable Essay Scoring
 \citep[RES;][]{jang2025roundtable} consolidates trait-based evaluator
-agents through simulated discussion (up to 34.86\% on ASAP,
-zero-shot). Related designs add debate with retrieval
+agents through simulated discussion (up to 34.86\% QWK improvement
+on the ASAP benchmark, zero-shot). Related designs add debate with retrieval
 \citep{keramati2026madrag} and component recognition
 \citep{wang2025autoscore}. What unites this family is the axis along
 which agents differ: \emph{function} or \emph{trait}. None varies the
@@ -44,7 +45,7 @@ In the LLM-evaluation community, panel designs pursue \emph{bias
 reduction}. \citet{verga2024replacing} replaced a single large judge
 model with a Panel of LLM evaluators (PoLL) drawn from three different
 model families. They found that the panel not only correlated better
-with human judgment across six datasets but also reduced intra-model
+with human judgement across six datasets but also reduced intra-model
 self-preference bias, at roughly a seventh of the cost. This is, to
 date, the clearest empirical demonstration that judge \emph{diversity}
 counteracts judge \emph{bias}. The diversity axis, however, is model
@@ -91,6 +92,7 @@ motivates two design decisions: consensus weights are calibrated
 empirically rather than assumed benign (Hypothesis H4 measures the
 over-correction frontier directly), and panel behaviour is validated
 against multi-rater human ground truth rather than taken on faith.
+
 A separate line of work mitigates bias inside the model rather than
 around it. Self-debiasing exploits a model's own ability to recognise
 undesirable properties of its output, suppressing them at decoding
@@ -125,12 +127,12 @@ companion study \citep{shujaa2026llms} evaluated seven state-of-the-art
 LLMs on prompts embedding culturally sensitive assumptions about
 Vietnam, Myanmar, and Nepal, documenting pervasive stereotyping,
 linguistic ethnocentrism, and epistemic bias, with substantial
-variation across models. It is this cross-model variation that
-motivates testing H1 on at least four model families. The same group's work on
+variation across models. The same group's work on
 framing-bias detection \citep{shujaa2025framing} reflects the
 detection-oriented strand of this programme that the Bias Divergence
 Score continues: bias treated not only as something to remove but as
 something to \emph{measure and flag}.
+
 Two further studies shaped how cultural calibration is implemented in
 this thesis. SEA-HELM, a community-built evaluation suite for
 Southeast Asian languages, argues that benchmarks produced by machine
@@ -220,7 +222,8 @@ topic-controlled design allows rhetorical variation to be observed
 under matched task conditions across ten Asian countries and a
 native-English reference cohort. This literature performs two duties in
 the present thesis. First, it supplies the content of the cultural rubric
-interpretations in Chapter~3, where each CRI prompt is grounded in
+interpretations in Chapter~3, where each Cultural Rubric
+Interpretation (CRI) prompt is grounded in
 documented rhetorical conventions rather than improvised cultural
 personas. Second, it supplies the defence against the objection that
 culturally-calibrated agents merely role-play stereotypes. The
@@ -230,7 +233,7 @@ scholarship, and their behaviour is tested empirically in Chapter~4.
 \section{The Research Gap}
 \label{sec:lit-gap}
 
-Three literatures converge on the problem this thesis addresses, and
+Four literatures converge on the problem this thesis addresses, and
 each stops short of it in a characteristic way. The multi-agent scoring
 literature (Section~\ref{sec:lit-multiagent}) established that panels
 of evaluators outperform single judges (CAFES and RES on accuracy,
@@ -241,7 +244,7 @@ debiasing literature (Section~\ref{sec:lit-debias}) established that
 bias can be mitigated without retraining, and MACD specifically
 established that \emph{explicit cultural representation} in agent
 frameworks matters. But its object is generated text, not evaluative
-judgment, and it dissolves inter-agent disagreement rather than
+judgement, and it dissolves inter-agent disagreement rather than
 exploiting it. The cultural-bias literature
 (Section~\ref{sec:lit-culture}) established the WEIRD disposition of
 current models and, in \citet{dorleon2026uncovering}, provided a formal

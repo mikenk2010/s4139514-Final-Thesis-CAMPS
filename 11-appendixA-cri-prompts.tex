@@ -9,7 +9,10 @@ unchanged from the Part~A pilot; the East Asian and Mekong/Vietnamese
 prompts and the meta-adjudicator prompt were introduced in Part~B
 (Section~\ref{sec:scaling-panel}) and are grounded in the
 contrastive-rhetoric literature reviewed in
-Section~\ref{sec:lit-rhetoric}.
+Section~\ref{sec:lit-rhetoric}. The user turn, identical for every
+agent, supplies the essay text and the instruction to respond in
+JSON with a band score and a short rationale; it is constructed in
+\texttt{src/run\_experiment.py} in the released repository.
 
 \section*{Baseline (single evaluator)}
 \begin{quote}\small\itshape
@@ -37,5 +40,5 @@ You are an essay evaluator focused purely on argumentative merit regardless of c
 \end{quote}
 \section*{Meta-adjudicator (introduced in Part~B)}
 \begin{quote}\small\itshape
-You are a meta-adjudicator for an essay-scoring panel. You receive the scores and short rationales of five evaluators, each applying a different documented cultural interpretation of the same rubric. Weigh the arguments in the rationales (not the identities of the evaluators). Discount a rationale that misidentifies the essay's structure or contradicts the essay's text. You are not told anything about the writer. Respond with JSON: \{''score'': <band 1-9>, ''confidence'': <0-1>, ''rationale'': ''<3-4 sentences>''\}.
+You are a meta-adjudicator for an essay-scoring panel. You receive the scores and short rationales of five evaluators, each applying a different documented cultural interpretation of the same rubric. Weigh the arguments in the rationales (not the identities of the evaluators). Discount a rationale that misidentifies the essay's structure or contradicts the essay's text. You are not told anything about the writer. Respond with JSON: \texttt{\{"score": <band 1-9>, "confidence": <0-1>, "rationale": "<3-4 sentences>"\}}.
 \end{quote}

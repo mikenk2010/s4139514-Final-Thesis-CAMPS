@@ -4,9 +4,9 @@
 % of alternatives" -- see Section 3.6.
 
 This chapter sets out what was done and why. It states the working
-theory (Section~\ref{sec:working-theory}), specifies the CAMPS
+theory (Section~\ref{sec:working-theory}) and specifies the CAMPS
 framework (Sections~\ref{sec:camps-framework}
-and~\ref{sec:scaling-panel}), describes the data
+and~\ref{sec:scaling-panel}). It then describes the data
 (Section~\ref{sec:data}) and the three experiments
 (Section~\ref{sec:experimental-design}), records the alternatives
 considered and the ethical constraints (Sections~\ref{sec:alternatives}
@@ -37,7 +37,7 @@ distribution $\mathcal{D}$. Evaluative epistemic filtering occurs when
 where $c(E)$ denotes the rhetorical tradition of the essay, and the
 deviation is systematic in $c$: essays whose rhetorical form is
 under-represented in $\mathcal{D}$ receive systematically deflated
-scores relative to human judgment, independent of argumentative merit.
+scores relative to human judgement, independent of argumentative merit.
 \end{definition}
 
 The definition makes two commitments. First, the filter is a property
@@ -273,12 +273,12 @@ S^{\mathrm{adj}}(E) = M\bigl(s_1, \rho_1, \dots, s_k, \rho_k\bigr),
 \end{equation}
 where $\rho_i$ is agent $i$'s rationale. The adjudicator is blind to
 writer identity and cohort metadata and runs at $t = 0.0$. Where the
-weighted mean treats every judgment as exchangeable evidence, the
+weighted mean treats every judgement as exchangeable evidence, the
 adjudicator can weigh \emph{arguments}, discounting an agent whose
 rationale misreads the essay. E2 compares the two aggregation paths
 directly, with BDS computed from raw agent scores in both conditions.
 Responding to the caution of \citet{mirza2025malibu}, deliberation is
-added \emph{after} independent judgment, never during scoring.
+added \emph{after} independent judgement, never during scoring.
 
 \section{Data}
 \label{sec:data}
@@ -368,11 +368,9 @@ band from 1 to 9 on the IELTS Coherence and Cohesion descriptors
 Panel consensus is the mean of these integers and so takes
 non-integer values. Agreement with ground truth is computed against
 the corpus's CEFR bands for the learner cohort and against the GRA's
-multi-rater consensus for the validation set. Inspection of the downloaded GRA archive (v2.1)
-confirms its structure. Each of the 140 essays carries ratings from
-80 raters of varied L1 backgrounds. Each rater scores ten analytic
-dimensions (0--10) grouped as Language, Content, and Attitude, plus a
-holistic score out of 100. Per-essay rating dispersion across the 80
+multi-rater consensus for the validation set. In the GRA archive
+each rater scores ten analytic dimensions (0--10) grouped as
+Language, Content, and Attitude, plus a holistic score out of 100. Per-essay rating dispersion across the 80
 raters provides the human-disagreement benchmark against which BDS is
 compared. Two properties of the archive shape the E3 design. First,
 all 140 rated essays address the part-time-job prompt, so the
@@ -468,7 +466,7 @@ infeasible for API-only access by construction
 
 \emph{Single-prompt debiasing}, instructing one evaluator to ``score
 fairly across cultures'', collapses the plurality of standards back
-into a single opaque judgment. Bias can then only be asserted away, not
+into a single opaque judgement. Bias can then only be asserted away, not
 measured, and no divergence signal remains to calibrate a review
 trigger against. The single-agent baseline in E1 provides the
 nearest empirical comparison, though this specific instruction was
@@ -497,7 +495,7 @@ First, cultural essentialism: agents are calibrated to
 cohorts are treated throughout as proxies for rhetorical tradition
 rather than identity. Second, downstream welfare: CAMPS is
 human-in-the-loop precisely because the cost of a misclassified essay
-falls on a student; BDS exists to route uncertain judgments to a
+falls on a student; BDS exists to route uncertain judgements to a
 human rather than automate them. Generative AI use in this project is
 disclosed in accordance with course policy.
 
@@ -532,9 +530,11 @@ Weighted Kappa,
 against proficiency bands for the learner cohorts, and against the
 multi-rater human consensus for the GRA validation set (E3).
 
-\textbf{Uncertainty.} Every reported statistic carries its $n$, and
-every proportion or $\kappa_w$ is reported with a 95\% percentile
-bootstrap confidence interval (10{,}000 resamples, fixed seed).
+\textbf{Uncertainty.} Every reported statistic carries its $n$.
+Every cohort gap and gap change is reported with a 95\% percentile
+bootstrap confidence interval (10{,}000 resamples, fixed seed);
+band-agreement and detection statistics are reported as point
+estimates with their $n$.
 Following the statistical-reporting guidance adopted for this thesis,
 confidence intervals are the primary inferential device.
 $p$-values are reported only for the pre-registered paired-bootstrap
