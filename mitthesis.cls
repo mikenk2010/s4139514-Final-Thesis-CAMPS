@@ -249,7 +249,7 @@ reserved.\par\permission}}
 \def\degreemonth#1{\gdef\@degreemonth{#1}}
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
 
-\newbox\@titlesupervisor 	\newbox\@abstractsupervisor
+%\newbox\@titlesupervisor 	\newbox\@abstractsupervisor
 
 \def\supervisor#1#2{\setbox\@titlesupervisor\vbox
   {\unvbox\@titlesupervisor \vskip 10pt% plus 1fil minus 1fil
