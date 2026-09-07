@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 02:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 02:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,11 +843,11 @@ Chapter 4.
 
 
 ]
-<figures/fig-e1-gaps.pdf, id=247, 520.34402pt x 303.534pt>
+<figures/fig-e1-gaps.pdf, id=247, 520.34402pt x 317.98799pt>
 File: figures/fig-e1-gaps.pdf Graphic file (type pdf)
 <use figures/fig-e1-gaps.pdf>
 Package pdftex.def Info: figures/fig-e1-gaps.pdf  used on input line 73.
-(pdftex.def)             Requested size: 325.215pt x 189.71753pt.
+(pdftex.def)             Requested size: 325.215pt x 198.7517pt.
  [40]
 <figures/fig-e1-dose-response.pdf, id=251, 462.52798pt x 303.534pt>
 File: figures/fig-e1-dose-response.pdf Graphic file (type pdf)
@@ -855,53 +855,50 @@ File: figures/fig-e1-dose-response.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/fig-e1-dose-response.pdf  used on input line 9
 7.
 (pdftex.def)             Requested size: 303.53267pt x 199.20296pt.
- (./tables/table_e1_qwk.tex [41 <./figures/fig-e1-gaps.pdf> <./figures/fig-e1-d
-ose-response.pdf>]) [42]
-<figures/fig-e2-lens-radar.pdf, id=379, 693.792pt x 317.98799pt>
+ (./tables/table_e1_qwk.tex) [41 <./figures/fig-e1-gaps.pdf>] [42 <./figures/fi
+g-e1-dose-response.pdf>]
+<figures/fig-e2-lens-radar.pdf, id=394, 693.792pt x 317.98799pt>
 File: figures/fig-e2-lens-radar.pdf Graphic file (type pdf)
 <use figures/fig-e2-lens-radar.pdf>
 Package pdftex.def Info: figures/fig-e2-lens-radar.pdf  used on input line 163.
 
 (pdftex.def)             Requested size: 368.57964pt x 168.9307pt.
-<figures/fig-e2-ablation.pdf, id=380, 520.34402pt x 303.534pt>
+<figures/fig-e2-ablation.pdf, id=395, 520.34402pt x 303.534pt>
 File: figures/fig-e2-ablation.pdf Graphic file (type pdf)
 <use figures/fig-e2-ablation.pdf>
 Package pdftex.def Info: figures/fig-e2-ablation.pdf  used on input line 174.
 (pdftex.def)             Requested size: 325.215pt x 189.71753pt.
- (./tables/table_e2_ablation.tex) [43 <./figures/fig-e2-lens-radar.pdf>]
-<figures/fig-e2-frontier-gpt-4o.pdf, id=423, 462.52798pt x 303.534pt>
+ (./tables/table_e2_ablation.tex) [43 <./figures/fig-e2-lens-radar.pdf>] [44 <.
+/figures/fig-e2-ablation.pdf>]
+<figures/fig-e2-frontier-gpt-4o.pdf, id=499, 462.52798pt x 303.534pt>
 File: figures/fig-e2-frontier-gpt-4o.pdf Graphic file (type pdf)
 <use figures/fig-e2-frontier-gpt-4o.pdf>
 Package pdftex.def Info: figures/fig-e2-frontier-gpt-4o.pdf  used on input line
  206.
 (pdftex.def)             Requested size: 281.85034pt x 184.97482pt.
- [44 <./figures/fig-e2-ablation.pdf>]
-(./tables/table_e3_bds.tex)
-<figures/fig-e3-roc.pdf, id=485, 693.792pt x 289.08pt>
+ [45 <./figures/fig-e2-frontier-gpt-4o.pdf>] (./tables/table_e3_bds.tex)
+<figures/fig-e3-roc.pdf, id=560, 693.792pt x 289.08pt>
 File: figures/fig-e3-roc.pdf Graphic file (type pdf)
 <use figures/fig-e3-roc.pdf>
 Package pdftex.def Info: figures/fig-e3-roc.pdf  used on input line 246.
 (pdftex.def)             Requested size: 381.5877pt x 158.99448pt.
- [45 <./figures/fig-e2-frontier-gpt-4o.pdf>]
-[46 <./figures/fig-e3-roc.pdf>]
-<figures/fig-e1-gap-by-band.pdf, id=610, 520.34402pt x 289.08pt>
+ [46 <./figures/fig-e3-roc.pdf>]
+<figures/fig-e1-gap-by-band.pdf, id=625, 520.34402pt x 289.08pt>
 File: figures/fig-e1-gap-by-band.pdf Graphic file (type pdf)
 <use figures/fig-e1-gap-by-band.pdf>
 Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 307
 .
 (pdftex.def)             Requested size: 325.215pt x 180.68336pt.
  [47] [48 <./figures/fig-e1-gap-by-band.pdf>]
-<figures/fig-case-study.pdf, id=673, 476.98201pt x 317.98799pt>
+<figures/fig-case-study.pdf, id=688, 476.98201pt x 317.98799pt>
 File: figures/fig-case-study.pdf Graphic file (type pdf)
 <use figures/fig-case-study.pdf>
 Package pdftex.def Info: figures/fig-case-study.pdf  used on input line 389.
 (pdftex.def)             Requested size: 338.22305pt x 225.48677pt.
-
-[49] [50 <./figures/fig-case-study.pdf>] [51] [52]) [53] [54]
+ [49] [50 <./figures/fig-case-study.pdf>] [51] [52]) [53] [54]
 \openout2 = `10-chapter5-conclusion.aux'.
 
-
-(./10-chapter5-conclusion.tex
+ (./10-chapter5-conclusion.tex
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 24--24
@@ -1084,9 +1081,9 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fo
 nts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyr
 e/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (66 pages, 663624 bytes).
+Output written on s4139514-Minor_Thesis_Part_B.pdf (66 pages, 669167 bytes).
 PDF statistics:
- 955 PDF objects out of 1000 (max. 8388607)
+ 970 PDF objects out of 1000 (max. 8388607)
  346 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
