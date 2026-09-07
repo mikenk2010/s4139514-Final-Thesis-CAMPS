@@ -27,7 +27,7 @@
 \contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{45}{}%
 \contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{47}{}%
 \contentsline {section}{\numberline {4.5}Threats to Validity}{49}{}%
-\contentsline {section}{\numberline {4.6}Discussion}{51}{}%
+\contentsline {section}{\numberline {4.6}Discussion}{50}{}%
 \contentsline {chapter}{\numberline {5}Conclusion}{54}{}%
 \contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{54}{}%
 \contentsline {section}{\numberline {5.2}Contributions}{55}{}%

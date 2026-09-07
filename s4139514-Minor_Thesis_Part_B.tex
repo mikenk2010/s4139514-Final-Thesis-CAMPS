@@ -15,6 +15,17 @@
 \def\Mit{RMIT University}
 \providecommand{\doi}[1]{doi:~\texttt{\detokenize{#1}}}
 \pagestyle{plain}
+% Float layout: pack floats to the top of float-only pages instead of
+% spreading them with blank space, and prefer mixing floats with text.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 4pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
 \def\files{all}
 \def\all{all}
 \ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi

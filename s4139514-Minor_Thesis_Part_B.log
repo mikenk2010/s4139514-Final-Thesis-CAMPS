@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 01:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 01:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -519,20 +519,20 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 (./13-thesis-bibliography.aux))
 \openout1 = `s4139514-Minor_Thesis_Part_B.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -855,8 +855,8 @@ File: figures/fig-e1-dose-response.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/fig-e1-dose-response.pdf  used on input line 9
 7.
 (pdftex.def)             Requested size: 303.53267pt x 199.20296pt.
- (./tables/table_e1_qwk.tex) [41 <./figures/fig-e1-gaps.pdf>] [42 <./figures/fi
-g-e1-dose-response.pdf>]
+ (./tables/table_e1_qwk.tex [41 <./figures/fig-e1-gaps.pdf> <./figures/fig-e1-d
+ose-response.pdf>]) [42]
 <figures/fig-e2-lens-radar.pdf, id=373, 693.792pt x 317.98799pt>
 File: figures/fig-e2-lens-radar.pdf Graphic file (type pdf)
 <use figures/fig-e2-lens-radar.pdf>
@@ -868,29 +868,30 @@ File: figures/fig-e2-ablation.pdf Graphic file (type pdf)
 <use figures/fig-e2-ablation.pdf>
 Package pdftex.def Info: figures/fig-e2-ablation.pdf  used on input line 174.
 (pdftex.def)             Requested size: 325.215pt x 189.71753pt.
- (./tables/table_e2_ablation.tex) [43 <./figures/fig-e2-lens-radar.pdf>] [44 <.
-/figures/fig-e2-ablation.pdf>]
-<figures/fig-e2-frontier-gpt-4o.pdf, id=478, 462.52798pt x 303.534pt>
+ (./tables/table_e2_ablation.tex) [43 <./figures/fig-e2-lens-radar.pdf>]
+<figures/fig-e2-frontier-gpt-4o.pdf, id=417, 462.52798pt x 303.534pt>
 File: figures/fig-e2-frontier-gpt-4o.pdf Graphic file (type pdf)
 <use figures/fig-e2-frontier-gpt-4o.pdf>
 Package pdftex.def Info: figures/fig-e2-frontier-gpt-4o.pdf  used on input line
  206.
 (pdftex.def)             Requested size: 281.85034pt x 184.97482pt.
- [45 <./figures/fig-e2-frontier-gpt-4o.pdf>] (./tables/table_e3_bds.tex)
-<figures/fig-e3-roc.pdf, id=539, 693.792pt x 289.08pt>
+ [44 <./figures/fig-e2-ablation.pdf>]
+(./tables/table_e3_bds.tex)
+<figures/fig-e3-roc.pdf, id=479, 693.792pt x 289.08pt>
 File: figures/fig-e3-roc.pdf Graphic file (type pdf)
 <use figures/fig-e3-roc.pdf>
 Package pdftex.def Info: figures/fig-e3-roc.pdf  used on input line 246.
 (pdftex.def)             Requested size: 381.5877pt x 158.99448pt.
- [46] [47 <./figures/fig-e3-roc.pdf>]
-<figures/fig-e1-gap-by-band.pdf, id=607, 520.34402pt x 289.08pt>
+ [45 <./figures/fig-e2-frontier-gpt-4o.pdf>]
+[46 <./figures/fig-e3-roc.pdf>]
+<figures/fig-e1-gap-by-band.pdf, id=604, 520.34402pt x 289.08pt>
 File: figures/fig-e1-gap-by-band.pdf Graphic file (type pdf)
 <use figures/fig-e1-gap-by-band.pdf>
 Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 307
 .
 (pdftex.def)             Requested size: 325.215pt x 180.68336pt.
- [48 <./figures/fig-e1-gap-by-band.pdf>] [49] [50] [51] [52])
-[53]
+ [47] [48 <./figures/fig-e1-gap-by-band.pdf>]
+[49] [50] [51]) [52] [53]
 \openout2 = `10-chapter5-conclusion.aux'.
 
  (./10-chapter5-conclusion.tex
@@ -973,20 +974,20 @@ de\T1/qtm/m/n/12 ),
 
 
 ])
-Overfull \hbox (81.2823pt too wide) in paragraph at lines 33--40
+Overfull \hbox (81.2823pt too wide) in paragraph at lines 33--51
 \T1/qtm/m/n/12 The ex-act model iden-ti-fiers re-quested through each provider'
 s API, as pinned in \T1/cmtt/m/n/12 configs/experiment.yaml
  []
 
 
-Overfull \hbox (3.63152pt too wide) in paragraph at lines 33--40
+Overfull \hbox (3.63152pt too wide) in paragraph at lines 33--51
 \T1/qtm/m/n/12 and recorded in ev-ery log en-try, were: \T1/cmtt/m/n/12 gpt-4o 
 \T1/qtm/m/n/12 (Ope-nAI); \T1/cmtt/m/n/12 claude-sonnet-4-6 \T1/qtm/m/n/12 (An-
 thropic);
  []
 
 
-Overfull \hbox (33.92464pt too wide) in paragraph at lines 33--40
+Overfull \hbox (33.92464pt too wide) in paragraph at lines 33--51
 \T1/cmtt/m/n/12 qwen3:14b \T1/qtm/m/n/12 (Al-ibaba, open weights, ex-e-cuted lo
 -cally via Ol-lama); and \T1/cmtt/m/n/12 gemini-3.1-pro-preview
  []
@@ -1044,7 +1045,7 @@ Underfull \hbox (badness 1102) in paragraph at lines 198--202
 Here is how much of TeX's memory you used:
  16107 strings out of 480247
  329887 string characters out of 5896151
- 585055 words of memory out of 5000000
+ 585061 words of memory out of 5000000
  33583 multiletter control sequences out of 15000+600000
  520676 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1075,7 +1076,7 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
 xmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/t
 ex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (65 pages, 626646 bytes).
+Output written on s4139514-Minor_Thesis_Part_B.pdf (65 pages, 626629 bytes).
 PDF statistics:
  867 PDF objects out of 1000 (max. 8388607)
  327 compressed objects within 4 object streams
