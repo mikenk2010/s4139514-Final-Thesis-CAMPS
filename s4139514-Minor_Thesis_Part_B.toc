@@ -2,9 +2,9 @@
 \contentsline {section}{\numberline {1.1}Problem Statement}{11}{}%
 \contentsline {section}{\numberline {1.2}Research Questions and Hypotheses}{12}{}%
 \contentsline {section}{\numberline {1.3}Theoretical Framing: Epistemic Injustice and Contrastive Rhetoric}{14}{}%
-\contentsline {section}{\numberline {1.4}Significance}{15}{}%
+\contentsline {section}{\numberline {1.4}Significance}{16}{}%
 \contentsline {section}{\numberline {1.5}Contributions}{16}{}%
-\contentsline {section}{\numberline {1.6}Thesis Outline}{16}{}%
+\contentsline {section}{\numberline {1.6}Thesis Outline}{17}{}%
 \contentsline {chapter}{\numberline {2}Literature Review}{18}{}%
 \contentsline {section}{\numberline {2.1}Multi-Agent and Panel-Based Approaches to Scoring}{18}{}%
 \contentsline {section}{\numberline {2.2}Inference-Time Debiasing}{19}{}%
@@ -23,15 +23,15 @@
 \contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{36}{}%
 \contentsline {chapter}{\numberline {4}Results and Discussion}{39}{}%
 \contentsline {section}{\numberline {4.1}Experiment 1: Evaluative Bias at Scale (H1; H2 in part)}{39}{}%
-\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{41}{}%
-\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{44}{}%
-\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{46}{}%
+\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{42}{}%
+\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{45}{}%
+\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{47}{}%
 \contentsline {section}{\numberline {4.5}Threats to Validity}{49}{}%
-\contentsline {section}{\numberline {4.6}Discussion}{50}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{53}{}%
-\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{53}{}%
-\contentsline {section}{\numberline {5.2}Contributions}{54}{}%
-\contentsline {section}{\numberline {5.3}Limitations}{55}{}%
-\contentsline {section}{\numberline {5.4}Future Work}{56}{}%
-\contentsline {chapter}{\numberline {A}CRI System Prompts}{57}{}%
-\contentsline {chapter}{\numberline {B}Reproducibility}{60}{}%
+\contentsline {section}{\numberline {4.6}Discussion}{51}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{54}{}%
+\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{54}{}%
+\contentsline {section}{\numberline {5.2}Contributions}{55}{}%
+\contentsline {section}{\numberline {5.3}Limitations}{56}{}%
+\contentsline {section}{\numberline {5.4}Future Work}{57}{}%
+\contentsline {chapter}{\numberline {A}CRI System Prompts}{58}{}%
+\contentsline {chapter}{\numberline {B}Reproducibility}{61}{}%

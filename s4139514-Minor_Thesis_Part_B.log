@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  7 SEP 2026 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 01:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,35 +636,42 @@ Chapter 1.
 
 
 
-] [12]
-Overfull \hbox (9.59065pt too wide) in paragraph at lines 95--98
+]
+<figures/fig-rhetoric-shapes.pdf, id=50, 513.53055pt x 105.8896pt>
+File: figures/fig-rhetoric-shapes.pdf Graphic file (type pdf)
+<use figures/fig-rhetoric-shapes.pdf>
+Package pdftex.def Info: figures/fig-rhetoric-shapes.pdf  used on input line 41
+.
+(pdftex.def)             Requested size: 411.93767pt x 84.94446pt.
+ [12 <./figures/fig-rhetoric-shapes.pdf>]
+Overfull \hbox (9.59065pt too wide) in paragraph at lines 105--108
 []\T1/qtm/b/n/12 H4 (Trade-off bound-ary). \T1/qtm/m/n/12 Consensus-weight al-l
 o-ca-tion ex-hibits an iden-ti-fi-able bound-
  []
 
 
-Overfull \hbox (9.07068pt too wide) in paragraph at lines 95--98
+Overfull \hbox (9.07068pt too wide) in paragraph at lines 105--108
 \T1/qtm/m/n/12 ary be-yond which cohort-fairness gains de-grade scor-ing ac-cu-
 racy against graded ground
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 142--142
+Underfull \hbox (badness 1242) in paragraph at lines 152--152
 []\T1/qtm/m/n/10.95 Evaluative epis-temic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []\T1/qtm/m/n/10.95 Bias Di-ver-gence
  []
 
 [13] [14]
-Overfull \hbox (0.65204pt too wide) in paragraph at lines 203--211
+Overfull \hbox (0.65204pt too wide) in paragraph at lines 213--221
 []\T1/qtm/m/n/12 Finally, the fairness--accuracy trade-off at the cen-tre of H4
  has a di-rect lin-eage in fairness-
  []
 
-[15]) [16] [17]
+[15] [16]) [17]
 \openout2 = `07-chapter2-literature-review.aux'.
 
  (./07-chapter2-literature-review.tex
@@ -697,7 +704,7 @@ Chapter 3.
 
 
 ] [26]
-<figures/fig-camps-architecture.pdf, id=104, 279.22215pt x 278.93811pt>
+<figures/fig-camps-architecture.pdf, id=124, 279.22215pt x 278.93811pt>
 File: figures/fig-camps-architecture.pdf Graphic file (type pdf)
 <use figures/fig-camps-architecture.pdf>
 Package pdftex.def Info: figures/fig-camps-architecture.pdf  used on input line
@@ -788,7 +795,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--334
  []
 
 [32]
-<figures/fig-sampling-flow.pdf, id=182, 386.60435pt x 188.76823pt>
+<figures/fig-sampling-flow.pdf, id=203, 386.60435pt x 188.76823pt>
 File: figures/fig-sampling-flow.pdf Graphic file (type pdf)
 <use figures/fig-sampling-flow.pdf>
 Package pdftex.def Info: figures/fig-sampling-flow.pdf  used on input line 357.
@@ -836,47 +843,54 @@ Chapter 4.
 
 
 ]
-<figures/fig-e1-gaps.pdf, id=221, 520.34402pt x 303.534pt>
+<figures/fig-e1-gaps.pdf, id=241, 520.34402pt x 303.534pt>
 File: figures/fig-e1-gaps.pdf Graphic file (type pdf)
 <use figures/fig-e1-gaps.pdf>
 Package pdftex.def Info: figures/fig-e1-gaps.pdf  used on input line 73.
 (pdftex.def)             Requested size: 325.215pt x 189.71753pt.
- [40] (./tables/table_e1_qwk.tex) [41 <./figures/fig-e1-gaps.pdf>]
-<figures/fig-e2-lens-radar.pdf, id=290, 693.792pt x 317.98799pt>
+ [40]
+<figures/fig-e1-dose-response.pdf, id=245, 462.52798pt x 303.534pt>
+File: figures/fig-e1-dose-response.pdf Graphic file (type pdf)
+<use figures/fig-e1-dose-response.pdf>
+Package pdftex.def Info: figures/fig-e1-dose-response.pdf  used on input line 9
+7.
+(pdftex.def)             Requested size: 303.53267pt x 199.20296pt.
+ (./tables/table_e1_qwk.tex) [41 <./figures/fig-e1-gaps.pdf>] [42 <./figures/fi
+g-e1-dose-response.pdf>]
+<figures/fig-e2-lens-radar.pdf, id=373, 693.792pt x 317.98799pt>
 File: figures/fig-e2-lens-radar.pdf Graphic file (type pdf)
 <use figures/fig-e2-lens-radar.pdf>
-Package pdftex.def Info: figures/fig-e2-lens-radar.pdf  used on input line 148.
+Package pdftex.def Info: figures/fig-e2-lens-radar.pdf  used on input line 163.
 
 (pdftex.def)             Requested size: 368.57964pt x 168.9307pt.
- [42]
-<figures/fig-e2-ablation.pdf, id=294, 520.34402pt x 303.534pt>
+<figures/fig-e2-ablation.pdf, id=374, 520.34402pt x 303.534pt>
 File: figures/fig-e2-ablation.pdf Graphic file (type pdf)
 <use figures/fig-e2-ablation.pdf>
-Package pdftex.def Info: figures/fig-e2-ablation.pdf  used on input line 159.
+Package pdftex.def Info: figures/fig-e2-ablation.pdf  used on input line 174.
 (pdftex.def)             Requested size: 325.215pt x 189.71753pt.
-
-(./tables/table_e2_ablation.tex) [43 <./figures/fig-e2-lens-radar.pdf>]
-<figures/fig-e2-frontier-gpt-4o.pdf, id=337, 462.52798pt x 303.534pt>
+ (./tables/table_e2_ablation.tex) [43 <./figures/fig-e2-lens-radar.pdf>] [44 <.
+/figures/fig-e2-ablation.pdf>]
+<figures/fig-e2-frontier-gpt-4o.pdf, id=478, 462.52798pt x 303.534pt>
 File: figures/fig-e2-frontier-gpt-4o.pdf Graphic file (type pdf)
 <use figures/fig-e2-frontier-gpt-4o.pdf>
 Package pdftex.def Info: figures/fig-e2-frontier-gpt-4o.pdf  used on input line
- 191.
+ 206.
 (pdftex.def)             Requested size: 281.85034pt x 184.97482pt.
-
-[44 <./figures/fig-e2-ablation.pdf>] (./tables/table_e3_bds.tex)
-<figures/fig-e3-roc.pdf, id=399, 693.792pt x 289.08pt>
+ [45 <./figures/fig-e2-frontier-gpt-4o.pdf>] (./tables/table_e3_bds.tex)
+<figures/fig-e3-roc.pdf, id=539, 693.792pt x 289.08pt>
 File: figures/fig-e3-roc.pdf Graphic file (type pdf)
 <use figures/fig-e3-roc.pdf>
-Package pdftex.def Info: figures/fig-e3-roc.pdf  used on input line 231.
+Package pdftex.def Info: figures/fig-e3-roc.pdf  used on input line 246.
 (pdftex.def)             Requested size: 381.5877pt x 158.99448pt.
- [45 <./figures/fig-e2-frontier-gpt-4o.pdf>] [46 <./figures/fig-e3-roc.pdf>]
-<figures/fig-e1-gap-by-band.pdf, id=524, 520.34402pt x 289.08pt>
+ [46] [47 <./figures/fig-e3-roc.pdf>]
+<figures/fig-e1-gap-by-band.pdf, id=607, 520.34402pt x 289.08pt>
 File: figures/fig-e1-gap-by-band.pdf Graphic file (type pdf)
 <use figures/fig-e1-gap-by-band.pdf>
-Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 292
+Package pdftex.def Info: figures/fig-e1-gap-by-band.pdf  used on input line 307
 .
 (pdftex.def)             Requested size: 325.215pt x 180.68336pt.
- [47 <./figures/fig-e1-gap-by-band.pdf>] [48] [49] [50] [51]) [52]
+ [48 <./figures/fig-e1-gap-by-band.pdf>] [49] [50] [51] [52])
+[53]
 \openout2 = `10-chapter5-conclusion.aux'.
 
  (./10-chapter5-conclusion.tex
@@ -916,12 +930,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--37
 []\T1/qtm/m/n/10.95 Supported
  []
 
-[53
+[54
 
 
 
 
-] [54] [55]) [56]
+] [55] [56]) [57]
 \openout2 = `11-appendixA-cri-prompts.aux'.
 
  (./11-appendixA-cri-prompts.tex
@@ -930,7 +944,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 5.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [57
+) [58
 
 
 
@@ -941,7 +955,7 @@ Overfull \hbox (6.8949pt too wide) in paragraph at lines 31--32
 her-ence may be reader-responsible:
  []
 
-[58]) [59]
+[59]) [60]
 \openout2 = `12-appendixB-reproducibility.aux'.
 
  (./12-appendixB-reproducibility.tex
@@ -953,7 +967,7 @@ s-i-tory (\T1/cmtt/m/n/12 github.com/mikenk2010/vs4139514-Final-Thesis-CAMPS-Co
 de\T1/qtm/m/n/12 ),
  []
 
-[60
+[61
 
 
 
@@ -977,7 +991,7 @@ Overfull \hbox (33.92464pt too wide) in paragraph at lines 33--40
 -cally via Ol-lama); and \T1/cmtt/m/n/12 gemini-3.1-pro-preview
  []
 
-[61]
+[62]
 \openout2 = `13-thesis-bibliography.aux'.
 
  (./13-thesis-bibliography.tex (./s4139514-Minor_Thesis_Part_B.bbl
@@ -998,7 +1012,7 @@ Underfull \hbox (badness 4429) in paragraph at lines 39--44
 ages 1125--1127. ACM, 2022.
  []
 
-[62
+[63
 
 
 
@@ -1009,7 +1023,7 @@ Underfull \hbox (badness 1117) in paragraph at lines 125--133
 , Yan Zhang, and
  []
 
-[63]
+[64]
 Underfull \hbox (badness 1448) in paragraph at lines 198--202
 []\T1/qtm/m/n/12 Yan Tao, Olga Viberg, Ryan S. Baker, and René F. Kizil-cec.  C
 ul-tural bias and
@@ -1021,17 +1035,17 @@ Underfull \hbox (badness 1102) in paragraph at lines 198--202
 2 PNAS Nexus\T1/qtm/m/n/12 , 3(9):pgae346, 2024.
  []
 
-)) [64] (./s4139514-Minor_Thesis_Part_B.aux (./01-thesis-cover.aux)
+)) [65] (./s4139514-Minor_Thesis_Part_B.aux (./01-thesis-cover.aux)
 (./05-thesis-contents.aux) (./06-chapter1-introduction.aux)
 (./07-chapter2-literature-review.aux) (./08-chapter3-methodology.aux)
 (./09-chapter4-results-discussion.aux) (./10-chapter5-conclusion.aux)
 (./11-appendixA-cri-prompts.aux) (./12-appendixB-reproducibility.aux)
 (./13-thesis-bibliography.aux)) ) 
 Here is how much of TeX's memory you used:
- 16086 strings out of 480247
- 329137 string characters out of 5896151
- 585034 words of memory out of 5000000
- 33564 multiletter control sequences out of 15000+600000
+ 16107 strings out of 480247
+ 329887 string characters out of 5896151
+ 585055 words of memory out of 5000000
+ 33583 multiletter control sequences out of 15000+600000
  520676 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,14n,89p,806b,308s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1051,18 +1065,20 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fon
-ts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre
-/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (64 pages, 573463 bytes).
+ic/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
+xmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/t
+ex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
+Output written on s4139514-Minor_Thesis_Part_B.pdf (65 pages, 626646 bytes).
 PDF statistics:
- 780 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
+ 867 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
