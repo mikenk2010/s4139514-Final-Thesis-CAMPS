@@ -358,16 +358,42 @@ treats the two learner traditions alike, and the native$-$SEA gap of
 E1 should be read as an upper bound on filtering rather than a pure
 bias estimate.
 
-\textbf{A concrete case.} The highest-divergence Southeast Asian
-essay under GPT-4o (a Philippine B1\_2 essay, $\mathrm{BDS} = 0.94$)
-illustrates the theorised mechanism directly. The Western-calibrated
-agent scored it 5.0, noting the absence of upfront thesis structure.
-The SEA-calibrated agent scored the same essay 7.0, describing ``a
-coherent and cohesive structure, with the thesis emerging through
-contextual development''. The neutral agent agreed at 7.0. The
-disagreement is not noise: it is two documented rubric interpretations
-reaching different verdicts on the same rhetorical choice, which is
-precisely the signal BDS is designed to expose.
+\textbf{A concrete case.} One essay makes the mechanism visible.
+The highest-divergence Southeast Asian essay under GPT-4o (a
+Philippine B1\_2 essay, $\mathrm{BDS} = 0.94$) opens with a proverb,
+``Experience is the best teacher'', and lets its position emerge
+inductively. Figure~\ref{fig:case-study} shows every score it
+received: 38 scorings across four models and seven evaluator roles.
+The Western-calibrated lens was the lowest scorer on every model.
+Its rationale on Claude Sonnet states the objection exactly: the
+essay ``lacks a clearly articulated thesis statement, instead relying
+on a general aphorism (`Experience is the best teacher') before
+gradually narrowing focus'' (band 5). The Mekong lens read the same
+sentence as a convention: the essay ``opens with a culturally
+familiar proverb \ldots\ that anchors the argument implicitly before
+the position emerges, consistent with Mekong-region framing
+conventions'' (band 6). The SEA lens on GPT-4o described ``a coherent
+and cohesive structure, with the thesis emerging through contextual
+development \ldots\ built inductively'' (band 7). The adjudicator,
+reading all five rationales, ruled that the Western rationale
+``overstates the structural deficiency'' and settled on band 6. The
+same rhetorical choice was thus recorded as a defect by one
+documented interpretation of the rubric and as a convention by
+another. That is Definition~\ref{def:eef} observed directly, and it
+is the disagreement BDS is designed to expose; that it did not
+generalise into a reliable detector across 140 essays (E3) does not
+make the individual case less clear.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig-case-study}
+\caption[One essay, every lens]{One essay, every lens: bands assigned
+to a proverb-opening, inductively organised Philippine B1\_2 essay by
+each evaluator role on each model (E1 and E2 logs). The
+Western-calibrated lens is the lowest scorer on every model; dashes
+mark roles not run on that model.}
+\label{fig:case-study}
+\end{figure}
 
 \section{Threats to Validity}
 \label{sec:threats}
