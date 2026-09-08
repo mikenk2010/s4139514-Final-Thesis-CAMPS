@@ -256,7 +256,7 @@ reserved.\par\permission}}
   \def\baselinestretch{1}\large
   % RMIT: no "Certified by" signature block (removed by supervisor);
   % the supervisor is credited as plain text on the title page.
-  \par\noindent Supervisor: #1, #2\par}
+  \par\noindent\hfil Supervisor: #1, #2\hfil\par}
   \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
   % RMIT: no "Thesis Supervisor" line under the abstract (removed by supervisor).
   }}
