@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 02:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.13)  8 SEP 2026 14:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -560,28 +560,24 @@ e
 
 
 (./01-thesis-cover.tex
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
-
- []
-
 <logo/rmit.png, id=5, 387.6081pt x 173.448pt>
 File: logo/rmit.png Graphic file (type png)
 <use logo/rmit.png>
-Package pdftex.def Info: logo/rmit.png  used on input line 18.
+Package pdftex.def Info: logo/rmit.png  used on input line 19.
 (pdftex.def)             Requested size: 130.08621pt x 58.21196pt.
 LaTeX Font Info:    Trying to load font information for TS1+qtm on input line 1
-8.
-(/usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
+9.
+ (/usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
 File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 ) [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo/rmit.png (PNG copy)
->] [2
+>]
+[2
 
-]
-(./04-thesis-acknowledgments.tex) [3
+] (./04-thesis-acknowledgments.tex) [3
 
 ] (./02-thesis-summary.tex) [4
 
@@ -1049,7 +1045,7 @@ Underfull \hbox (badness 1102) in paragraph at lines 198--202
 Here is how much of TeX's memory you used:
  16118 strings out of 480247
  330203 string characters out of 5896151
- 585072 words of memory out of 5000000
+ 584997 words of memory out of 5000000
  33593 multiletter control sequences out of 15000+600000
  520676 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1081,7 +1077,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fo
 nts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyr
 e/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on s4139514-Minor_Thesis_Part_B.pdf (66 pages, 669167 bytes).
+Output written on s4139514-Minor_Thesis_Part_B.pdf (66 pages, 669018 bytes).
 PDF statistics:
  970 PDF objects out of 1000 (max. 8388607)
  346 compressed objects within 4 object streams
