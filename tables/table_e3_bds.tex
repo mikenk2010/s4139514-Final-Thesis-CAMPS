@@ -10,11 +10,15 @@ held-out GRA split, per model.}
 \hline
 Quantity & GPT-4o & Claude Sonnet \\
 \hline
-Calibrated threshold $\tau$ & 0.40 & 0.40 \\
-Sensitivity (held-out, $n$=70) & 0.833 & 0.833 \\
-False-positive rate (held-out) & 0.615 & 0.865 \\
+Held-out contested / uncontested essays ($n$=70) & 18 / 52 & 18 / 52 \\
+Youden threshold $\tau$ (calibration split) & 0.40 & 0.40 \\
+\quad sensitivity (held-out) & 0.833 (15/18) & 0.833 (15/18) \\
+\quad false-positive rate (held-out) & 0.615 (32/52) & 0.865 (45/52) \\
+Constrained $\tau$ (calibration FPR $\le$ 5\%) & 0.63 & 0.80 \\
+\quad sensitivity (held-out) & 0.056 (1/18) & 0.000 (0/18) \\
+\quad false-positive rate (held-out) & 0.000 (0/52) & 0.019 (1/52) \\
 Area under ROC curve (held-out) & 0.639 & 0.481 \\
-Correlation of BDS with human dispersion & 0.232 & -0.126 \\
+Pearson $r$(BDS, human dispersion), all essays & 0.232 & -0.126 \\
 \hline
 \end{tabular}
 \end{table}

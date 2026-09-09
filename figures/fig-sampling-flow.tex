@@ -11,15 +11,14 @@
   coh/.style={box, fill=green!10},
   arr/.style={-{Latex[length=2.5mm]}}]
   \node[mod] (we) {WE v2.6\\5{,}600 essays};
-  \node[mod, right=of we] (wep) {WEP v0.6\\3{,}340 essays};
+  \node[mod, right=of we, fill=gray!10] (wep) {WEP v0.7\\2{,}340 essays\\(not scored in E1--E3)};
   \node[mod, right=of wep] (gra) {GRA v2.1\\140 essays $\times$ 80 raters};
   \node[box, below=9mm of we] (filter) {Filter: topic-complete,\\bands B1\_2 + B2+};
-  \node[coh, below left=9mm and -6mm of filter] (sea) {SEA cohort\\THA, IDN, PHL (+VNM)\\$n \approx 100$};
-  \node[coh, below right=9mm and -6mm of filter] (ens) {Native cohort\\ENS\\$n \approx 100$};
+  \node[coh, below left=9mm and -6mm of filter] (sea) {SEA cohort\\THA, IDN, PHL\\$n = 100$};
+  \node[coh, below right=9mm and -6mm of filter] (ens) {Native cohort\\ENS (unbanded)\\$n = 100$};
   \node[box, below=9mm of gra] (val) {Validation set\\140 essays, kept whole};
   \node[box, below=26mm of filter] (sample) {Stratified sample, fixed seed\\manifest of essay IDs only};
   \draw[arr] (we) -- (filter);
-  \draw[arr] (wep) -- (filter);
   \draw[arr] (filter) -- (sea);
   \draw[arr] (filter) -- (ens);
   \draw[arr] (sea) -- (sample);

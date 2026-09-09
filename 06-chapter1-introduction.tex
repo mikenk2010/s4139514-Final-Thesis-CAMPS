@@ -40,8 +40,9 @@ model. Figure~\ref{fig:rhetoric-shapes} sketches the two shapes.
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig-rhetoric-shapes}
 \caption[Two valid shapes of argument]{Two valid shapes of argument.
-The writer-responsible, thesis-first pattern dominates the text LLM
-evaluators learn from \citep{tao2024cultural}; the reader-responsible,
+The writer-responsible, thesis-first pattern is plausibly dominant
+in the text LLM evaluators learn from, given their measured alignment
+with Western values \citep{tao2024cultural}; the reader-responsible,
 context-first pattern common in many Asian academic traditions
 \citep{hinds1987reader, connor2011intercultural} is equally valid but
 under-represented.}
@@ -53,23 +54,27 @@ when an LLM evaluates writing, it applies an implicit cultural filter
 derived from its training distribution, systematically discounting
 rhetorical strategies that deviate from Anglo-American conventions
 regardless of their argumentative merit. A pilot study in the preceding
-phase of this research (Part~A) reported statistically significant
-scoring disparities between Southeast Asian (SEA) and native-English
-cohorts
-of equivalent human-rated quality across two frontier models. The same
-pilot reported that a culturally-diversified scoring panel reduced the
-disparity. Those findings motivated, but do not yet establish, the
-claims this thesis investigates at scale.
+phase of this research (Part~A) reported scoring disparities between
+Southeast Asian (SEA) and native-English cohorts on a 30-essay sample
+across two frontier models, and that a culturally-diversified scoring
+panel reduced them. The pilot's corpus did not support a controlled
+comparison, so Part~B rebuilds the data (Section~\ref{sec:data});
+its findings motivated, but do not establish, the claims this thesis
+investigates at scale.
 
 The problem this thesis addresses can therefore be stated plainly.
-LLM-based essay scoring applies culturally partial standards,
-invisibly and at scale, to students whose academic futures depend on
-the result. The disparity is documented, but no validated framework
-exists to mitigate it in evaluative settings. Nor does any calibrated
-mechanism exist to detect the essays it affects. This thesis
-quantifies the problem across models, builds and tests such a
-framework, and tests its detection mechanism against human ground
-truth.
+If LLM-based essay scoring applies culturally partial standards,
+it does so invisibly and at scale, to students whose academic futures
+depend on the result. Scoring disparities against non-native writers
+are documented, but no validated framework exists to mitigate them in
+evaluative settings, and no calibrated mechanism exists to flag the
+essays affected. This thesis measures the native$-$SEA scoring
+disparity across models, builds and tests such a framework, and
+tests its flagging mechanism against human ground truth. Throughout,
+\emph{disparity} or \emph{gap} names what is measured (a difference
+in mean score between cohorts) and \emph{filtering} names the
+mechanism hypothesised to produce part of it
+(Table~\ref{tab:key-terms}).
 
 \section{Research Questions and Hypotheses}
 \label{sec:rqs}
@@ -84,16 +89,17 @@ Two research questions drive this thesis:
   \item[RQ2.] Can a culturally-aware multi-agent scoring architecture
         mitigate these disparities at inference time, without
         retraining or access to model weights, while reliably
-        detecting the essays it cannot fairly score?
+        flagging for human review the essays it cannot score
+        with confidence?
 \end{description}
 
 These questions are operationalised as four testable hypotheses:
 
 \begin{itemize}
-  \item \textbf{H1 (Generalisation).} Evaluative bias against Southeast
-        Asian rhetorical patterns appears as a native$-$SEA cohort
-        score gap whose 95\% confidence interval excludes zero on at
-        least four LLMs, including an open-weight model.
+  \item \textbf{H1 (Generalisation).} A native$-$SEA cohort score
+        gap, consistent with evaluative epistemic filtering, has a
+        95\% confidence interval excluding zero on at least four
+        LLMs, including an open-weight model.
   \item \textbf{H2 (Mitigation).} A five-agent culturally-calibrated
         panel with a meta-adjudicator reduces the cohort score gap
         more than the three-agent pilot configuration, without
@@ -109,11 +115,15 @@ These questions are operationalised as four testable hypotheses:
         gains degrade scoring accuracy against graded ground truth.
 \end{itemize}
 
+Graded ground truth does not exist for the cohort essays, so H4 is
+examined on a proxy, association with the corpus's proficiency bands
+(Section~\ref{sec:metrics}), and is reported as exploratory.
+
 The research questions and hypotheses relate as follows. RQ1 is a
 question about the \emph{existence and generality} of the problem; it
 is operationalised by H1, which makes it falsifiable by fixing the
-scope (four model families) and the test (statistical significance of
-the cohort scoring gap). RQ2 is a question about the \emph{solution},
+scope (four model families) and the test (a confidence interval on
+the cohort scoring gap that excludes zero). RQ2 is a question about the \emph{solution},
 and it decomposes into three parts: whether the mitigation works (H2),
 whether its failures can be detected (H3), and what the mitigation
 costs (H4). Table~\ref{tab:rq-hypotheses} summarises the mapping and
@@ -129,10 +139,10 @@ questions decompose into hypotheses, and where each is tested.}
 \hline
 RQ & Hypothesis & Establishes & Tested in \\
 \hline
-RQ1 & H1 & Bias exists and generalises across models & Experiment E1 \\
-RQ2 & H2 & The panel mitigates the bias & Experiments E1--E2 \\
-RQ2 & H3 & Residual bias is detectable (BDS) & Experiment E3 \\
-RQ2 & H4 & What mitigation costs in accuracy & Experiment E2 \\
+RQ1 & H1 & A cohort gap exists and generalises across models & E1 \\
+RQ2 & H2 & The panel narrows the gap & E1--E2 \\
+RQ2 & H3 & BDS flags contested essays & E3 \\
+RQ2 & H4 & What narrowing the gap costs (proxy: band association) & E2 \\
 \hline
 \end{tabular}
 \end{table}
@@ -163,9 +173,15 @@ Bias Divergence Score (BDS) & How much the lenses disagree on one
 essay; high values are meant to flag the essay for a human. \\[2pt]
 Cohort, cohort gap & A group of essays by writer background (Southeast
 Asian learners or native-English writers); the gap is the difference
-in mean score between the two cohorts. \\[2pt]
-Band & The 1--9 integer score an evaluator assigns; the corpus's own
-proficiency labels are CEFR bands (B1\_2, B2+). \\
+in mean score between the two cohorts. It is an \emph{unadjusted
+disparity}: the cohorts were not matched on human-judged quality, so
+the gap may contain both filtering and real quality differences. \\[2pt]
+Contested essay & In E3, an essay in the top quartile of disagreement
+among 80 human raters. This is a proxy for the cultural
+contestation BDS is meant to detect, not the same thing. \\[2pt]
+Band & The 1--9 score an evaluator assigns (integer, with occasional
+half-bands); the corpus's own proficiency labels are CEFR bands
+(B1\_2, B2+). \\
 \hline
 \end{tabular}
 \end{table}
@@ -254,20 +270,25 @@ This thesis makes five contributions:
         theoretically grounded in epistemic injustice and contrastive
         rhetoric.
   \item \textbf{Architectural:} it develops CAMPS (Culturally-Aware
-        Multi-Perspective Scoring), a five-agent culturally-calibrated
-        scoring panel with a meta-adjudicator, extending formal
-        multi-perspective bias reduction from generation to evaluation.
-  \item \textbf{Empirical:} it evaluates the framework on approximately
-        200 topic-controlled essays from the ICNALE corpus
+        Multi-Perspective Scoring), a culturally-calibrated scoring
+        panel with a divergence-based review trigger, extending
+        multi-perspective bias reduction from generation to
+        evaluation, and tests whether scaling it to five lenses and
+        an adjudicator helps.
+  \item \textbf{Empirical:} it evaluates the framework on 200
+        topic-controlled essays from the ICNALE corpus
         \citep{ishikawa2023icnale} across four frontier and open-weight
-        models, re-establishing the pilot evidence at scale on a corpus
-        purpose-built for the comparison.
-  \item \textbf{Methodological:} it introduces the Bias Divergence
-        Score as a candidate trigger for targeted human review, and
-        evaluates it against multi-rater human ground truth.
-  \item \textbf{Practical:} it characterises the fairness--accuracy
-        trade-off frontier, giving deploying institutions an explicit
-        account of what fairness currently costs.
+        models, establishing the disparity at scale on a corpus
+        suited to the comparison and characterising where the
+        framework changes it.
+  \item \textbf{Methodological:} it introduces ROC calibration of
+        the Bias Divergence Score against multi-rater human
+        disagreement, replacing the pilot's hand-set threshold.
+  \item \textbf{Practical:} it maps the gap against a
+        proficiency-band association proxy under every panel
+        weighting, giving deploying institutions a re-runnable audit
+        and an explicit account of what narrowing the gap did and did
+        not cost on this evidence.
 \end{enumerate}
 
 \section{Thesis Outline}

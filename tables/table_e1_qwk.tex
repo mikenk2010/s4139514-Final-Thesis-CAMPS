@@ -2,24 +2,25 @@
 \begin{table}[htbp]
 \centering
 \caption[E1: cohort score gap by model]{Experiment E1: mean consensus
-score by cohort and the native$-$SEA score gap (upper-band SEA
-cohort vs unbanded native reference), with 95\% bootstrap confidence
-intervals (10{,}000 resamples).}
+score (SD) by cohort, $n = 100$ per cohort, and the native$-$SEA
+score gap (upper-band SEA cohort vs unbanded native reference) with
+95\% writer-cluster bootstrap confidence intervals (10{,}000
+resamples); $d$ is the gap in pooled-SD units.}
 \label{tab:e1-qwk}
 \small
-\begin{tabular}{llccc}
+\begin{tabular}{llcccc}
 \hline
-Model & Condition & Mean score\textsubscript{SEA} &
-Mean score\textsubscript{native} & Gap [95\% CI] \\
+Model & Condition & Mean\textsubscript{SEA} (SD) &
+Mean\textsubscript{native} (SD) & Gap [95\% CI] & $d$ \\
 \hline
-Claude Sonnet & Baseline & 4.44 ($n$=100) & 5.62 ($n$=100) & 1.18 [0.86, 1.50] \\
-Claude Sonnet & CAMPS $k{=}3$ & 3.73 ($n$=100) & 4.64 ($n$=100) & 0.91 [0.61, 1.21] \\
-Gemini Pro & Baseline & 4.83 ($n$=100) & 5.02 ($n$=100) & 0.19 [0.07, 0.31] \\
-Gemini Pro & CAMPS $k{=}3$ & 5.24 ($n$=100) & 5.69 ($n$=100) & 0.45 [0.30, 0.60] \\
-GPT-4o & Baseline & 5.03 ($n$=100) & 5.83 ($n$=100) & 0.80 [0.60, 1.00] \\
-GPT-4o & CAMPS $k{=}3$ & 4.70 ($n$=100) & 5.27 ($n$=100) & 0.57 [0.37, 0.78] \\
-Qwen3 14B & Baseline & 5.64 ($n$=100) & 5.88 ($n$=100) & 0.23 [0.07, 0.39] \\
-Qwen3 14B & CAMPS $k{=}3$ & 5.60 ($n$=100) & 5.87 ($n$=100) & 0.27 [0.14, 0.40] \\
+Claude Sonnet & Baseline & 4.44 (1.39) & 5.62 (0.91) & 1.18 [0.83, 1.54] & 1.01 \\
+Claude Sonnet & CAMPS $k{=}3$ & 3.73 (1.14) & 4.64 (1.04) & 0.91 [0.58, 1.23] & 0.83 \\
+Gemini Pro & Baseline & 4.83 (0.59) & 5.02 (0.20) & 0.19 [0.06, 0.31] & 0.43 \\
+Gemini Pro & CAMPS $k{=}3$ & 5.24 (0.62) & 5.69 (0.49) & 0.45 [0.29, 0.61] & 0.81 \\
+GPT-4o & Baseline & 5.03 (0.81) & 5.83 (0.65) & 0.80 [0.59, 1.02] & 1.09 \\
+GPT-4o & CAMPS $k{=}3$ & 4.70 (0.78) & 5.27 (0.71) & 0.57 [0.36, 0.79] & 0.77 \\
+Qwen3 14B & Baseline & 5.64 (0.59) & 5.88 (0.59) & 0.23 [0.06, 0.40] & 0.39 \\
+Qwen3 14B & CAMPS $k{=}3$ & 5.60 (0.46) & 5.87 (0.50) & 0.27 [0.13, 0.40] & 0.56 \\
 \hline
 \end{tabular}
 \end{table}
