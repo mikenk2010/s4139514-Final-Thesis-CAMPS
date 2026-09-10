@@ -12,12 +12,14 @@ are increasingly deployed to score high-stakes writing at scale,
 promising consistent, rapid, and inexpensive assessment. Yet a model
 that judges \emph{how well a student argues} must hold some standard of
 what good argumentation looks like, and that standard is not neutral.
-LLMs derive their evaluative expectations from training corpora that
-overwhelmingly represent Western, Educated, Industrialised, Rich, and
-Democratic (WEIRD) cultural contexts; empirical work has shown that
-widely used models express cultural values closely aligned with
-English-speaking and Protestant-European countries
-\citep{tao2024cultural}.
+LLMs may acquire culturally uneven evaluative expectations from
+training and alignment on corpora thought to over-represent Western,
+Educated, Industrialised, Rich, and Democratic (WEIRD) contexts;
+empirical work shows that widely used models express cultural values
+closely aligned with English-speaking and Protestant-European
+countries \citep{tao2024cultural}, which motivates this concern
+without establishing the prevalence of particular rhetorical
+structures in their training data.
 
 Consider an illustration. A Vietnamese student opens an argumentative
 essay with her grandfather's proverb, \emph{nuoc chay da mon} (water
@@ -46,8 +48,8 @@ itself is not measured here, and the measured Western value
 alignment of these models \citep{tao2024cultural} motivates rather
 than establishes it. The reader-responsible,
 context-first pattern common in many Asian academic traditions
-\citep{hinds1987reader, connor2011intercultural} is equally valid but
-under-represented.}
+\citep{hinds1987reader, connor2011intercultural} is equally valid
+and is hypothesised to be the less familiar of the two.}
 \label{fig:rhetoric-shapes}
 \end{figure}
 
@@ -117,9 +119,10 @@ These questions are operationalised as four testable hypotheses:
         gains degrade scoring accuracy against graded ground truth.
 \end{itemize}
 
-Graded ground truth does not exist for the cohort essays, so H4 is
-examined on a proxy, association with the corpus's proficiency bands
-(Section~\ref{sec:metrics}), and is reported as exploratory.
+Comparable essay-level human ratings are unavailable for the full
+cohort sample, so H4 is examined on a proxy, association with the
+corpus's proficiency bands (Section~\ref{sec:metrics}), and is
+reported as exploratory.
 
 The research questions and hypotheses relate as follows. RQ1 is a
 question about the \emph{existence and generality} of the problem; it
