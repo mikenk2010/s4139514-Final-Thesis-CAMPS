@@ -78,19 +78,24 @@ central finding, that functionally-roled agent frameworks lack the
 explicit cultural representation cross-cultural fairness needs,
 independently corroborates the design principle behind CAMPS. The two
 frameworks nonetheless answer different questions. MACD debiases
-\emph{what a model says} in open-ended generation. CAMPS debiases
-\emph{how a model judges}: the deliverable is a score whose
-fairness can be measured cohort by cohort, and disagreement
-between cultural agents is exploited as a detection signal rather than
-dissolved through debate.
+\emph{what a model says} in open-ended generation. The same paper
+also introduces Multi-Agent Vote (MAV), an evaluation protocol in
+which several agents classify a response's cultural tendency, with
+an explicit no-bias option, and their votes are aggregated; this is
+the closest architectural precedent for culturally differentiated
+judging. CAMPS differs in applying such judging to essay scoring,
+in analysing the resulting scores cohort by cohort, and in treating
+disagreement between cultural agents as a candidate human-review
+signal rather than a vote to be aggregated away.
 
 A caution for all multi-agent designs comes from the MALIBU benchmark
 \citep{mirza2025malibu}, which shows that LLM-based multi-agent systems
 can implicitly \emph{reinforce} social biases, and that
 persona-conditioned judging can over-correct. For this thesis, MALIBU
 motivates two design decisions: consensus weights are calibrated
-empirically rather than assumed benign (Hypothesis H4 measures the
-over-correction frontier directly), and panel behaviour is validated
+empirically rather than assumed benign (Hypothesis H4 examines,
+exploratorily, how the cohort gap moves with proficiency-band
+association under reweighting), and panel behaviour is validated
 against multi-rater human ground truth rather than taken on faith.
 
 A separate line of work mitigates bias inside the model rather than
@@ -115,8 +120,10 @@ judgement is exactly what this thesis tests. \citet{tao2024cultural} compared fi
 generations against nationally representative values-survey data for
 107 countries. They found that model responses consistently resemble
 those of English-speaking and Protestant-European populations. This is
-the WEIRD alignment that this thesis takes as the distal cause of
-evaluative epistemic filtering.
+the WEIRD alignment that this thesis proposes as a distal
+contributing cause of evaluative epistemic filtering; Tao et al.\
+measure value alignment in responses, not the prevalence of
+rhetorical forms in training data, so the link is hypothesised.
 
 The proximal framework for this thesis comes from the supervisor's
 research programme. \citet{dorleon2026uncovering} formally defined

@@ -92,3 +92,25 @@ dispersion for E3 was computed per essay as the standard deviation,
 across the 80 raters, of each rater's mean of the four Content
 dimensions; a rater with a missing Content rating for an essay was
 excluded for that essay (three essays, 79 raters each).
+
+\section*{Analysis details}
+\emph{Contested label.} The 75th percentile of dispersion over all
+140 essays (linear interpolation) is 1.910; essays with dispersion
+$\ge$ 1.910 are contested ($n = 35$; no ties at the cut-off). The
+calibration/held-out split is a seeded permutation (seed 4139514)
+of the 140 essays, first 70 calibration. \emph{Thresholds.} An
+essay is flagged when BDS $\ge \tau$. BDS takes the values
+$\{0, 0.400, 0.490, 0.632, 0.748, 0.800, 0.894\}$ at $k = 5$ and
+$\{0, 0.471, 0.816, 0.943\}$ at $k = 3$; the constrained $\tau$
+is the smallest observed BDS value satisfying calibration FPR
+$\le 5\%$ with maximal calibration sensitivity (exact values
+0.6325 GPT-4o and 0.8000 Claude at $k = 5$; 0.8165 both at $k = 3$),
+and Youden's $\tau$ is 0.4000 on both models (no tie).
+\emph{Cluster bootstrap.} Writers are resampled with replacement
+within each cohort separately; each resample concatenates the
+sampled writers' essays (one or two each), the cohort mean is the
+mean over those essays, and paired changes are computed on the same
+resample. Cohort composition: SEA 100 essays (Philippines 43,
+Indonesia 29, Thailand 28; B1\_2 74, B2+ 26; 50 per topic) from 84
+writers; native 100 essays (50 per topic) from 77 writers; 39
+writers contribute both topics.

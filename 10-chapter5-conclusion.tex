@@ -31,21 +31,24 @@ bands ($d$ = 1.01, 1.09, 0.39, 0.43); larger for B1\_2 essays.
 Cultural mechanism not isolated by the design \\[3pt]
 H2 mitigation, $k{=}5 > k{=}3$ & Not supported (GPT-4o); rejected
 (Claude) &
-$k$=3 panel cut the gap 23--28\% on the two largest-gap models, no
-more than its SEA lens alone; $k$=5 changed it by 0.02 [$-0.02$,
-0.06] on GPT-4o (no clear evidence) and $-0.10$ [$-0.15$, $-0.06$]
-on Claude (worse); adjudicator no clear change on either; band
-association lowered only by the adjudicated configuration on Claude
-($-0.06$ [$-0.10$, $-0.03$]). Scope note: the $k$=3 panel amplified
+Direct test, adjudicated $k$=5 vs $k$=3: GPT-4o gap reduction 0.05
+[$-0.03$, 0.14], association change $+0.02$ [$-0.06$, 0.12] (no
+clear evidence); Claude gap reduction $-0.10$ [$-0.18$, $-0.02$]
+and association change $-0.06$ [$-0.10$, $-0.02$] (worse on
+both). Components: $k$=5 alone
+added 0.02 [$-0.02$, 0.06] on GPT-4o and $-0.10$ [$-0.15$, $-0.06$]
+on Claude; the $k$=3 panel had cut the gap 23--28\%, no more than
+its SEA lens alone. Scope note: the $k$=3 panel amplified
 the gap on Gemini (0.19 $\to$ 0.45), not carried into E2 \\[3pt]
 H3 detection $\ge$90\%/$\le$5\% & Not supported &
 At the specified FPR $\le$ 5\%: held-out sensitivity 0.056 (GPT-4o)
 and 0.000 (Claude). Held-out AUC 0.639 and 0.481; $r$(BDS, human
 dispersion) $=$ 0.23 and $-0.13$ \\[3pt]
-H4 trade-off boundary & Not testable against graded ground truth;
-small in-sample trade-off on the proxy (exploratory) &
-Graded ground truth is absent for the cohort essays, so accuracy is
-proxied by band association. 10{,}626-vector sweep: equal weighting
+H4 trade-off boundary & Not testable against graded truth; small
+in-sample trade-off on the proxy (exploratory) &
+Comparable graded ground truth is unavailable for the full cohort
+sample (13 essays overlap the GRA), so accuracy is proxied by band
+association. 10{,}626-vector sweep: equal weighting
 dominated on both models (gap 0.55 $\to$ 0.32 with association 0.39
 $\to$ 0.42 on GPT-4o; 1.01 $\to$ 0.79 with 0.35 $\to$ 0.36 on
 Claude); along the non-dominated set higher association needs a
@@ -77,9 +80,9 @@ validated capability (H3).
 
 Turning to the research questions, RQ1 is answered in part: a
 scoring disparity against Southeast Asian writing is present and
-general, its strength is a property of the individual model, and
-isolating its cultural cause requires matched human assessments this
-design did not include. RQ2 is answered conditionally. Culturally
+general, its size is model-specific, and isolating its cultural
+cause requires matched human assessments this design did not
+include. RQ2 is answered conditionally. Culturally
 framed prompts can narrow the disparity at inference time on the
 models where it is material, and panel scores are strongly associated with 80-rater human
 consensus ($r \approx 0.9$; calibration was not assessed);

@@ -8,10 +8,10 @@
 \contentsline {chapter}{\numberline {2}Literature Review}{18}{}%
 \contentsline {section}{\numberline {2.1}Multi-Agent and Panel-Based Approaches to Scoring}{18}{}%
 \contentsline {section}{\numberline {2.2}Inference-Time Debiasing}{19}{}%
-\contentsline {section}{\numberline {2.3}Cultural Bias in Large Language Models}{20}{}%
-\contentsline {section}{\numberline {2.4}Fairness in AES for Non-Native Writers}{21}{}%
-\contentsline {section}{\numberline {2.5}Contrastive Rhetoric and Cultural Writing Traditions}{22}{}%
-\contentsline {section}{\numberline {2.6}The Research Gap}{23}{}%
+\contentsline {section}{\numberline {2.3}Cultural Bias in Large Language Models}{21}{}%
+\contentsline {section}{\numberline {2.4}Fairness in AES for Non-Native Writers}{22}{}%
+\contentsline {section}{\numberline {2.5}Contrastive Rhetoric and Cultural Writing Traditions}{23}{}%
+\contentsline {section}{\numberline {2.6}The Research Gap}{24}{}%
 \contentsline {chapter}{\numberline {3}Methodology}{25}{}%
 \contentsline {section}{\numberline {3.1}Working Theory: Evaluative Epistemic Filtering}{25}{}%
 \contentsline {section}{\numberline {3.2}The CAMPS Framework}{27}{}%
@@ -23,10 +23,10 @@
 \contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{37}{}%
 \contentsline {chapter}{\numberline {4}Results and Discussion}{39}{}%
 \contentsline {section}{\numberline {4.1}Experiment 1: The Cohort Gap at Scale (H1; H2 in part)}{39}{}%
-\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{41}{}%
+\contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{42}{}%
 \contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{47}{}%
 \contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{49}{}%
-\contentsline {section}{\numberline {4.5}Threats to Validity}{52}{}%
+\contentsline {section}{\numberline {4.5}Threats to Validity}{53}{}%
 \contentsline {section}{\numberline {4.6}Discussion}{54}{}%
 \contentsline {chapter}{\numberline {5}Conclusion}{57}{}%
 \contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{57}{}%
