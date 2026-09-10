@@ -40,9 +40,11 @@ model. Figure~\ref{fig:rhetoric-shapes} sketches the two shapes.
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig-rhetoric-shapes}
 \caption[Two valid shapes of argument]{Two valid shapes of argument.
-The writer-responsible, thesis-first pattern is plausibly dominant
-in the text LLM evaluators learn from, given their measured alignment
-with Western values \citep{tao2024cultural}; the reader-responsible,
+The writer-responsible, thesis-first pattern is hypothesised to
+dominate the text LLM evaluators learn from; the corpus composition
+itself is not measured here, and the measured Western value
+alignment of these models \citep{tao2024cultural} motivates rather
+than establishes it. The reader-responsible,
 context-first pattern common in many Asian academic traditions
 \citep{hinds1987reader, connor2011intercultural} is equally valid but
 under-represented.}
@@ -142,7 +144,7 @@ RQ & Hypothesis & Establishes & Tested in \\
 RQ1 & H1 & A cohort gap exists and generalises across models & E1 \\
 RQ2 & H2 & The panel narrows the gap & E1--E2 \\
 RQ2 & H3 & BDS flags contested essays & E3 \\
-RQ2 & H4 & What narrowing the gap costs (proxy: band association) & E2 \\
+RQ2 & H4 & What narrowing the gap costs (proxy: band association) & E2 (proxy only) \\
 \hline
 \end{tabular}
 \end{table}
@@ -166,7 +168,8 @@ down writing whose rhetorical form is unfamiliar from its training
 data, regardless of the argument's quality. \\[2pt]
 Lens & One AI evaluator given a documented cultural interpretation of
 the same scoring rubric (Western, Southeast Asian, East Asian,
-Mekong, or Neutral). \\[2pt]
+Mekong, or Neutral). ``Culturally calibrated'' means informed by
+that scholarship, not empirically tuned. \\[2pt]
 Panel, consensus & Several lenses scoring the same essay
 independently; their weighted average is the consensus score. \\[2pt]
 Bias Divergence Score (BDS) & How much the lenses disagree on one
@@ -240,12 +243,13 @@ exists in evaluative scoring, and where it lies.
 \section{Significance}
 \label{sec:significance}
 
-The significance of this work is threefold. First, equity: as LLM-based
-assessment becomes a gatekeeper to scholarships, university admission,
-and migration pathways, a systematic penalty against non-Western
+The significance of this work is threefold. First, equity: if
+LLM-based assessment comes to gate scholarships, university
+admission, and migration pathways, as its adoption in essay scoring
+makes plausible, a systematic penalty against non-Western
 rhetorical traditions would constitute discrimination embedded in
 infrastructure, invisible to its subjects and deniable by its
-operators. Quantifying that penalty rigorously is a precondition for
+operators. Measuring the disparity rigorously is a precondition for
 governing it. Second, method: existing multi-agent AES research
 improves accuracy without cultural awareness
 \citep[e.g.,][]{su2025cafes}, while existing debiasing research targets

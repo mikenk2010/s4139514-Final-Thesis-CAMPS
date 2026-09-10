@@ -1,23 +1,25 @@
 % -*-latex-*-
 % RMIT requirement: technical abstract, <200 words (counted as printed).
 
-Large language models (LLMs) increasingly score student essays, yet
-models trained mainly on Western text risk treating Anglo-American
-rhetoric as the standard and penalising other valid traditions. This thesis formalises the mechanism as \emph{evaluative
-epistemic filtering} and develops CAMPS (Culturally-Aware
-Multi-Perspective Scoring), an inference-time framework where
-agents calibrated to distinct cultural readings of the rubric score
-each essay independently, a Bias Divergence Score (BDS) measuring
-disagreement. Across 200 topic-controlled
-ICNALE essays and four model families, every baseline model scored
-native-English above upper-band Southeast Asian writers
-(0.19--1.18 bands; all 95\% intervals exclude zero). As the cohorts
-were not matched on judged quality, this is an unadjusted disparity,
-not an isolated cultural bias. A
-three-agent panel reduced the disparity by 23--28\% on the two most
-disparate models, by marking both cohorts down (natives more) and by no more than
-its Southeast Asian lens alone; it amplified the disparity on the least disparate model. Five agents
-added nothing on GPT-4o and widened the gap on Claude. Reweighting showed no trade-off with band association. BDS missed its detection target (held-out sensitivity 0.06 and
-0.00 at 5\% false-positive rate). Culturally framed prompts change LLM scoring
-in model-dependent ways; cohort gaps and agent disagreement are
-imperfect fairness proxies.
+Large language models (LLMs) increasingly score essays, yet models
+trained mainly on Western text may treat Anglo-American rhetoric as
+the standard, penalising other valid traditions. This thesis names
+the mechanism \emph{evaluative epistemic filtering} and develops
+CAMPS (Culturally-Aware Multi-Perspective Scoring), an inference-time
+framework whose agents calibrated to distinct cultural readings
+of the rubric score each essay independently, a Bias Divergence
+Score (BDS) measuring disagreement. Across 200 topic-controlled ICNALE
+essays and four model families, every baseline model scored native
+above upper-band Southeast Asian writers (0.19--1.18 bands; all
+intervals exclude zero). Unmatched on judged quality, the cohorts
+show an unadjusted disparity, not an isolated cultural bias. A
+three-agent panel reduced it by 23--28\% on the two most disparate
+models, marking both cohorts down (natives more) and no more than
+its Southeast Asian lens alone, and amplified it on the least
+disparate one. Five agents gave no clear further reduction on GPT-4o
+and widened the gap on Claude. Reweighting showed equal weighting
+inefficient and a small in-sample trade-off with band association.
+At thresholds set for 5\% calibration false positives, BDS reached
+held-out sensitivity of 0.06 and 0.00. Culturally framed prompts
+change LLM scoring model-dependently; cohort gaps and agent
+disagreement are imperfect fairness proxies.

@@ -5,9 +5,9 @@
 % Answer each of H1-H4 explicitly (rubric: conclusions relate to the
 % original research questions/hypotheses).
 
-This thesis asked whether LLM essay evaluators penalise valid
-non-Western rhetoric, and whether a culturally plural panel can
-mitigate and detect that penalty. Table~\ref{tab:verdicts} answers
+This thesis asked whether LLM essay evaluators score valid
+non-Western rhetoric lower, and whether a culturally plural panel
+can narrow and flag that disparity. Table~\ref{tab:verdicts} answers
 each hypothesis against the evidence of Chapter~4.
 
 \begin{table}[htbp]
@@ -32,22 +32,25 @@ Cultural mechanism not isolated by the design \\[3pt]
 H2 mitigation, $k{=}5 > k{=}3$ & Not supported (GPT-4o); rejected
 (Claude) &
 $k$=3 panel cut the gap 23--28\% on the two largest-gap models, no
-more than its SEA lens alone; $k$=5 added 0.02 [$-0.02$, 0.06] on
-GPT-4o, regressed $-0.10$ [$-0.15$, $-0.06$] on Claude; adjudicator
-null on both; band association fell on Claude. Scope note: the $k$=3
-panel amplified the gap on Gemini (0.19 $\to$ 0.45), not carried
-into E2 \\[3pt]
+more than its SEA lens alone; $k$=5 changed it by 0.02 [$-0.02$,
+0.06] on GPT-4o (no clear evidence) and $-0.10$ [$-0.15$, $-0.06$]
+on Claude (worse); adjudicator no clear change on either; band
+association lowered only by the adjudicated configuration on Claude
+($-0.06$ [$-0.10$, $-0.03$]). Scope note: the $k$=3 panel amplified
+the gap on Gemini (0.19 $\to$ 0.45), not carried into E2 \\[3pt]
 H3 detection $\ge$90\%/$\le$5\% & Not supported &
 At the specified FPR $\le$ 5\%: held-out sensitivity 0.056 (GPT-4o)
 and 0.000 (Claude). Held-out AUC 0.639 and 0.481; $r$(BDS, human
 dispersion) $=$ 0.23 and $-0.13$ \\[3pt]
 H4 trade-off boundary & Not testable against graded ground truth;
-no trade-off on the proxy (exploratory) &
+small in-sample trade-off on the proxy (exploratory) &
 Graded ground truth is absent for the cohort essays, so accuracy is
-proxied by band association. 10{,}626-vector sweep: equal-weight
-panel dominated on both models; gap 0.55 $\to$ 0.32 with association
-0.39 $\to$ 0.42 (GPT-4o), 1.01 $\to$ 0.79 with 0.35 $\to$ 0.36
-(Claude); minimum-gap vector is the SEA lens alone, by construction \\
+proxied by band association. 10{,}626-vector sweep: equal weighting
+dominated on both models (gap 0.55 $\to$ 0.32 with association 0.39
+$\to$ 0.42 on GPT-4o; 1.01 $\to$ 0.79 with 0.35 $\to$ 0.36 on
+Claude); along the non-dominated set higher association needs a
+larger gap (0.32--0.38 / 0.42--0.43; 0.79--0.90 / 0.355--0.361);
+minimum-gap vector is the SEA lens alone, by construction \\
 \hline
 \end{tabular}
 \end{table}
@@ -62,10 +65,11 @@ the disparity in a model-dependent way, reducing it on the two
 models where it was largest, by marking both cohorts down (the
 native cohort more) and by no more than the Southeast Asian lens
 alone achieved, and amplifying it on the model where it was
-smallest; five lenses added nothing on GPT-4o and widened the gap
-on Claude, and the adjudicator added nothing (H2). H4
-could not be tested against graded ground truth; on the
-proficiency-band proxy, no trade-off was observed (H4). The panel's
+smallest; five lenses gave no clear further reduction on GPT-4o and
+a larger gap on Claude, and the adjudicator no clear change (H2).
+H4 could not be tested against graded ground truth; on the
+proficiency-band proxy, equal weighting was inefficient and a small
+in-sample trade-off remained along the non-dominated set (H4). The panel's
 divergence signal did not meet its specified operating point, and
 was larger on native than on Southeast Asian essays, so the
 review-trigger use of BDS remains a hypothesis rather than a
@@ -77,8 +81,8 @@ general, its strength is a property of the individual model, and
 isolating its cultural cause requires matched human assessments this
 design did not include. RQ2 is answered conditionally. Culturally
 framed prompts can narrow the disparity at inference time on the
-models where it is material, and panel scores track 80-rater human
-consensus in rank ($r \approx 0.9$; calibration was not assessed);
+models where it is material, and panel scores are strongly associated with 80-rater human
+consensus ($r \approx 0.9$; calibration was not assessed);
 but the narrowing has not been shown to be an improvement in
 fairness rather than a change of scoring criteria, and the
 self-diagnostic signal is not yet reliable enough to route essays
@@ -88,17 +92,17 @@ autonomously.
 \label{sec:conclusion-contributions}
 
 This thesis makes five contributions. Conceptually, it formalises
-\emph{evaluative epistemic filtering} as a distinct bias mechanism in
-LLM-driven scoring (Definition~\ref{def:eef}), grounded in epistemic
-injustice and contrastive rhetoric. Architecturally, it specifies
+\emph{evaluative epistemic filtering} as a candidate bias mechanism
+in LLM-driven scoring (Definition~\ref{def:eef}), grounded in
+epistemic injustice and contrastive rhetoric. Architecturally, it specifies
 CAMPS, a culturally-calibrated scoring panel with a divergence-based
 human-review trigger, extending multi-perspective bias mitigation
 from generation \citep{dorleon2026uncovering} to evaluation. Empirically, it evaluates the framework on topic-controlled ICNALE
 cohorts across four model families, establishing the disparity at
 scale and characterising where the panel changes it; and it
-disconfirms two working assumptions, that panel benefit grows with
-panel size and that inter-judge divergence transfers directly into a
-detection signal. Methodologically, it introduces ROC calibration of
+disconfirms two working assumptions, that adding the East Asian and
+Mekong lenses would add mitigation and that inter-judge divergence
+transfers directly into a detection signal. Methodologically, it introduces ROC calibration of
 the Bias Divergence Score against the disagreement of eighty human
 raters, an evaluation design that exposed the construct gap between
 cultural contestation and general rater disagreement. Practically,
@@ -113,24 +117,23 @@ Beyond the validity threats analysed in Section~\ref{sec:threats},
 four limitations bound this work. First, corpus scope: the evidence
 rests on short, topic-controlled argumentative essays by university
 students; high-stakes examination writing differs in genre, length,
-and stakes. Second, the cultural lenses cover five perspectives and
-leave others (notably Middle Eastern, South Asian, and African
-traditions) to future work; ICNALE's WEP module does contain South
-Asian writers, so the constraint is the absence of validating cohorts
-and documented rhetorical grounding for a lens, not of essays. Third, CAMPS is an inference-time
-mitigation: it treats the symptom at the point of judgement and cannot
-correct the training-distribution causes of the filter; a panel of
-biased judges may be fairer than one, but is not unbiased. Fourth, the framework
-multiplies inference cost by the panel size and routes contested
-essays to humans, so its operational cost scales with exactly the
-essays that most need care; whether that is acceptable is an
-institutional decision.
+and stakes. Second, the lenses cover five perspectives and leave others
+(notably Middle Eastern, South Asian, and African traditions) to
+future work; the constraint is the absence of validating cohorts and
+documented rhetorical grounding for a lens, not of essays. Third,
+CAMPS is an inference-time mitigation: it treats the symptom at the
+point of judgement, not the training-distribution cause; a panel of
+biased judges may be fairer than one, but is not unbiased. Fourth,
+the framework multiplies inference cost by the panel size and is
+intended to route contested essays to humans, a targeting E3 has
+not validated; whether the cost is acceptable is an institutional
+decision.
 
 Stated plainly, the scope within which the findings hold is this.
 CAMPS narrowed the disparity on the two frontier models whose
-measured gaps were largest (0.8 bands or more, a description of
-these two models rather than a threshold), on short argumentative
-essays by upper-band Southeast Asian learners, with three lenses. It
+measured gaps were largest (0.8 bands or more, a description rather
+than a threshold), on short argumentative essays by upper-band
+Southeast Asian learners, with three lenses. It
 had no clear effect on a model with a small gap and amplified the gap
 on the model with the smallest. It should not be applied without first measuring the disparity it
 is meant to treat. Five internal limitations qualify the numbers. The cohorts were not matched on
@@ -140,32 +143,28 @@ cohorts, since the rated archive holds four native essays. The lens
 prompts add scoring criteria rather than reinterpreting a fixed
 rubric, so the panel's effect may reflect changed expectations rather
 than a corrected bias; a control panel of non-cultural prompt
-variants, which would separate these explanations, was not run. BDS was evaluated at band-level resolution (seven distinct
-values), which limits any detector built on it. The ``accuracy''
-axis of the weight sweep is association with a two-level
-proficiency placement, not essay-level human quality, so no claim
-about scoring accuracy rests on it. And the 80-rater correlation of
-about 0.9 is evidence of rank association on a single-topic set, not
-of calibration.
+variants, which would separate these explanations, was not run. BDS
+was evaluated at band-level resolution (seven observed values). The
+``accuracy'' axis of the weight sweep is association with a
+two-level proficiency placement, not essay-level human quality. And
+the 80-rater correlation of about 0.9 is association on a
+single-topic set, not calibration or proof of a shared rubric.
 
 \section{Future Work}
 \label{sec:future-work}
 
-The null and unresolved results define the nearest future work. First,
-re-validating BDS with continuous, confidence-weighted lens scores
-against annotations of specifically \emph{cultural} contestation,
-so that the detector is tested on the construct it measures.
-Alongside this, the non-cultural control panel that would isolate what
-cultural plurality adds over prompt averaging should be run. Second,
-obtaining graded human ratings on the cohort essays, so that
+The null and unresolved results define the nearest future work.
+First, re-validating BDS with continuous, confidence-weighted lens
+scores against annotations of specifically \emph{cultural}
+contestation, so that the detector is tested on the construct it
+measures, alongside the non-cultural control panel that would
+isolate what cultural plurality adds over prompt averaging. Second,
+graded human ratings on the cohort essays, so that
 Definition~\ref{def:eef} can be tested as an LLM$-$human residual
 between native and Southeast Asian writers rather than read from a
-raw cohort gap. Beyond these, the panel could be extended to further rhetorical
-traditions as validating corpora become available, including a
-Middle Eastern lens for which the literature is rich but public
-rated corpora are lacking. A
-theoretical treatment is a further direction: the formal guarantees
-established for multi-perspective generation
-\citep{dorleon2026uncovering} suggest an analogous proposition
-stating conditions under which panel consensus provably narrows
-cohort gaps, independent of any particular model generation. Finally, a classroom pilot of BDS-triggered review.
+raw cohort gap. Beyond these: extending the panel to further rhetorical traditions
+as validating corpora become available; a theoretical treatment, since
+the formal guarantees for multi-perspective generation
+\citep{dorleon2026uncovering} suggest an analogous proposition on
+when panel consensus provably narrows cohort gaps; and a classroom
+pilot of BDS-triggered review.

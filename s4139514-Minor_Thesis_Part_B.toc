@@ -18,20 +18,20 @@
 \contentsline {section}{\numberline {3.3}Scaling the Panel: from Three to Five Agents}{30}{}%
 \contentsline {section}{\numberline {3.4}Data}{32}{}%
 \contentsline {section}{\numberline {3.5}Experimental Design}{35}{}%
-\contentsline {section}{\numberline {3.6}Alternatives Considered}{36}{}%
+\contentsline {section}{\numberline {3.6}Alternatives Considered}{37}{}%
 \contentsline {section}{\numberline {3.7}Ethical Considerations}{37}{}%
 \contentsline {section}{\numberline {3.8}Metrics and Statistical Protocol}{37}{}%
 \contentsline {chapter}{\numberline {4}Results and Discussion}{39}{}%
 \contentsline {section}{\numberline {4.1}Experiment 1: The Cohort Gap at Scale (H1; H2 in part)}{39}{}%
 \contentsline {section}{\numberline {4.2}Experiment 2: Extended CAMPS Panel (H2, H4)}{41}{}%
-\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{46}{}%
-\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{48}{}%
-\contentsline {section}{\numberline {4.5}Threats to Validity}{51}{}%
-\contentsline {section}{\numberline {4.6}Discussion}{53}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{56}{}%
-\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{56}{}%
-\contentsline {section}{\numberline {5.2}Contributions}{57}{}%
-\contentsline {section}{\numberline {5.3}Limitations}{58}{}%
-\contentsline {section}{\numberline {5.4}Future Work}{59}{}%
-\contentsline {chapter}{\numberline {A}CRI System Prompts}{60}{}%
-\contentsline {chapter}{\numberline {B}Reproducibility}{63}{}%
+\contentsline {section}{\numberline {4.3}Experiment 3: BDS Validation (H3)}{47}{}%
+\contentsline {section}{\numberline {4.4}Uncertainty and Error Analysis}{49}{}%
+\contentsline {section}{\numberline {4.5}Threats to Validity}{52}{}%
+\contentsline {section}{\numberline {4.6}Discussion}{54}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{57}{}%
+\contentsline {section}{\numberline {5.1}Conclusions Against the Hypotheses}{57}{}%
+\contentsline {section}{\numberline {5.2}Contributions}{59}{}%
+\contentsline {section}{\numberline {5.3}Limitations}{59}{}%
+\contentsline {section}{\numberline {5.4}Future Work}{60}{}%
+\contentsline {chapter}{\numberline {A}CRI System Prompts}{61}{}%
+\contentsline {chapter}{\numberline {B}Reproducibility}{64}{}%

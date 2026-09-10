@@ -22,8 +22,8 @@ between the cohorts as well as differential model error
 
 Experiment E1 scored all 200 cohort essays under the single-agent
 baseline and the three-agent panel on four models; the two
-conditions together comprised 800 scoring calls per model, all
-deterministic and logged.
+conditions together comprised 800 scoring calls per model, all at
+temperature 0 and logged.
 Table~\ref{tab:e1-qwk} reports the mean and spread of scores per
 cohort under each condition, the native$-$SEA score gap with bootstrap confidence
 intervals, and the gap in standard-deviation units.
@@ -41,8 +41,8 @@ including an open-weight model. Because the cohorts were not matched
 on independently assessed essay quality, these gaps do not by
 themselves isolate the cultural mechanism of
 Definition~\ref{def:eef}; Section~\ref{sec:results-uncertainty}
-tests that mechanism where human ratings exist, between the learner
-traditions the GRA contains.
+examines it, exploratorily, where human ratings exist, between the
+learner traditions the GRA contains.
 
 Second, the \emph{magnitude} of the gap varied across models,
 spanning a factor of six in raw bands. Claude Sonnet and GPT-4o
@@ -142,32 +142,39 @@ adjudicator behaved similarly: its final scores gave a gap of 0.52
 ($p = 0.16$). The panel's effect against the single-agent baseline
 remained robust, 0.25 bands [0.15, 0.35], or 31\% ($p < 0.0001$),
 against 28\% at $k = 3$; the 3-point difference is the 0.02-band
-change whose interval includes zero. What E2 rules out is not the
-panel but the premise that its power grows with its size. On Claude Sonnet the
+change whose interval includes zero. What E2 shows is that adding
+these two lenses did not add mitigation; it tested particular lenses,
+not agent count in the abstract. On Claude Sonnet the
 five-lens panel was \emph{worse} than three lenses. The gap rose
 from 0.91 [0.58, 1.23] to 1.01 [0.68, 1.33], a paired change of
 $-0.10$ bands [$-0.15$, $-0.06$] whose interval excludes zero, and
-its advantage over baseline weakened to 0.17 [$-0.03$, 0.37]. The adjudicator changed
-nothing on this model (gap 1.01 [0.66, 1.35], paired change 0.002
-[$-0.08$, $0.08$]). H2's second clause, that the panel should not
-degrade agreement with the corpus's proficiency bands, held on one
-model only. Spearman's $\rho$ between the panel score and the CEFR
-band on the Southeast Asian cohort ($n = 100$; two band levels) rose
-on GPT-4o from 0.32 (baseline) to 0.38 ($k = 3$), 0.39 ($k = 5$) and
-0.40 (adjudicated), but fell on Claude Sonnet from 0.40 to 0.34,
-0.35 and 0.29. Hypothesis H2, which predicted stronger mitigation at
-$k = 5$ than $k = 3$, is therefore rejected on both models tested,
-and its band-association clause fails on Claude.
+its advantage over baseline weakened to 0.17 [$-0.03$, 0.37]. The adjudicator gave no
+clear change on this model (gap 1.01 [0.66, 1.35], paired change
+0.002 [$-0.08$, $0.08$]). H2's second clause concerns agreement with
+the corpus's proficiency bands. Spearman's $\rho$ between the panel
+score and the CEFR band on the Southeast Asian cohort ($n = 100$;
+two band levels) rose on GPT-4o from 0.32 (baseline) to 0.38
+($k = 3$), 0.39 ($k = 5$) and 0.40 (adjudicated); the
+baseline-to-$k{=}5$ change of $+0.07$ has a writer-cluster interval
+[0.01, 0.13]. On Claude Sonnet it moved from 0.40 to 0.34, 0.35 and
+0.29: the baseline-to-$k{=}3$ change of $-0.06$ [$-0.15$, 0.03] and
+the $k{=}3$-to-$k{=}5$ change of $+0.005$ [$-0.02$, 0.02] are not
+clearly different from zero, while the adjudicated configuration
+changed association by $-0.06$ [$-0.10$, $-0.03$]. Hypothesis H2,
+which predicted stronger mitigation at $k = 5$ than $k = 3$, is
+therefore not supported on GPT-4o (no clear evidence of additional
+reduction) and rejected on Claude Sonnet (the five-lens gap was
+larger); its band-association clause is contradicted only by the
+adjudicated configuration on Claude.
 
 The lens-level scores suggest why, and
 Figure~\ref{fig:e2-lens-radar} makes the pattern visible at a glance.
 Each axis is one cultural lens. The native cohort's profile
 (outer polygon) encloses the Southeast Asian cohort's on every lens
-of both models: no single lens closes the gap. The shape of the two profiles, however, is nearly
-parallel on the two added lenses. East Asian and Mekong scored the
-cohorts almost in lock-step, so their inclusion diluted, rather than
-reinforced, the corrective contrast that the Southeast Asian lens
-contributes. On Claude every panel configuration was harsher than the baseline,
+of both models: no single lens closes the gap. The two added lenses
+did not add correction: on GPT-4o their gaps roughly matched the
+panel's, and on Claude their gaps exceeded the baseline's, so the
+five-lens panel regressed there. On Claude every panel configuration was harsher than the baseline,
 visible as the smaller polygons: cohort means fell from 4.44 (SEA)
 and 5.62 (native) at baseline to 3.73 and 4.64 under three lenses,
 and 3.81 and 4.82 under five ($n = 100$ each), so the five-lens
@@ -180,19 +187,25 @@ sharper question, and the logged lens scores answer it. The
 Southeast Asian lens on its own produced a smaller gap than any
 panel: 0.32 bands on GPT-4o against 0.57 for the three-lens and 0.55
 for the five-lens panel, and 0.79 on Claude Sonnet against 0.91 and
-1.01. The Western lens alone gave 0.54 and 0.88; the two added
-lenses, East Asian and Mekong, 0.51 and 0.52 on GPT-4o but 1.19 and
-1.14 on Claude Sonnet, which is why the five-lens panel regressed
-there; and the panel's Neutral lens the widest gaps of the pilot
-lenses, 0.86 and 1.06, wider than the single-evaluator baseline on
-GPT-4o. In gap terms, then, the panel's
-reduction is the Southeast Asian lens pulling the average down, not
-an emergent property of combining perspectives. The Neutral lens,
-the panel's regulatory ideal (Section~\ref{sec:theory}), was not
-neutral in effect: asking a model to judge ``argumentative merit
-alone'' left its default expectations in place and widened the gap.
-What the panel adds beyond its best lens is therefore not a smaller
-gap but a divergence signal, whose value E3 tests.
+1.01. The Western lens alone gave 0.54 and 0.88, the Neutral lens
+0.86 and 1.06, and the two added lenses, East Asian and Mekong, 0.51
+and 0.52 on GPT-4o but 1.19 and 1.14 on Claude Sonnet, which is why
+the five-lens panel regressed there. Because the equal-weight
+consensus is a mean, the three-lens reduction decomposes exactly
+into one third of each lens's gap change from baseline: on Claude
+Sonnet all three lenses contributed (Western 0.10, Southeast Asian
+0.13, Neutral 0.04 bands of the 0.27), and on GPT-4o the Western
+lens contributed 0.09 and the Southeast Asian lens 0.16 while the
+Neutral lens, whose gap exceeded the baseline's, subtracted 0.02.
+The Southeast Asian lens is therefore the largest but not the only
+contributor, and the panel did not improve on it under the gap
+metric; these results do not show a synergistic benefit from
+combining perspectives, though they do not exclude benefits on
+other criteria the design did not measure. The Neutral lens, the
+panel's regulatory ideal (Section~\ref{sec:theory}), was not neutral
+in effect: asking a model to judge ``argumentative merit alone''
+left its default expectations in place, and on GPT-4o produced a
+gap wider than the baseline prompt's.
 
 \begin{figure}[htbp]
 \centering
@@ -200,8 +213,10 @@ gap but a divergence signal, whose value E3 tests.
 \caption[Lens-level cohort profiles (radar)]{Mean lens-level score by
 cohort on the five-lens panel. The native profile (red) encloses the
 Southeast Asian profile (blue) on every lens of both models; the
-added East Asian and Mekong lenses track the cohorts in parallel,
-explaining why enlarging the panel did not enlarge the correction.}
+added East Asian and Mekong lenses match the panel's gap on GPT-4o
+and exceed the baseline gap on Claude, which is why enlarging the
+panel did not add correction on one model and regressed on the
+other.}
 \label{fig:e2-lens-radar}
 \end{figure}
 
@@ -223,17 +238,18 @@ Recomputing the five-lens consensus at every weight vector on a
 $\Delta = 0.05$ simplex grid (10{,}626 vectors, zero additional API
 calls) traces the relationship in Figure~\ref{fig:e2-frontier}
 between the absolute cohort gap and proficiency-band association
-(Spearman's $\rho$ on the banded Southeast Asian cohort). No
-trade-off was observed on the sample. On GPT-4o the equal-weight
-panel (gap 0.55, $\rho = 0.39$) was dominated by 2{,}594 of the
-weight vectors, which achieved both a smaller gap and higher
-association; the gap-minimising vector, which loads entirely on the
-Southeast Asian lens, gave gap 0.32 with $\rho = 0.42$, and the
-non-dominated set spanned only gap 0.32--0.38 and $\rho$
-0.42--0.43. Claude Sonnet showed the same pattern: equal weights
-(1.01, 0.35) dominated by 2{,}291 vectors, the Southeast Asian lens
-alone at (0.79, 0.36), and a non-dominated set spanning gap
-0.79--0.90 and $\rho$ 0.355--0.361. Three qualifications bound this
+(Spearman's $\rho$ on the banded Southeast Asian cohort). Two
+comparisons must be kept apart. Relative to equal weighting, many
+vectors improved both objectives: on GPT-4o the equal-weight panel
+(gap 0.55, $\rho = 0.39$) was dominated by 2{,}594 of the weight
+vectors, and on Claude Sonnet (1.01, 0.35) by 2{,}291, so equal
+weighting was inefficient on the sample. Along the non-dominated
+set, however, a small trade-off remained: on GPT-4o the set ran
+from the gap-minimising vector, the Southeast Asian lens alone
+(gap 0.32, $\rho = 0.42$), to gap 0.38 at $\rho = 0.43$, and on
+Claude from (0.79, 0.355) to (0.90, 0.361), so the highest
+association required accepting a somewhat larger gap
+(Figure~\ref{fig:e2-frontier}). Three qualifications bound this
 reading. The gap-minimising vector being a single lens is a
 consequence of the aggregation rule (Section~\ref{sec:camps-framework}),
 not evidence for combining perspectives; the association measure is
@@ -241,8 +257,10 @@ a two-level proficiency placement, not essay-level human quality, so
 ``accuracy'' here is a weak proxy; and the sweep optimises on the
 observed sample, so the non-dominated set is an in-sample
 description rather than a performance guarantee. Within those
-limits, H4's predicted boundary was not located: on the proxy
-measures available, reducing the gap did not cost association.
+limits, the analysis does not establish a fairness--accuracy
+boundary: it shows an inefficient default and a modest in-sample
+trade-off between two proxy measures, not the graded-ground-truth
+boundary H4 predicted.
 
 \begin{figure}[htbp]
 \centering
@@ -251,8 +269,9 @@ measures available, reducing the gap did not cost association.
 (GPT-4o)]{Weight sweep for GPT-4o: each point is one weight vector
 over the five lenses, plotted by absolute cohort gap and Spearman
 association with the CEFR band (SEA cohort). The equal-weight panel
-(star) is dominated; the non-dominated set clusters at the Southeast
-Asian lens. Exploratory and in-sample.}
+(star) is dominated; along the non-dominated set (black line)
+higher association is reached only with a somewhat larger gap.
+Exploratory and in-sample.}
 \label{fig:e2-frontier}
 \end{figure}
 
@@ -261,8 +280,8 @@ Asian lens. Exploratory and in-sample.}
 
 Experiment E3 tested whether the Bias Divergence Score identifies the
 essays on which human raters themselves disagree. The five-lens panel
-scored all 140 GRA essays on GPT-4o and Claude Sonnet (700 calls per
-model). Each essay carries ratings from 80 human raters on the four
+scored all 140 GRA essays on GPT-4o and Claude Sonnet (700 scoring
+records per model, 635 of them fresh calls). Each essay carries ratings from 80 human raters on the four
 Content dimensions, whose per-essay standard deviation defines the
 human-disagreement ground truth. ``Contested'' is operationalised
 as the top dispersion quartile.
@@ -300,12 +319,23 @@ as horizontal bands.}
 \label{fig:e3-roc}
 \end{figure}
 
-Two reasons explain this, one mechanical and one conceptual. The
-mechanical reason is resolution: band-level lens scores at $k = 5$
-concentrate BDS onto seven distinct values, visible as horizontal
-bands in the scatter, leaving the score too coarse to rank 140
-essays against a continuous dispersion measure; finer scores are a
-plausible remedy but were not tested. The conceptual reason is a
+The counts are small, and the estimates carry wide uncertainty:
+exact binomial 95\% intervals are 0.1--27\% for GPT-4o's held-out
+sensitivity (1/18), 0--18\% for Claude's (0/18), and 0--6.8\% and
+0.05--10.3\% for the two false-positive rates (0/52 and 1/52), so
+an observed false-positive rate below 5\% does not establish that
+the underlying rate is. Two plausible contributing explanations
+follow, one mechanical and one conceptual; their contributions were
+not isolated experimentally. The mechanical one is resolution:
+band-level lens scores at $k = 5$ took only seven distinct BDS
+values on this set, visible as horizontal bands in the scatter,
+which limits the thresholds available, though coarseness alone does
+not explain poor discrimination (a two-valued score can separate
+classes perfectly if the values align with them). The three-lens
+BDS, recomputed from the same logs on the same split, behaved alike
+(four distinct values; held-out AUC 0.635 and 0.515; constrained
+sensitivity 0.056 on both models), so the failure is not specific
+to the five-lens configuration. The conceptual explanation is a
 construct mismatch that the case study of
 Section~\ref{sec:results-uncertainty} makes concrete. BDS directly
 measures dispersion among prompt-conditioned scores; that this
@@ -322,7 +352,7 @@ working theory is unproven at this operating point. Second,
 validating it properly requires human annotation of \emph{cultural}
 contestation specifically, which no public corpus currently
 provides, and finer-grained lens scores would address only the
-resolution half of the problem.
+resolution explanation.
 
 \section{Uncertainty and Error Analysis}
 \label{sec:results-uncertainty}
@@ -380,39 +410,40 @@ against an unbanded native reference and is an unadjusted disparity:
 part of any native$-$SEA gap may be a genuine quality difference
 that human raters would also assign, and part may be differential
 model error. The GRA essays, which carry 80-rater human scores,
-permit a supplementary test of Definition~\ref{def:eef}
-in its own terms, between the traditions the set contains. The
-five-lens panel's consensus correlated with the human Content mean at
-$r = 0.91$ (GPT-4o) and $r = 0.88$ (Claude Sonnet) across all 140
-essays. This is evidence of rank association, not of calibrated
-accuracy: a score that is uniformly too low can correlate perfectly,
-and standardising the two scales, as the residual analysis below
-does, removes exactly the level and spread differences that the
-severity-shift question concerns. Standardising both scales and
-taking the LLM$-$human residual by writer group, the panel showed no
-cohort-specific deviation between the two learner cohorts. The
-Southeast Asian ($n = 44$) minus East Asian ($n = 80$) residual
-(the remaining 12 essays, from Hong Kong, Pakistan, and Singapore,
-belong to neither group)
-difference was $+0.06$ standard deviations (SD) [$-0.07$, $+0.19$]
-on GPT-4o and $-0.04$
-[$-0.21$, $+0.13$] on Claude Sonnet. The Western lens alone likewise
-showed no learner-cohort residual ($+0.05$ [$-0.13$, $+0.23$] and
-$+0.12$ [$-0.10$, $+0.35$]). The Southeast Asian lens on GPT-4o, however,
-was \emph{more generous} to Southeast Asian essays than the human
-raters ($+0.24$ [$+0.07$, $+0.41$]). This is a lens-calibration lean that the
-consensus averages out. The GRA set contains only four native-speaker
-essays, too few for inference; descriptively, the panel ranked them
-below where the human raters did ($-0.22$ and $-0.38$ SD). Two cautions apply. First, the GRA human
-raters themselves ordered the groups native $>$ East Asian $>$
-Southeast Asian (Content means 6.35, 5.47, 4.87 on the 0--10 scale; four native
-essays), suggesting that raw cohort gaps partly reflect quality
-differences humans also perceive. Second, the analysis was added after the main analyses, is
-single-topic, and does not include a native$-$SEA contrast, which is
-the contrast E1 measures. It shows that under a human anchor the
-panel treated the two learner traditions alike; it says nothing
-about whether the native$-$SEA gap of E1 is quality difference or
-differential error, which this design cannot decompose.
+permit an exploratory comparison of standardised model scores with
+human Content ratings across learner cohorts. It is not a direct
+test of Definition~\ref{def:eef}: the lenses scored Coherence and
+Cohesion while the human reference averages four Content
+dimensions, and the thesis has not shown these to be interchangeable
+measures of one rubric. The five-lens consensus was strongly
+associated with the human Content mean across all 140 essays,
+Pearson $r = 0.91$ and Spearman $\rho = 0.93$ (GPT-4o), $r = 0.88$
+and $\rho = 0.88$ (Claude Sonnet). This is association, not
+calibrated accuracy: a score that is uniformly too low can correlate
+perfectly. Standardising both scales and taking the LLM$-$human
+difference in standardised position by writer group, the Southeast
+Asian ($n = 44$) minus East Asian ($n = 80$) contrast (the remaining
+12 essays, from Hong Kong, Pakistan, and Singapore, belong to neither
+group) was $+0.06$ SD [$-0.07$, $+0.19$] on GPT-4o and $-0.04$
+[$-0.21$, $+0.13$] on Claude Sonnet: no clear evidence of a
+difference, but intervals that allow non-zero differences, so
+equivalence is not established. The Western lens alone gave $+0.05$
+[$-0.13$, $+0.23$] and $+0.12$ [$-0.10$, $+0.35$]; the Southeast
+Asian lens on GPT-4o gave a more positive contrast for the Southeast
+Asian cohort, $+0.24$ [$+0.07$, $+0.41$], which the consensus
+averages out. A difference in standardised position is not an error
+in a common scoring unit, so these contrasts cannot by themselves
+show culturally differential treatment at equal quality, or its
+absence. The GRA set contains only four native-speaker essays, too
+few for inference; descriptively, the panel placed them lower in
+standardised position than the human raters did ($-0.22$ and
+$-0.38$ SD). The GRA human raters themselves ordered the groups
+native $>$ East Asian $>$ Southeast Asian (Content means 6.35,
+5.47, 4.87 on the 0--10 scale), suggesting that raw cohort gaps
+partly reflect quality differences humans also perceive. The
+analysis was added after the main analyses, is single-topic, and
+contains no native$-$SEA contrast, which is the contrast E1
+measures.
 
 \textbf{A concrete case.} One essay makes the mechanism visible.
 The highest-divergence Southeast Asian essay under GPT-4o's
@@ -452,7 +483,8 @@ essays (E3) does not make the individual case less instructive.
 \caption[One essay, every lens]{One essay, every lens: bands assigned
 to a proverb-opening, inductively organised Philippine B1\_2 essay by
 each evaluator role on each model (E1 and E2 logs). The
-Western-calibrated lens is the lowest scorer on every model; dashes
+Western-calibrated lens is the lowest or joint-lowest scorer on
+every model; dashes
 mark roles not run on that model.}
 \label{fig:case-study}
 \end{figure}
@@ -477,8 +509,9 @@ Section~\ref{sec:scaling-panel}. Second, the Western and
 Southeast Asian lenses are checked against their corpus cohorts.
 The East Asian and Mekong lenses, by contrast, were not separately
 validated in E1--E3, though validating cohorts exist in the corpus,
-and their behaviour is known only through the panel. Third, all runs are
-deterministic, removing sampling variation from the elicitation.
+and their behaviour is known only through the panel. Third, all runs
+used temperature 0, which reduces but does not eliminate generation
+variability (Appendix~\ref{chap:appendix-repro}).
 
 \textbf{Internal validity.} Scores may be sensitive to prompt wording
 and output format. All prompts were fixed before the experiments,
@@ -530,11 +563,13 @@ culturally framed evaluators reduced the disparity by about a
 quarter on the two models where it was largest, entirely by marking
 both cohorts down (the native cohort more), and amplified it on the
 model where it was smallest. Enlarging the panel from three lenses
-to five added nothing and on one model subtracted; the reduction was
-no larger than that of the Southeast Asian lens alone. Reweighting
-found no trade-off between the gap and proficiency-band association
-on the sample. And the panel's internal disagreement did not
-identify the essays human raters dispute.
+to five gave no clear further reduction on one model and a larger
+gap on the other; no panel improved on the Southeast Asian lens
+alone. Reweighting
+showed equal weighting to be inefficient and a small in-sample
+trade-off between the gap and proficiency-band association along
+the non-dominated set. And the panel's internal disagreement did
+not identify the essays human raters dispute.
 
 Set against prior findings, the results replicate in one respect and
 fail to generalise or transfer in two. The Part~A pilot reported a
@@ -545,18 +580,18 @@ other two (null on Qwen3, amplification on Gemini). The pilot also reported 96.7
 hand-set threshold at $k = 3$; the five-lens BDS, ROC-calibrated
 against 80-rater ground truth on 140 essays, reached 0.056
 sensitivity at the specified false-positive rate, consistent with a
-small-$n$ artefact in the pilot (the $k = 3$ signal itself was not
-validated on the GRA). The existence finding accords with
+small-$n$ artefact in the pilot (the $k = 3$ signal, recomputed on
+the GRA, performed no better; Section~\ref{sec:results-e3}). The existence finding accords with
 \citet{gayed2026firstlanguage}, who documented L1-linked scoring
 variation on TOEFL11, and adds a native reference and a cross-family
 comparison that single-model studies cannot see. The mitigation
-finding accords only superficially with the panel-of-evaluators
-result of \citet{verga2024replacing}, that judge diversity reduces
-judge bias: on this evidence the reduction is attributable to one
-lens, not to diversity as such. The
+finding accords only partly with the panel-of-evaluators result of
+\citet{verga2024replacing}, that judge diversity reduces judge bias:
+here the panel did not improve on its best single lens under the gap
+metric, so no synergistic benefit of diversity was shown. The
 panel-size finding shows that the accuracy gains CAFES and RES
-report from adding agents \citep{su2025cafes, jang2025roundtable} do
-not extend to fairness on this evidence. Finally, the Gemini gap
+report from adding agents \citep{su2025cafes, jang2025roundtable}
+did not extend to the gap metric for the two lenses added here. Finally, the Gemini gap
 amplification is the behaviour the MALIBU benchmark predicted for
 persona-conditioned judging \citep{mirza2025malibu}, and the Neutral
 lens's expanded score range on that model is consistent with the
@@ -570,14 +605,14 @@ any vendor's alignment choices. Second, the cross-model ordering is
 only partly consistent with that account, since the smallest gap
 belongs to a Western-trained model (Section~\ref{sec:results-e1}).
 Third, the lens-level results temper the theory's account of
-\emph{why} the panel helps. The reduction on GPT-4o and Claude was
-carried by the Southeast Asian lens, which alone produced a smaller
-gap than any panel, while the Neutral prompt produced the widest
-gap; since the lens prompts add scoring criteria rather than merely
-reinterpreting a fixed rubric (Section~\ref{sec:threats}), the most
-economical reading is that culturally framed prompts \emph{change
-the scoring expectations applied}, and that the framing favourable
-to Southeast Asian rhetoric narrows the disparity. Whether that
+\emph{why} the panel helps. The reduction on GPT-4o and Claude decomposes into contributions
+from more than one lens, with the Southeast Asian lens the largest
+contributor and, alone, a smaller gap than any panel; since the lens
+prompts add scoring criteria rather than merely reinterpreting a
+fixed rubric (Section~\ref{sec:threats}), the most economical
+reading is that culturally framed prompts \emph{change the scoring
+expectations applied}, and that framings favourable to Southeast
+Asian rhetoric narrow the disparity. Whether that
 narrowing recovers quality the baseline overlooked, or simply
 relaxes a criterion, is not settled by this design. Gemini Pro's
 amplified gap shows that the same prompts can move a weakly
@@ -616,20 +651,22 @@ ground truth on the cohort essays themselves, which is future work.
 The E2 and E3 results together discipline how the framework should
 be described. What survives is CAMPS as an audit instrument that
 also delivers a model-dependent reduction of an unadjusted
-disparity, with no observed trade-off against proficiency-band
-association. What does not yet survive is the panel as an autonomous
+disparity, with a small gain in proficiency-band association on
+GPT-4o and a small loss under adjudication on Claude. What does not yet survive is the panel as an autonomous
 triage instrument: BDS at band-level resolution did not meet its
 specified operating point, and its dispersion was concentrated on
-the native rather than the Southeast Asian essays. H3 tested a
-prespecified hypothesis on its held-out split and carries the same
-evidentiary weight as the H1 confirmation; H4 is exploratory.
+the native rather than the Southeast Asian essays. H3's target and split were prespecified, though the constrained
+threshold rule was added in revision (Section~\ref{sec:metrics});
+H4 is exploratory.
 
 \section*{Chapter summary}
 An unadjusted native$-$SEA disparity exists on every model tested and
 varies six-fold between them (H1). A three-lens panel reduces it by
 about a quarter on the two largest-gap models, no more than its
 Southeast Asian lens alone, has no clear effect on Qwen3, and
-amplifies it on Gemini Pro; five lenses add nothing on GPT-4o and
-widen the gap on Claude, and the adjudicator adds nothing (H2). Reweighting showed no gap--band-association trade-off
-(H4, exploratory). Panel disagreement did not identify contested
+amplifies it on Gemini Pro; five lenses give no clear further
+reduction on GPT-4o and a larger gap on Claude, and the adjudicator
+no clear change (H2). Reweighting showed equal weighting to be
+inefficient and a small in-sample trade-off along the non-dominated
+set (H4, exploratory). Panel disagreement did not identify contested
 essays at the specified operating point (H3).

@@ -10,8 +10,12 @@ prompts and the meta-adjudicator prompt were introduced in Part~B
 (Section~\ref{sec:scaling-panel}) and are grounded in the
 contrastive-rhetoric literature reviewed in
 Section~\ref{sec:lit-rhetoric}. The user turn, identical for every
-agent, supplies the essay text and the instruction to respond in
-JSON with a band score and a short rationale; it is constructed in
+lens agent, is: ``Score the following essay. Respond with JSON:
+\{"score": <band>, "rationale": "<2--3 sentences>"\}'' followed by
+the essay text. The IELTS descriptors are referred to by name and
+not reproduced in any prompt. The adjudicator's user turn lists the
+five evaluators' scores and rationales, then the full essay text,
+then the JSON instruction. Both are constructed in
 \texttt{src/run\_experiment.py} in the released repository.
 
 \section*{Baseline (single evaluator)}

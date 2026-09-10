@@ -55,20 +55,20 @@ tradition rather than on language proficiency. This is what
 distinguishes evaluative epistemic filtering from the legitimate
 scoring of weaker English. It is what the band-restricted cohort
 design of Section~\ref{sec:data} is built to approach, and what a
-supplementary human-anchored check (Section~\ref{sec:results-uncertainty})
-tests where human ratings exist.
+supplementary, exploratory human-anchored check
+(Section~\ref{sec:results-uncertainty}) examines where human ratings
+exist.
 
-Four conditions jointly sustain the filter. First, training corpora
+Four conditions jointly sustain the filter: training corpora
 over-represent WEIRD cultural contexts, whose value orientation
-models demonstrably absorb \citep{tao2024cultural}. Second, the standards LLM
-evaluators apply are opaque, distributed across parameters rather
-than inspectable as engineered features \citep{vajjala2018automated,
-gallegos2024bias}. Third, diagnostic effort has concentrated on generative
-outputs, leaving the bias categories of \citet{dorleon2026uncovering}
-without an evaluative counterpart. Fourth, the observable symptom,
-L1-linked scoring disparity, is documented
-\citep{gayed2026firstlanguage} but unconnected to any mitigation
-mechanism.
+models absorb \citep{tao2024cultural}; the standards LLM evaluators
+apply are opaque, distributed across parameters rather than
+inspectable \citep{vajjala2018automated, gallegos2024bias};
+diagnostic effort has concentrated on generative outputs, leaving
+the bias categories of \citet{dorleon2026uncovering} without an
+evaluative counterpart; and the observable symptom, L1-linked
+scoring disparity, is documented \citep{gayed2026firstlanguage} but
+unconnected to any mitigation mechanism.
 
 The theory yields three testable signatures, mapping onto the
 hypotheses of Chapter~1. The first is a systematic scoring gap between an
@@ -132,14 +132,13 @@ outputs:
 \begin{equation}
 s_i = A_i(E, r_i), \qquad i = 1, \dots, k,
 \end{equation}
-with temperature fixed at $t = 0.0$ to minimise generation
-variability and structured (JSON) output; every response is archived,
-so the analysis is exactly reproducible from the archived outputs
-even though provider APIs do not guarantee bit-identical regeneration. Independence at this
-stage is deliberate: the MALIBU results \citep{mirza2025malibu} caution
-that interacting agents can amplify rather than cancel bias, so CAMPS
-confines interaction to the aggregation stage, where it is
-mathematically controlled.
+with temperature $t = 0.0$ and structured (JSON) output; every
+response is archived, so the analysis is exactly reproducible from
+the archive even though providers do not guarantee bit-identical
+regeneration. Independence here is deliberate: MALIBU
+\citep{mirza2025malibu} cautions that interacting agents can amplify
+rather than cancel bias, so CAMPS confines interaction to the
+aggregation stage.
 
 \subsection*{Component 3: Consensus aggregation}
 The panel's scores are combined as a weighted mean,
@@ -297,10 +296,11 @@ irrespective of structural ordering \citep{fricker2007epistemic} &
 \end{table}
 
 The second architectural addition is a \emph{meta-adjudicator}: a
-further LLM instance that receives the five agents' scores and their
-short written rationales, and produces a reasoned consensus score,
+further LLM instance that receives the essay, the five agents'
+scores and their short written rationales, and produces a reasoned
+consensus score,
 \begin{equation}
-S^{\mathrm{adj}}(E) = M\bigl(s_1, \rho_1, \dots, s_k, \rho_k\bigr),
+S^{\mathrm{adj}}(E) = M\bigl(E, s_1, \rho_1, \dots, s_k, \rho_k\bigr),
 \end{equation}
 where $\rho_i$ is agent $i$'s rationale. The adjudicator is blind to
 writer identity and cohort metadata and runs at $t = 0.0$. Where the
@@ -372,7 +372,11 @@ Asian cohort draws from the Thailand, Indonesia, and Philippines
 components of WE, restricted to the two upper proficiency bands
 (B1\_2, B2+) and stratified by topic and band. The native cohort
 draws from ENS, which ICNALE does not band (native writers are the
-corpus's reference group). Sampling yields $n = 100$ per cohort
+corpus's reference group). ICNALE's native module also contains
+teachers and other adults, but every sampled native essay is by a
+writer the corpus classifies as a student (USA 83, Canada 8, New
+Zealand 4, UK 3, Australia 2; ages 19--29; corpus participant file),
+so both cohorts are university-age students. Sampling yields $n = 100$ per cohort
 (50 per topic) under a fixed seed. Restricting the learner cohort to
 its upper bands reduces how much of a cohort gap can be attributed
 to weak English, but it cannot equate the cohorts: any residual
@@ -397,7 +401,9 @@ reproducibility manifest records essay identifiers only.}
 Every agent, including the single-agent baseline, is asked for a
 band from 1 to 9 on the IELTS Coherence and Cohesion descriptors (the
 prompts are verbatim in Appendix~\ref{chap:appendix-prompts}). The
-prompts request a band from 1 to 9; Claude Sonnet and Gemini Pro
+descriptors are named, not reproduced, in the prompts, so scores
+rest partly on each model's learned reading of the rubric and are
+not examiner-equivalent IELTS bands. Claude Sonnet and Gemini Pro
 returned whole bands only, while Qwen3 returned half-bands (e.g.\
 6.5) in 295 of its 800 scoring records and GPT-4o in 34 of its
 3{,}700. Returned values were retained as returned, so the
@@ -440,9 +446,9 @@ Three experiments test the four hypotheses
 run on the two models with the largest E1 gaps (GPT-4o and Claude
 Sonnet), confining the costlier extended conditions to the evaluators
 where mitigation is material. All conditions share the same
-determinism guarantees: temperature fixed at $0.0$, structured JSON
-outputs, exact model versions pinned in the experiment configuration,
-and a fixed random seed for all sampling. Every result in Chapter~4
+settings: temperature fixed at $0.0$, structured JSON outputs, model
+identifiers pinned in the experiment configuration, and a fixed
+random seed for all sampling. Every result in Chapter~4
 is reproducible from the archived model outputs and the released
 configuration, prompts, and essay-identifier manifest; regenerating
 the outputs through provider APIs is best-effort
@@ -470,7 +476,7 @@ on a hold-out split & H3 \\
 \end{tabular}
 \end{table}
 
-\textbf{Experiment E1 (scaled replication)} scores both cohorts under
+\textbf{Experiment E1 (scaled replication)}\ scores both cohorts under
 the single-agent baseline and the pilot's three-agent panel on all
 four models, establishing whether the gap exists at scale (H1) and
 providing the $k{=}3$ reference for E2.
@@ -492,53 +498,48 @@ of a contested essay, operationalised as the top quartile of
 per-essay standard deviation across the 80 raters' Content ratings,
 where each rater's Content score is the mean of the four Content
 dimensions and dispersion is the standard deviation of those
-per-rater scores across the 80 raters. This is a proxy: the GRA
-raters disagree for many reasons, of which cultural contestation is
-one, so a detector of cultural divergence is here benchmarked
-against general disagreement. The 90\%/5\% operating point in H3
-was fixed before E3 as the performance level the pilot's hand-set
-threshold had reported (96.7\% sensitivity), with 5\% a
+per-rater scores across the 80 raters (three essays had 79 usable
+raters after a missing Content rating was excluded). This is a
+proxy: GRA raters disagree for many reasons, of which cultural
+contestation is one, so a detector of cultural divergence is
+benchmarked here against general disagreement. The 90\%/5\%
+operating point was fixed before E3 somewhat below the 96.7\%
+sensitivity the pilot's hand-set threshold had reported, with 5\% a
 conventional false-alarm tolerance. Two thresholds are calibrated
-on a random half of the GRA set and locked before evaluation on the
-held-out half: Youden's $J$, and the constrained rule that H3 actually
-specifies (the most sensitive threshold whose calibration
-false-positive rate is at most 5\%). Sensitivity and false-positive
-rate with their counts, and the area under the ROC curve, are
-reported.
+on a random half of the GRA set and evaluated on the held-out half:
+Youden's $J$ (the original analysis), and the constrained rule that
+H3 actually specifies (the most sensitive threshold whose
+calibration false-positive rate is at most 5\%), added in revision
+(Section~\ref{sec:metrics}). Sensitivity and false-positive rate
+with their counts, and the area under the ROC curve, are reported.
 
 \section{Alternatives Considered}
 \label{sec:alternatives}
 
 \emph{Training-time cultural adaptation}, as in CultureLLM
 \citep{li2024culturellm}, is rejected on deployment grounds: it
-requires weight access or fine-tuning budgets unavailable to most
-educational institutions, must be repeated for every model
-generation, and cannot be audited by the deploying institution.
-\emph{Activation steering}, as in FairSteer \citep{li2025fairsteer},
-is infeasible for API-only access by construction
-(Section~\ref{sec:lit-debias}).
-
-\emph{Single-prompt debiasing}, instructing one evaluator to ``score
-fairly across cultures'', collapses the plurality of standards into
-a single opaque judgement, leaving no divergence signal to calibrate
-a review trigger against; this instruction was not separately run. \emph{Inter-agent debate}, as in MACD
-\citep{tan2026macd}, is rejected because interaction can amplify bias
-\citep{mirza2025malibu} and deliberation before scoring destroys the
-independence that makes BDS meaningful; CAMPS confines deliberation
-to the optional post-hoc adjudicator. \emph{Recruiting external human
-raters} was rejected on ethics-scope and timeline grounds
-(Section~\ref{sec:ethics}); the GRA archive supplies eighty raters
-per essay without new data collection.
+needs weight access or fine-tuning budgets most institutions lack,
+must be repeated per model generation, and cannot be audited by the
+deployer. \emph{Activation steering} \citep{li2025fairsteer} is
+infeasible for API-only access (Section~\ref{sec:lit-debias}).
+\emph{Single-prompt debiasing} (``score fairly across cultures'')
+collapses the plurality of standards into one opaque judgement and
+leaves no divergence signal; it was not separately run.
+\emph{Inter-agent debate}, as in MACD \citep{tan2026macd}, is
+rejected because interaction can amplify bias \citep{mirza2025malibu}
+and deliberation before scoring destroys the independence BDS
+needs; CAMPS confines deliberation to the post-hoc adjudicator.
+\emph{Recruiting human raters} was rejected on ethics-scope grounds
+(Section~\ref{sec:ethics}); the GRA supplies eighty raters per essay.
 
 \section{Ethical Considerations}
 \label{sec:ethics}
 
 This research analyses de-identified secondary data only, under an
 RMIT human research ethics exemption (Project ID 31036). No writer
-is re-identified, no essay text is redistributed, storage follows
-the project's data management plan, and no participants are
-recruited; any extension involving human participants would require
-a new ethics assessment. Two considerations shape the design. First,
+is re-identified, no essay text is redistributed, and no
+participants are recruited; any extension involving participants
+would require a new ethics assessment. Two considerations shape the design. First,
 cultural essentialism: agents are calibrated to \emph{documented
 rhetorical traditions}, not nationalities, and L1 cohorts are
 treated as proxies for rhetorical tradition rather than identity.
@@ -571,28 +572,31 @@ compression, visible in the per-cohort standard deviations of
 Table~\ref{tab:e1-qwk}).
 Association with the learner cohort's proficiency bands is reported
 secondarily as Spearman's $\rho$ between the panel score and the band
-ordinal on the Southeast Asian cohort; a kappa statistic was
-considered and rejected because the 1--9 score scale and the two-level
-band labels share no common category system. A supplementary human-anchored check on the GRA set, added after
-the main analyses, is reported in Section~\ref{sec:results-uncertainty}.
+ordinal on the Southeast Asian cohort. A supplementary human-anchored
+check on the GRA set is reported in
+Section~\ref{sec:results-uncertainty}.
+
+\textbf{Analysis revisions.} Three analyses were revised after the
+first results were examined, and are declared here. The
+proficiency-band analysis originally used quadratic weighted kappa,
+replaced by Spearman's $\rho$ because the 1--9 score scale and the
+two-level band labels share no common category system. Cohort
+uncertainty estimates originally resampled essays, recomputed to
+resample writers. E3 originally calibrated only Youden's threshold;
+the constrained rule H3 specifies was added on the same
+prespecified split after the Youden results had been seen, as was
+the human-anchored check. The 90\%/5\% target, the E3 split, the
+paired-bootstrap tests, and the seed were fixed before scoring.
 
 \textbf{Uncertainty.} Every statistic carries its $n$. ICNALE
 writers contribute up to two essays (one per topic): the 200 cohort
-essays come from 161 writers, 39 of whom contribute both. The writer
-is therefore the unit of independence, and every cohort gap and gap
-change is reported with a 95\% percentile bootstrap confidence
-interval that resamples \emph{writers} (10{,}000 resamples, fixed
-seed), preserving the paired conditions within each essay.
-Band-association and detection statistics are reported as point
-estimates with their $n$ and counts. Confidence intervals are the
-primary inferential device. $p$-values are reported only for the
-prespecified paired-bootstrap tests of gap change (one-sided
-probability of no reduction); the tests and seed were fixed in this
-chapter before the experiments ran but were not formally registered.
-
-\section*{Chapter summary}
-CAMPS scores each essay with several culturally-calibrated lenses,
-averages them, and measures their disagreement. E1 tests whether the
-gap exists across four models (H1), E2 whether a larger panel and
-adjudicator help and what they cost (H2, H4), E3 whether
-disagreement flags contested essays (H3).
+essays come from 161 writers, 39 of whom contribute both, so the
+writer is the unit of independence, and every cohort gap, gap change
+and band-association change is reported with a 95\% percentile
+bootstrap interval that resamples \emph{writers} (10{,}000 resamples,
+fixed seed), preserving the paired conditions within each essay.
+Detection statistics are reported with counts and exact binomial
+intervals. Confidence intervals are the primary inferential device;
+$p$-values appear only for the prespecified paired-bootstrap tests
+of gap change (one-sided probability of no reduction), fixed with
+the seed before the experiments ran but not formally registered.
